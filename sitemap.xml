@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9 http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
+<!-- Sitemap generado para CardMax - Credenciales PVC y Tarjetas Personalizadas en Tijuana -->
+
+<url>
+  <loc>https://cardmax.com.mx/</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/index.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>1.00</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/servicios.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/proceso.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/envios.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.80</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/acerca-de-nosotros.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>monthly</changefreq>
+  <priority>0.70</priority>
+</url>
+
+<!-- Productos y Servicios -->
+<url>
+  <loc>https://cardmax.com.mx/credenciales-escolares.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.95</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/gafetes-empresariales.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.95</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-identificacion.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-membresia.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-regalo.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-lealtad.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-eventos.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-presentacion.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-rfid-qr.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.95</priority>
+</url>
+
+</urlset>

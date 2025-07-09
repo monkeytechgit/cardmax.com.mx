@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Supabase - CardMax</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            background: #f5f5f5;
+        }
+        .test-container {
+            background: white;
+            padding: 30px;
+            border-radius: 10px;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        .test-btn {
+            background: #E11D48;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            margin: 10px;
+            font-size: 16px;
+        }
+        .test-btn:hover {
+            background: #be1e3c;
+        }
+        .result {
+            margin-top: 20px;
+            padding: 15px;
+            border-radius: 6px;
+            font-family: monospace;
+        }
+        .success {
+            background: #d1fae5;
+            border: 1px solid #10b981;
+            color: #065f46;
+        }
+        .error {
+            background: #fef2f2;
+            border: 1px solid #ef4444;
+            color: #991b1b;
+        }
+    </style>
+</head>
+<body>
+    <div class="test-container">
+        <h1>Test de Integración con Supabase - CardMax</h1>
+        <p>Esta página permite probar la conexión con la base de datos de Supabase antes de usar el formulario real.</p>
+        
+        <button class="test-btn" onclick="testSupabaseConnection()">Probar Conexión a Supabase</button>
+        <button class="test-btn" onclick="testFormSubmission()">Probar Envío de Formulario</button>
+        
+        <div id="results"></div>
+    </div>
+
+    <script>
+        // Configuración de Supabase (misma que en global.js)
+        const SUPABASE_URL = 'https://kjvmjrmrmxuhdbsfzwrj.supabase.co';
+        const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imtqdm1qcm1ybXh1aGRic2Z6d3JqIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MzgzMTg0OTIsImV4cCI6MjA1Mzg5NDQ5Mn0.6bYe5YAYDOwYhPqNvG-SJP8YNOy2gWr7VrNgJXxdHj8';
+
+        function showResult(message, isSuccess = true) {
+            const resultsDiv = document.getElementById('results');
+            const resultDiv = document.createElement('div');
+            resultDiv.className = `result ${isSuccess ? 'success' : 'error'}`;
+            resultDiv.innerHTML = `<strong>${new Date().toLocaleTimeString()}</strong><br>${message}`;
+            resultsDiv.appendChild(resultDiv);
+            resultsDiv.scrollTop = resultsDiv.scrollHeight;
+        }
+
+        async function testSupabaseConnection() {
+            showResult('Probando conexión a Supabase...', true);
+            
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/contacto_webpage?limit=1`, {
+                    method: 'GET',
+                    headers: {
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`
+                    }
+                });
+
+                if (response.ok) {
+                    showResult('✅ Conexión exitosa a Supabase', true);
+                    showResult(`Status: ${response.status} - ${response.statusText}`, true);
+                } else {
+                    showResult(`❌ Error de conexión: ${response.status} - ${response.statusText}`, false);
+                }
+            } catch (error) {
+                showResult(`❌ Error de red: ${error.message}`, false);
+            }
+        }
+
+        async function testFormSubmission() {
+            showResult('Probando envío de datos de prueba...', true);
+            
+            const testData = {
+                nombre_completo: 'Test Usuario CardMax',
+                email: 'test@cardmax.com.mx',
+                telefono: '+52 55 1234 5678',
+                empresa_institucion: 'Empresa de Prueba',
+                tipo_tarjeta: 'credenciales-escolares',
+                cantidad_estimada: '1-50',
+                descripcion_proyecto: 'Este es un proyecto de prueba para verificar la integración con Supabase',
+                fecha_entrega: '2024-02-15',
+                presupuesto_aproximado: '5000-10000',
+                fecha_envio: new Date().toISOString(),
+                pagina_origen: '/test.html'
+            };
+
+            try {
+                const response = await fetch(`${SUPABASE_URL}/rest/v1/contacto_webpage`, {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                        'apikey': SUPABASE_ANON_KEY,
+                        'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+                        'Prefer': 'return=minimal'
+                    },
+                    body: JSON.stringify(testData)
+                });
+
+                if (response.ok) {
+                    showResult('✅ Datos enviados correctamente a Supabase', true);
+                    showResult(`Status: ${response.status} - Los datos de prueba se guardaron en la tabla contacto_webpage`, true);
+                } else {
+                    const errorText = await response.text();
+                    showResult(`❌ Error al enviar datos: ${response.status} - ${response.statusText}`, false);
+                    showResult(`Detalles del error: ${errorText}`, false);
+                }
+            } catch (error) {
+                showResult(`❌ Error de red al enviar: ${error.message}`, false);
+            }
+        }
+
+        // Test automático al cargar la página
+        window.addEventListener('load', () => {
+            showResult('Página de test cargada. Haz clic en los botones para probar la integración.', true);
+        });
+    </script>
+</body>
+</html>
