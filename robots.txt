@@ -1,0 +1,23 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cardmax.com.mx/sitemap.xml
+
+# Disallow test files
+Disallow: /test-*
+Disallow: /final-validation.html
+
+# Prevent indexing of duplicate content
+Disallow: /index.html
+
+# Allow all other pages
+Allow: /*.html
+Allow: /*.css
+Allow: /*.js
+Allow: /*.png
+Allow: /*.jpg
+Allow: /*.jpeg
+Allow: /*.gif
+Allow: /*.svg
+Allow: /*.pdf

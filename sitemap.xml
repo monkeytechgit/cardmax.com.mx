@@ -10,13 +10,6 @@
 </url>
 
 <url>
-  <loc>https://cardmax.com.mx/index.html</loc>
-  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
-  <changefreq>weekly</changefreq>
-  <priority>1.00</priority>
-</url>
-
-<url>
   <loc>https://cardmax.com.mx/servicios.html</loc>
   <lastmod>2025-01-08T00:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
@@ -106,6 +99,13 @@
   <lastmod>2025-01-08T00:00:00+00:00</lastmod>
   <changefreq>weekly</changefreq>
   <priority>0.95</priority>
+</url>
+
+<url>
+  <loc>https://cardmax.com.mx/tarjetas-personalizadas.html</loc>
+  <lastmod>2025-01-08T00:00:00+00:00</lastmod>
+  <changefreq>weekly</changefreq>
+  <priority>0.90</priority>
 </url>
 
 </urlset>
