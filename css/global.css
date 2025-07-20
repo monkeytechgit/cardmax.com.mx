@@ -533,144 +533,363 @@ a {
 
 /* Utilidades */
 .highlight {
-    background: linear-gradient(135deg, var(--primary-color), #C41E3A);
+    background: linear-gradient(135deg, var(--color-primary), #FF6B6B);
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
     background-clip: text;
+    font-weight: 700;
 }
 
-.text-center {
+/* ===============================================
+   PROMOTIONAL ELEMENTS - MINIMAL VERSION
+   =============================================== */
+
+/* Simple promotional text - like a note, no container */
+.promo-indicator-unified {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin: 8px 0;
+    text-align: left;
+    line-height: 1.3;
+}
+
+.promo-indicator-unified .price-part {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.promo-indicator-unified .offer-part {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    display: block;
+    margin-top: 1px;
+    font-style: italic;
+}
+
+/* Legacy styles for backward compatibility */
+.price-indicator-minimal {
+    color: rgba(255, 255, 255, 0.8);
+    font-weight: 400;
+    font-size: 0.9rem;
+    margin: 6px 0;
+}
+
+.price-indicator-minimal .amount {
+    color: rgba(255, 255, 255, 0.95);
+    font-weight: 500;
+    font-size: 0.95rem;
+}
+
+.limited-time-indicator {
+    color: rgba(255, 255, 255, 0.7);
+    font-size: 0.8rem;
+    font-weight: 400;
+    margin: 3px 0;
+    font-style: italic;
+}
+
+.limited-time-indicator i {
+    margin-right: 3px;
+}
+
+/* Subtle promotional badge */
+.promo-badge-subtle {
+    display: inline-flex;
+    align-items: center;
+    gap: 8px;
+    background: linear-gradient(135deg, #E11D48, #FF6B6B);
+    color: white;
+    padding: 6px 16px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+    margin-bottom: 15px;
+    box-shadow: 0 2px 10px rgba(225, 29, 72, 0.2);
+}
+
+/* Premium quality label */
+.premium-badge-minimal {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    color: #FFFFFF;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 10px;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+}
+
+.premium-badge-minimal i {
+    color: #FFF700;
+    text-shadow: 0 1px 2px rgba(0, 0, 0, 0.5);
+    filter: drop-shadow(0 0 2px rgba(255, 247, 0, 0.8));
+}
+
+/* Enhanced CTA button */
+.btn-enhanced {
+    background: linear-gradient(135deg, #E11D48, #FF6B6B) !important;
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+}
+
+.btn-enhanced::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -100%;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255,255,255,0.2), transparent);
+    transition: left 0.5s;
+}
+
+.btn-enhanced:hover::before {
+    left: 100%;
+}
+
+.btn-enhanced:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.4);
+}
+
+/* Service card minimal promotion */
+.service-card-promo {
+    position: relative;
+}
+
+.service-card-promo .price-minimal {
+    background: rgba(255, 255, 255, 0.9);
+    color: #E11D48;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+    display: inline-block;
+    border: 1px solid #E11D48;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+    margin: 8px 0;
+}
+
+.service-card-promo .limited-time-small {
+    background: rgba(255, 255, 255, 0.9);
+    color: #7C3AED;
+    font-size: 0.75rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #7C3AED;
+    display: inline-block;
+    margin: 5px 0;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================================
+   UNIFIED MINIMAL PRODUCT CARD STYLES
+   Static layout with no shadows or animations
+   =============================================== */
+
+/* Distributed promotional elements - badges in same row */
+.promo-elements-distributed {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    margin: 15px 0;
+    align-items: center;
+}
+
+.promo-badges-row {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 5px;
+}
+
+.promo-discount {
+    background: linear-gradient(135deg, #E11D48, #FF6B6B);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+}
+
+.promo-premium {
+    background: linear-gradient(135deg, #7C3AED, #9333EA);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+.promo-premium i {
+    color: #FFF700;
+    font-size: 0.7rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+.promo-price-display {
+    font-size: 1.1rem;
+    font-weight: 700;
+    color: #E11D48;
+    padding: 8px 16px;
+    background: rgba(225, 29, 72, 0.1);
+    border-radius: 6px;
+    border: 1px solid rgba(225, 29, 72, 0.3);
+    margin-top: 5px;
+}
+
+/* Unified product card style - static and minimal */
+.product-card-unified {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: block;
+    position: relative;
+    transition: none; /* Remove any animation */
+    box-shadow: none; /* Remove shadows */
+}
+
+.product-card-unified:hover {
+    transform: none; /* Remove hover animations */
+    box-shadow: none; /* Remove hover shadows */
+}
+
+/* Unified promotional badges - improved styling */
+.promo-badge {
+    background: linear-gradient(135deg, #E11D48, #FF6B6B);
+    color: white;
+    font-size: 0.85rem;
+    font-weight: 600;
+    padding: 6px 16px;
+    border-radius: 20px;
+    display: inline-block;
+    box-shadow: 0 2px 8px rgba(225, 29, 72, 0.3);
+}
+
+.premium-badge {
+    background: linear-gradient(135deg, #7C3AED, #9333EA);
+    color: white;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 12px;
+    border-radius: 16px;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(124, 58, 237, 0.3);
+}
+
+.premium-badge i {
+    color: #FFF700;
+    font-size: 0.7rem;
+    filter: drop-shadow(0 1px 2px rgba(0, 0, 0, 0.3));
+}
+
+/* Unified price display - minimal */
+.price-unified {
+    color: #E11D48;
+    font-weight: 700;
+    font-size: 1.1rem;
+    margin: 0 8px;
+}
+
+/* Unified limited time indicator - minimal */
+.limited-time-unified {
+    color: #7C3AED;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.limited-time-unified i {
+    font-size: 0.8rem;
+}
+
+/* Service card unified style - matches product cards */
+.servicio-card-unified {
+    background: white;
+    border: 1px solid #E5E7EB;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
+    display: block;
+    position: relative;
+    transition: none;
+    box-shadow: none;
+}
+
+.servicio-card-unified:hover {
+    transform: none;
+    box-shadow: none;
+}
+
+/* Remove any existing shadows and animations from all cards */
+.servicio-card,
+.service-card,
+.product-card {
+    box-shadow: none !important;
+    transform: none !important;
+    transition: none !important;
+}
+
+.servicio-card:hover,
+.service-card:hover,
+.product-card:hover {
+    box-shadow: none !important;
+    transform: none !important;
+}
+
+/* Unified promotional elements for hero sections */
+.hero-promo-unified {
+    background: rgba(255, 255, 255, 0.95);
+    border: 1px solid #E11D48;
+    border-radius: 8px;
+    padding: 20px;
+    margin: 20px 0;
     text-align: center;
 }
 
-.mb-0 { margin-bottom: 0; }
-.mb-1 { margin-bottom: 1rem; }
-.mb-2 { margin-bottom: 2rem; }
-.mb-3 { margin-bottom: 3rem; }
-
-.lazy {
-    opacity: 0;
-    transition: opacity 0.3s;
+.hero-promo-unified .promo-badges {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 12px;
 }
 
-.lazy.loaded {
-    opacity: 1;
+.hero-promo-unified .price-display {
+    color: #E11D48;
+    font-weight: 700;
+    font-size: 1.2rem;
+    margin: 8px 0;
 }
 
-/* Responsive Design */
-@media (max-width: 1024px) {
-    .nav-cta {
-        display: none;
-    }
-    
-    .container {
-        padding: 0 15px;
-    }
-}
-
-@media (max-width: 768px) {
-    .nav-toggle {
-        display: flex;
-    }
-    
-    .nav-logo .logo-image {
-        height: 40px;
-        max-width: 160px;
-    }
-    
-    .nav-menu {
-        position: fixed;
-        top: 80px;
-        left: -100%;
-        width: 100%;
-        height: calc(100vh - 80px);
-        background: var(--white);
-        box-shadow: var(--shadow-medium);
-        transition: var(--transition);
-        overflow-y: auto;
-    }
-    
-    .nav-menu.active {
-        left: 0;
-    }
-    
-    .nav-list {
-        flex-direction: column;
-        padding: 2rem;
-        gap: 1rem;
-        align-items: stretch;
-    }
-    
-    .nav-item {
-        width: 100%;
-        text-align: center;
-    }
-    
-    .dropdown-menu {
-        position: static;
-        opacity: 1;
-        visibility: visible;
-        transform: none;
-        box-shadow: none;
-        background: var(--light-gray);
-        margin-top: 0.5rem;
-    }
-    
-    h1 { font-size: 2.5rem; }
-    h2 { font-size: 2rem; }
-    h3 { font-size: 1.5rem; }
-    
-    .btn {
-        padding: 12px 24px;
-        font-size: 0.95rem;
-    }
-    
-    .btn-large {
-        padding: 16px 32px;
-        font-size: 1rem;
-    }
-    
-    .footer-bottom {
-        flex-direction: column;
-        text-align: center;
-    }
-    
-    .footer-legal {
-        justify-content: center;
-    }
-}
-
-@media (max-width: 480px) {
-    .nav-container {
-        padding: 0 15px;
-    }
-    
-    .nav-logo .logo-text {
-        font-size: 1.5rem;
-    }
-    
-    .nav-logo .logo-image {
-        height: 35px;
-        max-width: 140px;
-    }
-    
-    .container {
-        padding: 0 10px;
-    }
-    
-    h1 { font-size: 2rem; }
-    h2 { font-size: 1.75rem; }
-    
-    .btn {
-        padding: 10px 20px;
-        font-size: 0.9rem;
-        gap: 0.25rem;
-    }
-    
-    .btn-large {
-        padding: 14px 28px;
-        font-size: 0.95rem;
-    }
+.hero-promo-unified .limited-time {
+    color: #7C3AED;
+    font-size: 0.9rem;
+    font-weight: 600;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 4px;
+    margin-top: 8px;
 }
 
 /* ===============================================
@@ -966,9 +1185,8 @@ a {
 }
 
 @keyframes spin {
-    to {
-        transform: rotate(360deg);
-    }
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
 }
 
 /* ===============================================
@@ -1512,4 +1730,137 @@ a {
     .whatsapp-float i {
         color: white !important;
     }
+}
+
+/* Override existing promotional classes for better contrast */
+.service-promo .premium-label {
+    background: rgba(255, 255, 255, 0.9);
+    color: #7C3AED;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #7C3AED;
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.service-promo .price-comparison {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    margin: 8px 0;
+}
+
+.service-promo .price-old {
+    background: rgba(255, 255, 255, 0.8);
+    color: #9CA3AF;
+    font-size: 0.8rem;
+    text-decoration: line-through;
+    padding: 4px 8px;
+    border-radius: 4px;
+}
+
+.service-promo .price-new {
+    background: rgba(255, 255, 255, 0.9);
+    color: #E11D48;
+    font-weight: 700;
+    font-size: 0.9rem;
+    padding: 6px 12px;
+    border-radius: 5px;
+    border: 1px solid #E11D48;
+    box-shadow: 0 1px 5px rgba(0, 0, 0, 0.1);
+}
+
+.service-promo .btn-service-quote.cta-promo {
+    background: linear-gradient(135deg, #E11D48, #FF6B6B) !important;
+    color: white !important;
+    position: relative;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(225, 29, 72, 0.3);
+}
+
+.service-promo .btn-service-quote.cta-promo:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.4);
+}
+
+/* Hero section promotional overrides */
+.hero-description .premium-label {
+    background: rgba(255, 255, 255, 0.9);
+    color: #7C3AED;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #7C3AED;
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.hero-description .limited-time {
+    background: rgba(255, 255, 255, 0.9);
+    color: #E11D48;
+    font-size: 0.8rem;
+    font-weight: 600;
+    padding: 4px 8px;
+    border-radius: 4px;
+    border: 1px solid #E11D48;
+    display: inline-block;
+    margin: 0 5px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+/* Price comparison styling in hero */
+.price-comparison {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    margin: 15px 0;
+}
+
+.price-old {
+    background: rgba(255, 255, 255, 0.8);
+    color: #9CA3AF;
+    font-size: 1rem;
+    text-decoration: line-through;
+    padding: 6px 12px;
+    border-radius: 6px;
+}
+
+.price-new {
+    background: rgba(255, 255, 255, 0.95);
+    color: #E11D48;
+    font-weight: 700;
+    font-size: 1.1rem;
+    padding: 10px 16px;
+    border-radius: 8px;
+    border: 2px solid #E11D48;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Urgency indicator styling */
+.urgency-indicator {
+    background: rgba(255, 255, 255, 0.9);
+    color: #E11D48;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #E11D48;
+    margin: 10px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Stock warning styling */
+.stock-warning {
+    background: rgba(255, 255, 255, 0.9);
+    color: #7C3AED;
+    font-weight: 600;
+    padding: 10px 15px;
+    border-radius: 6px;
+    border: 1px solid #7C3AED;
+    margin: 15px 0;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
