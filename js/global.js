@@ -124,6 +124,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Navbar Mobile Toggle
     const navToggle = document.getElementById('nav-toggle');
     const navMenu = document.getElementById('nav-menu');
+    const dropdown = document.querySelector('.dropdown');
+    const dropdownToggle = document.querySelector('.dropdown-toggle');
     
     if (navToggle && navMenu) {
         navToggle.addEventListener('click', function() {
@@ -135,8 +137,22 @@ document.addEventListener('DOMContentLoaded', function() {
                 document.body.style.overflow = 'hidden';
             } else {
                 document.body.style.overflow = '';
+                // Cerrar dropdown si está abierto
+                if (dropdown) dropdown.classList.remove('active');
             }
         });
+        
+        // Manejar dropdown en móvil
+        if (dropdownToggle && dropdown) {
+            dropdownToggle.addEventListener('click', function(e) {
+                e.preventDefault();
+                
+                // Solo manejar dropdown en móvil (1080px o menos)
+                if (window.innerWidth <= 1080) {
+                    dropdown.classList.toggle('active');
+                }
+            });
+        }
         
         // Cerrar menu al hacer click en un enlace
         const navLinks = navMenu.querySelectorAll('.nav-link:not(.dropdown-toggle)');
@@ -145,6 +161,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                if (dropdown) dropdown.classList.remove('active');
+            });
+        });
+        
+        // Cerrar dropdown al hacer click en un enlace del dropdown
+        const dropdownLinks = navMenu.querySelectorAll('.dropdown-menu a');
+        dropdownLinks.forEach(link => {
+            link.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                if (dropdown) dropdown.classList.remove('active');
             });
         });
         
@@ -154,6 +182,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 navToggle.classList.remove('active');
                 navMenu.classList.remove('active');
                 document.body.style.overflow = '';
+                if (dropdown) dropdown.classList.remove('active');
+            }
+        });
+        
+        // Manejar redimensionamiento de ventana
+        window.addEventListener('resize', function() {
+            if (window.innerWidth > 1080) {
+                // Restablecer estados en desktop
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                if (dropdown) dropdown.classList.remove('active');
             }
         });
     }
@@ -173,7 +213,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Ocultar/mostrar navbar en mobile al hacer scroll
-        if (window.innerWidth <= 768) {
+        if (window.innerWidth <= 1080) {
             if (scrollTop > lastScrollTop && scrollTop > 100) {
                 // Scrolling down
                 navbar.style.transform = 'translateY(-100%)';

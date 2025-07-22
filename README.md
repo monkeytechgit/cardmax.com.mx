@@ -196,5 +196,5 @@ pagina_web/
 
 Para dudas sobre el desarrollo o modificaciones:
 
-- WhatsApp: +52 55 1234 5678 (actualizar con número real)
+- WhatsApp: +52 55 1234 8 (actualizar con número real)
 - Email: info@cardmax.com.mx (actualizar con email real)

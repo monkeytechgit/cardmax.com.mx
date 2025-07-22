@@ -266,6 +266,24 @@ a {
     color: var(--primary-color);
 }
 
+/* Asegurar que todos los elementos del dropdown sean visibles */
+.dropdown-menu li:nth-child(9) {
+    display: block !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+}
+
+/* Estilo específico para "Tarjetas con Tecnología" */
+.dropdown-menu li:nth-child(9) a {
+    color: var(--secondary-color);
+    font-weight: 500;
+}
+
+/* Asegurar que el dropdown tenga altura suficiente para 9 elementos */
+.dropdown.active .dropdown-menu {
+    min-height: 500px; /* Altura mínima para acomodar todos los elementos */
+}
+
 /* Mobile Menu Toggle */
 .nav-toggle {
     display: none;
@@ -1190,6 +1208,405 @@ a {
 }
 
 /* ===============================================
+   NAVBAR RESPONSIVE DESIGN
+   =============================================== */
+
+/* Activar toggle a partir de 1080px */
+@media (max-width: 1080px) {
+    .navbar {
+        background: var(--white);
+        box-shadow: var(--shadow-light);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-container {
+        height: 70px;
+        padding: 0 15px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 40px;
+        max-width: 150px;
+    }
+    
+    .nav-toggle {
+        display: flex;
+        z-index: 1002;
+    }
+    
+    .nav-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100vh;
+        background: var(--white);
+        transform: translateX(-100%);
+        transition: transform 0.3s ease;
+        z-index: 1001;
+        overflow-y: auto;
+        box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+        padding-top: 70px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+    }
+    
+    .nav-menu.active {
+        transform: translateX(0);
+    }
+    
+    .nav-list {
+        flex-direction: column;
+        gap: 0;
+        padding: 0;
+        align-items: stretch;
+        flex: 1;
+        margin: 0;
+        list-style: none;
+    }
+    
+    .nav-item {
+        border-bottom: 1px solid var(--light-gray);
+        margin: 0;
+    }
+    
+    .nav-item:last-child {
+        border-bottom: none;
+    }
+    
+    .nav-link {
+        display: block;
+        padding: 1.25rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 500;
+        border-bottom: none;
+        color: var(--secondary-color);
+        text-decoration: none;
+        transition: var(--transition);
+    }
+    
+    .nav-link::after {
+        display: none;
+    }
+    
+    .nav-link:hover,
+    .nav-link.active {
+        background: var(--light-gray);
+        color: var(--primary-color);
+    }
+    
+    /* Dropdown en móvil */
+    .dropdown {
+        position: static;
+    }
+    
+    .dropdown-toggle {
+        justify-content: space-between;
+        padding: 1.25rem 2rem;
+    }
+    
+    .dropdown-toggle i {
+        transition: transform 0.3s ease;
+    }
+    
+    .dropdown.active .dropdown-toggle i {
+        transform: rotate(180deg);
+    }
+    
+    .dropdown-menu {
+        position: static;
+        background: var(--light-gray);
+        box-shadow: none;
+        border-radius: 0;
+        min-width: auto;
+        padding: 0; /* Sin padding cuando está cerrado */
+        opacity: 0; /* Invisible por defecto */
+        visibility: hidden; /* Oculto por defecto */
+        transform: translateY(-10px); /* Efecto de deslizamiento */
+        max-height: 0; /* Completamente oculto por defecto */
+        overflow: hidden;
+        transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1); /* Transición suave */
+        margin-top: 0;
+    }
+    
+    .dropdown.active .dropdown-menu {
+        max-height: 700px; /* Aumentado para mostrar todos los elementos */
+        padding: 1rem 0; /* Padding solo cuando está activo */
+        margin-top: 0.5rem;
+        border-radius: 8px; /* Bordes redondeados */
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1); /* Sombra sutil */
+        background: #FAFAFA; /* Fondo ligeramente diferente */
+        opacity: 1; /* Totalmente visible */
+        visibility: visible; /* Visible */
+        transform: translateY(0); /* Sin desplazamiento */
+        min-height: 500px; /* Altura mínima para acomodar todos los elementos */
+    }
+    
+    .dropdown-menu li {
+        border-bottom: 1px solid #E5E7EB;
+        transition: all 0.2s ease;
+        margin-bottom: 0; /* Sin margen extra */
+    }
+    
+    .dropdown-menu li:last-child {
+        border-bottom: none;
+    }
+    
+    .dropdown-menu li:hover {
+        background: #F3F4F6; /* Fondo más sutil */
+        border-radius: 6px; /* Bordes redondeados más pequeños */
+        margin: 0 6px; /* Espaciado lateral en hover */
+    }
+    
+    .dropdown-menu a {
+        padding: 1.5rem 3.5rem; /* MUCHO más amplio: era 1.25rem 3rem */
+        font-size: 1.2rem; /* Texto más grande: era 1.1rem */
+        background: transparent;
+        font-weight: 500;
+        line-height: 1.5; /* Más espacio entre líneas */
+        min-height: 60px; /* Altura mínima para mejor toque */
+        display: flex;
+        align-items: center;
+    }
+    
+    .dropdown-menu a:hover {
+        background: #E5E7EB;
+        color: var(--primary-color);
+        padding-left: 4rem; /* Efecto hover más pronunciado: era 3.5rem */
+        transform: translateX(5px); /* Efecto de deslizamiento */
+    }
+    
+    /* CTA button dentro del toggle - al final de la lista */
+    .nav-cta {
+        padding: 2rem 2rem 2.5rem;
+        border-top: 2px solid var(--light-gray);
+        margin-top: auto;
+        background: #FAFAFA;
+        flex-shrink: 0;
+    }
+    
+    .nav-cta .btn {
+        width: 100%;
+        justify-content: center;
+        padding: 1.25rem 2rem;
+        font-size: 1.1rem;
+        font-weight: 600;
+        box-shadow: var(--shadow-medium);
+        border-radius: 10px;
+    }
+    
+    /* Ocultar CTA del navbar principal en móvil */
+    .nav-container > .nav-cta {
+        display: none;
+    }
+}
+
+/* Tablet (768px y menores) - ajustes específicos */
+@media (max-width: 768px) {
+    .navbar {
+        background: var(--white);
+        box-shadow: var(--shadow-light);
+        transition: transform 0.3s ease;
+    }
+    
+    .nav-container {
+        height: 65px;
+        padding: 0 15px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 38px;
+        max-width: 140px;
+    }
+    
+    .nav-menu {
+        padding-top: 65px;
+    }
+    
+    .nav-item:first-child {
+        margin-top: 0.5rem;
+    }
+    
+    .nav-link {
+        padding: 1.1rem 1.5rem;
+        font-size: 1.05rem;
+    }
+    
+    .dropdown-toggle {
+        padding: 1.1rem 1.5rem;
+    }
+    
+    .dropdown-menu a {
+        padding: 0.9rem 2.5rem;
+        font-size: 0.95rem;
+    }
+    
+    .nav-cta {
+        padding: 1.5rem 1.5rem 2rem;
+    }
+    
+    .nav-cta .btn {
+        padding: 1.1rem 1.5rem;
+        font-size: 1.05rem;
+    }
+}
+
+/* Móvil pequeño (480px y menores) - optimización del modal */
+@media (max-width: 480px) {
+    .nav-container {
+        height: 60px;
+        padding: 0 12px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 35px;
+        max-width: 130px;
+    }
+    
+    .nav-toggle {
+        gap: 3px;
+    }
+    
+    .nav-toggle .bar {
+        width: 22px;
+        height: 2px;
+    }
+    
+    .nav-menu {
+        padding-top: 60px;
+    }
+    
+    .nav-item:first-child {
+        margin-top: 0.25rem;
+        border-top: none;
+    }
+    
+    .nav-link {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .nav-link:hover:not(.active) {
+        padding-left: 2rem;
+    }
+    
+    .dropdown-toggle {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+    }
+    
+    .dropdown-menu a {
+        padding: 1.4rem 3.25rem; /* MUCHO más amplio: era 1.1rem 2.75rem */
+        font-size: 1.1rem; /* Más grande: era 1rem */
+        font-weight: 500;
+        line-height: 1.5;
+        min-height: 55px; /* Altura mínima para tablet */
+        display: flex;
+        align-items: center;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 3.75rem; /* Más pronunciado: era 3.25rem */
+        transform: translateX(3px);
+    }
+    
+    .nav-cta {
+        padding: 1.25rem 1.25rem 1.75rem;
+    }
+    
+    .nav-cta .btn {
+        padding: 1rem 1.25rem;
+        font-size: 1rem;
+        border-radius: 8px;
+    }
+    
+    /* Asegurar que todos los elementos del dropdown sean visibles */
+    .dropdown-menu li:nth-child(9) {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Estilo específico para "Tarjetas con Tecnología" */
+    .dropdown-menu li:nth-child(9) a {
+        color: var(--secondary-color);
+        font-weight: 500;
+    }
+    
+    /* Asegurar que el dropdown tenga altura suficiente para 9 elementos */
+    .dropdown.active .dropdown-menu {
+        min-height: 500px; /* Altura mínima para acomodar todos los elementos */
+    }
+}
+
+/* Móvil muy pequeño (320px y menores) - máxima optimización */
+@media (max-width: 320px) {
+    .nav-container {
+        height: 55px;
+        padding: 0 10px;
+    }
+    
+    .nav-logo .logo-image {
+        height: 32px;
+        max-width: 120px;
+    }
+    
+    .nav-toggle .bar {
+        width: 20px;
+        height: 2px;
+    }
+    
+    .nav-menu {
+        padding-top: 55px;
+    }
+    
+    .nav-link {
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .nav-link:hover:not(.active) {
+        padding-left: 1.5rem;
+    }
+    
+    .dropdown-toggle {
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+    }
+    
+    .dropdown-menu a {
+        padding: 1.3rem 3rem; /* MUCHO más amplio: era 1rem 2.5rem */
+        font-size: 1rem; /* Más legible: era 0.95rem */
+        font-weight: 500;
+        line-height: 1.5;
+        min-height: 50px; /* Altura mínima para móvil */
+        display: flex;
+        align-items: center;
+    }
+    
+    .dropdown-menu a:hover {
+        padding-left: 3.5rem; /* Más pronunciado: era 3rem */
+        transform: translateX(3px);
+    }
+    
+    .nav-cta {
+        padding: 1rem 1rem 1.5rem;
+    }
+    
+    .nav-cta .btn {
+        padding: 0.9rem 1rem;
+        font-size: 0.95rem;
+        border-radius: 6px;
+    }
+    
+    /* Scroll bar más delgado en móviles muy pequeños */
+    .nav-menu::-webkit-scrollbar {
+        width: 4px;
+    }
+}
+
+/* ===============================================
    MODAL RESPONSIVE DESIGN
    =============================================== */
 
@@ -1863,4 +2280,105 @@ a {
     border: 1px solid #7C3AED;
     margin: 15px 0;
     box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* ===============================================
+   MEJORAS ADICIONALES PARA EL CONTENIDO DEL MODAL MÓVIL
+   =============================================== */
+
+@media (max-width: 1080px) {
+    /* Mejorar la distribución general del contenido */
+    .nav-menu {
+        padding-bottom: 0;
+    }
+    
+    /* Espaciado mejorado para los elementos de navegación */
+    .nav-item:first-child {
+        border-top: 1px solid var(--light-gray);
+        margin-top: 1rem;
+    }
+    
+    /* Mejorar la visualización del enlace activo */
+    .nav-link.active {
+        background: linear-gradient(135deg, var(--primary-color), #C41E3A);
+        color: var(--white);
+        font-weight: 600;
+        position: relative;
+    }
+    
+    .nav-link.active::before {
+        content: "●";
+        margin-right: 0.5rem;
+        color: var(--white);
+    }
+    
+    /* Mejorar el hover de los enlaces */
+    .nav-link:hover:not(.active) {
+        background: var(--light-gray);
+        color: var(--primary-color);
+        padding-left: 2.5rem;
+        transition: padding-left 0.3s ease;
+    }
+    
+    /* Área de scroll suave para el contenido */
+    .nav-menu::-webkit-scrollbar {
+        width: 6px;
+    }
+    
+    .nav-menu::-webkit-scrollbar-track {
+        background: #f1f1f1;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb {
+        background: var(--primary-color);
+        border-radius: 3px;
+    }
+    
+    .nav-menu::-webkit-scrollbar-thumb:hover {
+        background: #C41E3A;
+    }
+    
+    /* Animación de entrada para el contenido */
+    .nav-menu.active .nav-item {
+        animation: slideInFromLeft 0.3s ease forwards;
+    }
+    
+    .nav-menu.active .nav-item:nth-child(1) { animation-delay: 0.1s; }
+    .nav-menu.active .nav-item:nth-child(2) { animation-delay: 0.15s; }
+    .nav-menu.active .nav-item:nth-child(3) { animation-delay: 0.2s; }
+    .nav-menu.active .nav-item:nth-child(4) { animation-delay: 0.25s; }
+    .nav-menu.active .nav-item:nth-child(5) { animation-delay: 0.3s; }
+    .nav-menu.active .nav-item:nth-child(6) { animation-delay: 0.35s; }
+    
+    .nav-menu.active .nav-cta {
+        animation: slideInFromLeft 0.3s ease forwards;
+        animation-delay: 0.4s;
+    }
+}
+
+/* Keyframes para animaciones */
+@keyframes slideInFromLeft {
+    from {
+        opacity: 0;
+        transform: translateX(-20px);
+    }
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+/* ===============================================
+   NAVBAR CTA BUTTON VISIBILITY CONTROL
+   =============================================== */
+
+/* Desktop (>1080px): Mostrar botón principal, ocultar del toggle */
+@media (min-width: 1081px) {
+    .nav-container > .nav-cta {
+        display: block;
+    }
+    
+    .nav-menu .nav-cta {
+        display: none;
+    }
 }
