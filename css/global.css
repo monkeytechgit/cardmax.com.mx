@@ -1249,7 +1249,7 @@ a {
         padding-top: 70px;
         display: flex;
         flex-direction: column;
-        justify-content: flex-start;
+        /* Eliminado justify-content para permitir flujo normal */
     }
     
     .nav-menu.active {
@@ -1261,7 +1261,7 @@ a {
         gap: 0;
         padding: 0;
         align-items: stretch;
-        flex: 1;
+        /* Removido flex: 1 para que no empuje el CTA al fondo */
         margin: 0;
         list-style: none;
     }
@@ -1377,13 +1377,13 @@ a {
         transform: translateX(5px); /* Efecto de deslizamiento */
     }
     
-    /* CTA button dentro del toggle - al final de la lista */
+    /* CTA button dentro del toggle - como opción navegable normal */
     .nav-cta {
         padding: 2rem 2rem 2.5rem;
         border-top: 2px solid var(--light-gray);
-        margin-top: auto;
         background: #FAFAFA;
         flex-shrink: 0;
+        /* Eliminado margin-top: auto para que no vaya al fondo */
     }
     
     .nav-cta .btn {
@@ -1521,6 +1521,11 @@ a {
         border-radius: 8px;
     }
     
+    /* Ocultar el contenedor nav-cta original en móvil */
+    .nav-menu .nav-cta {
+        display: none !important;
+    }
+    
     /* Asegurar que todos los elementos del dropdown sean visibles */
     .dropdown-menu li:nth-child(9) {
         display: block !important;
@@ -1600,9 +1605,27 @@ a {
         border-radius: 6px;
     }
     
-    /* Scroll bar más delgado en móviles muy pequeños */
-    .nav-menu::-webkit-scrollbar {
-        width: 4px;
+    /* Ocultar el contenedor nav-cta original en móvil */
+    .nav-menu .nav-cta {
+        display: none !important;
+    }
+    
+    /* Asegurar que todos los elementos del dropdown sean visibles */
+    .dropdown-menu li:nth-child(9) {
+        display: block !important;
+        opacity: 1 !important;
+        visibility: visible !important;
+    }
+    
+    /* Estilo específico para "Tarjetas con Tecnología" */
+    .dropdown-menu li:nth-child(9) a {
+        color: var(--secondary-color);
+        font-weight: 500;
+    }
+    
+    /* Asegurar que el dropdown tenga altura suficiente para 9 elementos */
+    .dropdown.active .dropdown-menu {
+        min-height: 500px; /* Altura mínima para acomodar todos los elementos */
     }
 }
 
@@ -1612,6 +1635,29 @@ a {
 
 /* Tablet (768px y menores) */
 @media (max-width: 768px) {
+    /* Navegación móvil */
+    .nav-link-cta {
+        padding: 1.1rem 1.75rem !important;
+        font-size: 1.05rem !important;
+        margin: 0 !important; /* Sin margen extra */
+        border-radius: 0 !important; /* Sin border-radius para consistencia */
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        color: var(--white) !important;
+        display: block !important;
+    }
+    
+    /* Hacer que se vea como una opción de navegación normal */
+    .nav-item-cta {
+        border-bottom: 1px solid var(--light-gray) !important;
+        margin: 0 !important;
+    }
+    
+    .nav-link-cta:hover {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
+        color: var(--white) !important;
+    }
+    
+    /* Modal responsivo para tablets */
     .modal-container,
     #quote-modal .modal-container {
         max-width: 95% !important;
@@ -1621,7 +1667,7 @@ a {
     }
     
     .modal-header {
-        padding: 2rem 2rem !important;
+        padding: 1.75rem 2rem !important;
     }
     
     .modal-title {
@@ -1636,31 +1682,92 @@ a {
         padding: 2rem !important;
     }
     
+    .quote-form {
+        gap: 1.75rem !important;
+    }
+    
     .form-row {
         grid-template-columns: 1fr !important;
         gap: 1.5rem !important;
+    }
+    
+    .form-group {
+        gap: 0.625rem !important;
+    }
+    
+    .form-label {
+        font-size: 0.95rem !important;
+        margin-bottom: 0.375rem !important;
     }
     
     .form-input,
     .form-select,
     .form-textarea {
         padding: 1rem 1.25rem !important;
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+    }
+    
+    .form-textarea {
+        min-height: 130px !important;
+    }
+    
+    .form-help {
+        font-size: 0.85rem !important;
+        margin-top: 0.375rem !important;
     }
     
     .modal-actions {
         flex-direction: column-reverse !important;
         gap: 1rem !important;
+        margin-top: 2rem !important;
+        padding-top: 1.5rem !important;
     }
     
     .btn-cancel,
     .btn-submit {
         width: 100% !important;
         justify-content: center !important;
+        padding: 1.125rem 1.5rem !important;
+        font-size: 1rem !important;
+        border-radius: 10px !important;
+    }
+    
+    /* Mejorar el close button en tablets */
+    .modal-close {
+        width: 40px !important;
+        height: 40px !important;
+        top: 1.25rem !important;
+        right: 1.25rem !important;
+        font-size: 1.2rem !important;
     }
 }
 
 /* Móvil (480px y menores) */
 @media (max-width: 480px) {
+    /* Navegación móvil */
+    .nav-link-cta {
+        padding: 1rem 1.5rem !important;
+        font-size: 1rem !important;
+        margin: 0 !important; /* Sin margen extra */
+        border-radius: 0 !important; /* Sin border-radius para consistencia */
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        color: var(--white) !important;
+        display: block !important;
+    }
+    
+    /* Hacer que se vea como una opción de navegación normal */
+    .nav-item-cta {
+        border-bottom: 1px solid var(--light-gray) !important;
+        margin: 0 !important;
+    }
+    
+    .nav-link-cta:hover {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
+        color: var(--white) !important;
+    }
+    
+    /* Modal responsivo para móviles */
     .modal-container,
     #quote-modal .modal-container {
         max-width: 100% !important;
@@ -1677,10 +1784,12 @@ a {
     
     .modal-title {
         font-size: 1.6rem !important;
+        line-height: 1.3 !important;
     }
     
     .modal-subtitle {
         font-size: 0.95rem !important;
+        line-height: 1.4 !important;
     }
     
     .modal-body {
@@ -1691,8 +1800,19 @@ a {
         gap: 1.5rem !important;
     }
     
+    .form-row {
+        grid-template-columns: 1fr !important;
+        gap: 1.25rem !important;
+    }
+    
     .form-group {
         gap: 0.5rem !important;
+    }
+    
+    .form-label {
+        font-size: 0.9rem !important;
+        margin-bottom: 0.25rem !important;
+        font-weight: 600 !important;
     }
     
     .form-input,
@@ -1700,12 +1820,45 @@ a {
     .form-textarea {
         padding: 0.875rem 1rem !important;
         font-size: 0.95rem !important;
+        border-radius: 8px !important;
+        border-width: 1.5px !important;
+    }
+    
+    .form-select {
+        background-size: 1.25rem !important;
+        padding-right: 3rem !important;
+        background-position: right 1rem center !important;
     }
     
     .form-textarea {
         min-height: 120px !important;
+        line-height: 1.5 !important;
     }
     
+    .form-help {
+        font-size: 0.8rem !important;
+        margin-top: 0.25rem !important;
+        line-height: 1.4 !important;
+    }
+    
+    .modal-actions {
+        flex-direction: column-reverse !important;
+        gap: 0.875rem !important;
+        margin-top: 1.75rem !important;
+        padding-top: 1.25rem !important;
+    }
+    
+    .btn-cancel,
+    .btn-submit {
+        width: 100% !important;
+        justify-content: center !important;
+        padding: 1rem 1.25rem !important;
+        font-size: 0.95rem !important;
+        border-radius: 8px !important;
+        font-weight: 600 !important;
+    }
+    
+    /* Close button optimizado para móvil */
     .modal-close {
         width: 36px !important;
         height: 36px !important;
@@ -1713,27 +1866,133 @@ a {
         right: 1rem !important;
         font-size: 1.1rem !important;
     }
+    
+    /* Mejorar toque en móviles */
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+        transform: translateY(0) !important; /* Evitar desplazamiento en móvil */
+        box-shadow: 0 0 0 3px rgba(225, 29, 72, 0.15) !important;
+    }
 }
 
 /* Muy pequeño (320px y menores) */
 @media (max-width: 320px) {
-    .modal-header {
-        padding: 1rem !important;
+    /* Navegación móvil muy pequeña */
+    .nav-link-cta {
+        padding: 0.875rem 1.25rem !important;
+        font-size: 0.95rem !important;
+        margin: 0 !important; /* Sin margen extra */
+        border-radius: 0 !important; /* Sin border-radius para consistencia */
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        color: var(--white) !important;
+        display: block !important;
     }
     
-    .modal-body {
-        padding: 1rem !important;
+    /* Hacer que se vea como una opción de navegación normal */
+    .nav-item-cta {
+        border-bottom: 1px solid var(--light-gray) !important;
+        margin: 0 !important;
+    }
+    
+    .nav-link-cta:hover {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
+        color: var(--white) !important;
+    }
+    
+    /* Modal para pantallas muy pequeñas */
+    .modal-header {
+        padding: 1.25rem 1rem !important;
     }
     
     .modal-title {
         font-size: 1.4rem !important;
+        line-height: 1.2 !important;
+    }
+    
+    .modal-subtitle {
+        font-size: 0.9rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .modal-body {
+        padding: 1.25rem !important;
+    }
+    
+    .quote-form {
+        gap: 1.25rem !important;
+    }
+    
+    .form-row {
+        gap: 1rem !important;
+    }
+    
+    .form-group {
+        gap: 0.375rem !important;
+    }
+    
+    .form-label {
+        font-size: 0.85rem !important;
+        margin-bottom: 0.125rem !important;
     }
     
     .form-input,
     .form-select,
     .form-textarea {
-        padding: 0.75rem !important;
+        padding: 0.75rem 0.875rem !important;
         font-size: 0.9rem !important;
+        border-radius: 6px !important;
+    }
+    
+    .form-select {
+        background-size: 1rem !important;
+        padding-right: 2.5rem !important;
+        background-position: right 0.75rem center !important;
+    }
+    
+    .form-textarea {
+        min-height: 100px !important;
+        line-height: 1.4 !important;
+    }
+    
+    .form-help {
+        font-size: 0.75rem !important;
+        line-height: 1.3 !important;
+    }
+    
+    .modal-actions {
+        gap: 0.75rem !important;
+        margin-top: 1.5rem !important;
+        padding-top: 1rem !important;
+    }
+    
+    .btn-cancel,
+    .btn-submit {
+        padding: 0.875rem 1rem !important;
+        font-size: 0.9rem !important;
+        border-radius: 6px !important;
+    }
+    
+    /* Close button para pantallas muy pequeñas */
+    .modal-close {
+        width: 32px !important;
+        height: 32px !important;
+        top: 0.75rem !important;
+        right: 0.75rem !important;
+        font-size: 1rem !important;
+    }
+    
+    /* Optimizar scroll para pantallas muy pequeñas */
+    .modal-container {
+        border-radius: 0 !important;
+    }
+    
+    /* Asegurar que el modal sea completamente accesible */
+    .form-input:focus,
+    .form-select:focus,
+    .form-textarea:focus {
+        box-shadow: 0 0 0 2px rgba(225, 29, 72, 0.2) !important;
+        border-color: var(--primary-color) !important;
     }
 }
 
@@ -2380,5 +2639,113 @@ a {
     
     .nav-menu .nav-cta {
         display: none;
+    }
+}
+
+/* ===============================================
+   ESTILOS ESPECÍFICOS PARA CTA EN NAVEGACIÓN MÓVIL
+   =============================================== */
+
+/* CTA como elemento de navegación - oculto en desktop, normal en móvil */
+.nav-item-cta {
+    display: none !important; /* Oculto por defecto en desktop */
+}
+
+.nav-link-cta {
+    background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+    color: var(--white) !important;
+    border-radius: 8px !important;
+    margin: 0.5rem 1rem !important;
+    font-weight: 600 !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    gap: 0.5rem !important;
+    transition: all 0.3s ease !important;
+    box-shadow: 0 4px 14px rgba(225, 29, 72, 0.3) !important;
+}
+
+.nav-link-cta:hover {
+    background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
+    color: var(--white) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(225, 29, 72, 0.4) !important;
+}
+
+.nav-link-cta::after {
+    display: none !important;
+}
+
+/* ===============================================
+   MEJORAS DE RESPONSIVIDAD PARA MODAL
+   =============================================== */
+
+/* Mejoras generales para el modal en dispositivos móviles */
+@media (max-width: 1080px) {
+    /* Mostrar CTA como elemento de navegación normal */
+    .nav-item-cta {
+        display: block !important;
+        /* Mantener en secuencia normal - sin order ni margin especiales */
+        border-bottom: 1px solid var(--light-gray) !important;
+    }
+    
+    .nav-link-cta {
+        padding: 1.25rem 2rem !important;
+        font-size: 1.1rem !important;
+        margin: 0 !important; /* Sin margen extra */
+        border-radius: 0 !important; /* Sin border-radius para mantener consistencia */
+        /* Hacer que se vea como un nav-link normal pero con estilo especial */
+        background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)) !important;
+        color: var(--white) !important;
+        border: none !important;
+        display: block !important; /* Asegurar que sea block como otros nav-links */
+    }
+    
+    .nav-link-cta:hover {
+        background: linear-gradient(135deg, var(--secondary-color), var(--primary-color)) !important;
+        color: var(--white) !important;
+    }
+    
+    /* Ajustes del modal para tablets */
+    .modal-container,
+    #quote-modal .modal-container {
+        max-width:  90% !important;
+        width: 90% !important;
+    }
+    
+    .modal-header {
+        padding: 2rem 2.5rem !important;
+    }
+    
+    .modal-body {
+        padding: 2.5rem !important;
+    }
+    
+    .form-row {
+        grid-template-columns: 1fr 1fr !important;
+        gap: 1.25rem !important;
+    }
+    
+    .form-input,
+    .form-select,
+    .form-textarea {
+        padding: 1.125rem 1.375rem !important;
+        font-size: 1rem !important;
+    }
+    
+    .form-label {
+        font-size: 0.95rem !important;
+    }
+    
+    .modal-actions {
+        flex-direction: row !important;
+        justify-content: space-between !important;
+        gap: 1.25rem !important;
+    }
+    
+    .btn-cancel,
+    .btn-submit {
+        flex: 1 !important;
+        padding: 1.125rem 1.5rem !important;
     }
 }

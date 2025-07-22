@@ -165,6 +165,17 @@ document.addEventListener('DOMContentLoaded', function() {
             });
         });
         
+        // Cerrar menu específicamente al hacer click en el botón CTA de navegación
+        const navCtaButton = navMenu.querySelector('.nav-link-cta');
+        if (navCtaButton) {
+            navCtaButton.addEventListener('click', function() {
+                navToggle.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.style.overflow = '';
+                if (dropdown) dropdown.classList.remove('active');
+            });
+        }
+        
         // Cerrar dropdown al hacer click en un enlace del dropdown
         const dropdownLinks = navMenu.querySelectorAll('.dropdown-menu a');
         dropdownLinks.forEach(link => {
