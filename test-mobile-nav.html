@@ -39,6 +39,85 @@
         .nav-menu.active {
             background: rgba(240, 240, 240, 0.98) !important;
         }
+        
+        /* Estilos adicionales para verificar el comportamiento responsivo del formulario */
+        .form-row {
+            border: 2px dashed #007bff !important;
+            margin-bottom: 1rem !important;
+            padding: 0.5rem !important;
+            position: relative !important;
+        }
+        
+        .form-row::before {
+            content: 'Form Row - Desktop: 2 cols | Mobile: 1 col';
+            position: absolute;
+            top: -10px;
+            left: 10px;
+            background: #007bff;
+            color: white;
+            padding: 2px 8px;
+            font-size: 10px;
+            border-radius: 3px;
+        }
+        
+        .form-group {
+            border: 1px solid #28a745 !important;
+            padding: 0.5rem !important;
+            position: relative !important;
+        }
+        
+        .form-group::after {
+            content: 'Campo';
+            position: absolute;
+            top: -8px;
+            right: 5px;
+            background: #28a745;
+            color: white;
+            padding: 1px 6px;
+            font-size: 9px;
+            border-radius: 2px;
+        }
+        
+        /* Indicador de breakpoint activo */
+        .breakpoint-indicator {
+            position: fixed;
+            bottom: 10px;
+            left: 10px;
+            background: #dc3545;
+            color: white;
+            padding: 8px 12px;
+            border-radius: 5px;
+            font-weight: bold;
+            z-index: 9999;
+        }
+        
+        @media (max-width: 768px) {
+            .breakpoint-indicator::before {
+                content: 'TABLET: ≤768px - 1 CAMPO POR FILA';
+            }
+        }
+        
+        @media (max-width: 480px) {
+            .breakpoint-indicator::before {
+                content: 'MÓVIL: ≤480px - 1 CAMPO POR FILA';
+            }
+        }
+        
+        @media (max-width: 320px) {
+            .breakpoint-indicator::before {
+                content: 'MÓVIL PEQUEÑO: ≤320px - 1 CAMPO POR FILA';
+            }
+        }
+        
+        @media (min-width: 769px) {
+            .breakpoint-indicator::before {
+                content: 'DESKTOP: >768px - 2 CAMPOS POR FILA';
+                background: #28a745;
+            }
+            .breakpoint-indicator {
+                background: #28a745;
+            }
+        }
     </style>
 </head>
 <body>
@@ -48,6 +127,8 @@
         <div>Menú: <span id="menu-status">Cerrado</span></div>
         <div>CTA visible: <span id="cta-status">?</span></div>
     </div>
+
+    <div class="breakpoint-indicator"></div>
 
     <!-- Navbar -->
     <nav class="navbar">
@@ -112,6 +193,66 @@
                 <li>Verifica que "Solicitar Cotización" aparece en la lista</li>
             </ol>
         </div>
+
+        <!-- Formulario de Prueba -->
+        <div style="margin-top: 3rem;">
+            <h2>Prueba de Formulario Responsivo</h2>
+            <p>Este formulario debe mostrar <strong>un campo por fila</strong> en dimensiones pequeñas:</p>
+            
+            <form class="quote-form" style="background: white; padding: 2rem; border-radius: 12px; border: 1px solid #e2e8f0;">
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required">Nombre Completo</label>
+                        <input type="text" class="form-input" placeholder="Tu nombre completo">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required">Correo Electrónico</label>
+                        <input type="email" class="form-input" placeholder="tu@email.com">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label">Teléfono</label>
+                        <input type="tel" class="form-input" placeholder="(664) 123-4567">
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label">Empresa</label>
+                        <input type="text" class="form-input" placeholder="Nombre de tu empresa">
+                    </div>
+                </div>
+                
+                <div class="form-row">
+                    <div class="form-group">
+                        <label class="form-label required">Tipo de Producto</label>
+                        <select class="form-select">
+                            <option value="">Selecciona un producto...</option>
+                            <option value="credenciales">Credenciales Escolares</option>
+                            <option value="gafetes">Gafetes Empresariales</option>
+                            <option value="tarjetas">Tarjetas de Identificación</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label class="form-label required">Cantidad</label>
+                        <input type="number" class="form-input" placeholder="100" min="1">
+                    </div>
+                </div>
+                
+                <div class="form-group full-width">
+                    <label class="form-label">Descripción del Proyecto</label>
+                    <textarea class="form-textarea" placeholder="Describe tu proyecto..."></textarea>
+                    <div class="form-help">Incluye detalles sobre diseño, colores, información requerida, etc.</div>
+                </div>
+                
+                <div class="modal-actions" style="margin-top: 2rem;">
+                    <button type="button" class="btn-cancel">Cancelar</button>
+                    <button type="submit" class="btn-submit">
+                        <i class="fas fa-paper-plane"></i>
+                        Enviar Cotización
+                    </button>
+                </div>
+            </form>
+        </div>
     </main>
 
     <script src="js/global.js"></script>
@@ -146,9 +287,36 @@
             document.getElementById('menu-status').textContent = menuStatus;
         }
         
+        function checkFormLayout() {
+            const formRows = document.querySelectorAll('.form-row');
+            formRows.forEach((row, index) => {
+                const computedStyle = window.getComputedStyle(row);
+                const gridColumns = computedStyle.gridTemplateColumns;
+                const display = computedStyle.display;
+                
+                // Actualizar el mensaje del form-row basado en el layout actual
+                const existingBefore = row.querySelector('::before');
+                let message = 'Form Row - ';
+                
+                if (display === 'flex') {
+                    message += 'FLEX: 1 campo por fila';
+                } else if (gridColumns && gridColumns.includes('1fr 1fr')) {
+                    message += 'GRID: 2 campos por fila';
+                } else if (gridColumns && gridColumns === '1fr') {
+                    message += 'GRID: 1 campo por fila';
+                } else {
+                    message += `Display: ${display}, Columns: ${gridColumns}`;
+                }
+                
+                // Crear un elemento temporal para actualizar el contenido
+                row.setAttribute('data-layout-info', message);
+            });
+        }
+        
         window.addEventListener('resize', () => {
             updateDimensions();
             setTimeout(checkCTAVisibility, 100);
+            setTimeout(checkFormLayout, 100);
         });
         
         // Observar cambios en el menú
@@ -159,11 +327,17 @@
         }
         
         // Verificar cada segundo también
-        setInterval(checkCTAVisibility, 1000);
+        setInterval(() => {
+            checkCTAVisibility();
+            checkFormLayout();
+        }, 1000);
         
         // Inicializar
         updateDimensions();
-        setTimeout(checkCTAVisibility, 500);
+        setTimeout(() => {
+            checkCTAVisibility();
+            checkFormLayout();
+        }, 500);
     </script>
 </body>
 </html>

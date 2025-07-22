@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Final - CardMax</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Montserrat:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/global.css">
+</head>
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <img src="assets/CardMax.png" alt="CardMax Logo" class="logo-image">
+            </div>
+            
+            <div class="nav-menu" id="navMenu">
+                <ul class="nav-list">
+                    <li class="nav-item">
+                        <a href="index.html" class="nav-link">Inicio</a>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a href="#" class="nav-link dropdown-toggle">
+                            Servicios <i class="fas fa-chevron-down"></i>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li><a href="tarjetas-presentacion.html">Tarjetas de Presentación</a></li>
+                            <li><a href="tarjetas-identificacion.html">Tarjetas de Identificación</a></li>
+                            <li><a href="tarjetas-personalizadas.html">Tarjetas Personalizadas</a></li>
+                            <li><a href="tarjetas-membresia.html">Tarjetas de Membresía</a></li>
+                            <li><a href="tarjetas-lealtad.html">Tarjetas de Lealtad</a></li>
+                            <li><a href="tarjetas-eventos.html">Tarjetas para Eventos</a></li>
+                            <li><a href="tarjetas-regalo.html">Tarjetas de Regalo</a></li>
+                            <li><a href="gafetes-empresariales.html">Gafetes Empresariales</a></li>
+                            <li><a href="tarjetas-rfid-qr.html">Tarjetas con Tecnología</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item">
+                        <a href="acerca-de-nosotros.html" class="nav-link">Acerca de Nosotros</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="servicios.html" class="nav-link">Cómo Trabajamos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="proceso.html" class="nav-link">Proceso</a>
+                    </li>
+                    <li class="nav-item">
+                        <a href="envios.html" class="nav-link">Envíos</a>
+                    </li>
+                    <!-- ESTE BOTÓN DEBE APARECER SOLO EN MÓVIL/TABLET -->
+                    <li class="nav-item nav-item-cta">
+                        <a href="#" class="nav-link nav-link-cta btn btn-primary" onclick="openQuoteModal(event)">Solicitar Cotización</a>
+                    </li>
+                </ul>
+                
+                <!-- ESTE BOTÓN DEBE APARECER SOLO EN MÓVIL/TABLET DENTRO DEL MENÚ -->
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-primary" onclick="openQuoteModal(event)">
+                        <i class="fas fa-calculator"></i>
+                        Solicitar Cotización
+                    </a>
+                </div>
+            </div>
+            
+            <!-- ESTE BOTÓN DEBE APARECER SOLO EN DESKTOP/LAPTOP -->
+            <div class="nav-cta">
+                <a href="#" class="btn btn-primary" onclick="openQuoteModal(event)">
+                    <i class="fas fa-calculator"></i>
+                    Solicitar Cotización
+                </a>
+            </div>
+            
+            <div class="nav-toggle" id="navToggle">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </div>
+    </nav>
+
+    <!-- MAIN CONTENT -->
+    <main style="margin-top: 100px; padding: 40px 20px; max-width: 800px; margin-left: auto; margin-right: auto;">
+        <h1>Test Final - CardMax</h1>
+        <p><strong>Verificación de funcionalidades:</strong></p>
+        
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>1. Navbar - Botón "Solicitar Cotización"</h3>
+            <ul>
+                <li><strong>Desktop/Laptop:</strong> Solo debe aparecer UN botón (independiente) fuera del menú</li>
+                <li><strong>Tablet/Móvil:</strong> El botón debe aparecer DENTRO del menú toggle, no fuera</li>
+            </ul>
+        </div>
+
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>2. Formulario Responsivo</h3>
+            <form class="quote-form" style="background: white; padding: 20px; border-radius: 8px; box-shadow: 0 2px 10px rgba(0,0,0,0.1);">
+                <h4>Formulario de Cotización</h4>
+                
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label for="nombre">Nombre completo:</label>
+                        <input type="text" id="nombre" name="nombre" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="empresa">Empresa:</label>
+                        <input type="text" id="empresa" name="empresa" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label for="email">Email:</label>
+                        <input type="email" id="email" name="email" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                    <div class="form-group">
+                        <label for="telefono">Teléfono:</label>
+                        <input type="tel" id="telefono" name="telefono" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <div class="form-row" style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; margin-bottom: 1rem;">
+                    <div class="form-group">
+                        <label for="servicio">Tipo de servicio:</label>
+                        <select id="servicio" name="servicio" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <option value="">Seleccionar...</option>
+                            <option value="presentacion">Tarjetas de Presentación</option>
+                            <option value="identificacion">Tarjetas de Identificación</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="cantidad">Cantidad:</label>
+                        <input type="number" id="cantidad" name="cantidad" style="width: 100%; padding: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                    </div>
+                </div>
+                
+                <button type="submit" class="btn btn-primary" style="margin-top: 1rem;">Enviar Cotización</button>
+            </form>
+            
+            <p style="margin-top: 15px; font-size: 0.9rem; color: #666;"><strong>Nota:</strong> En móvil/tablet, cada campo debe aparecer en su propia fila (uno debajo del otro).</p>
+        </div>
+
+        <div style="background: #f5f5f5; padding: 20px; border-radius: 8px; margin: 20px 0;">
+            <h3>3. Botón Flotante WhatsApp</h3>
+            <p>Debe aparecer un botón verde flotante en la esquina inferior derecha en todas las dimensiones.</p>
+        </div>
+    </main>
+
+    <!-- BOTÓN FLOTANTE WHATSAPP -->
+    <a href="https://wa.me/526643053834?text=Hola!%20Me%20interesa%20conocer%20más%20sobre%20los%20servicios%20de%20CardMax" 
+       class="whatsapp-float" 
+       target="_blank" 
+       rel="noopener" 
+       title="Contactar por WhatsApp">
+        <i class="fab fa-whatsapp"></i>
+    </a>
+
+    <!-- JavaScript para el navbar -->
+    <script src="js/global.js"></script>
+</body>
+</html>
