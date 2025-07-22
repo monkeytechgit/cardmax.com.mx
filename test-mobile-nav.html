@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test Mobile Navigation - CardMax</title>
+    <link rel="stylesheet" href="css/global.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        /* Estilo adicional para verificar visibilidad */
+        .debug-info {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            background: rgba(0, 0, 0, 0.9);
+            color: white;
+            padding: 10px;
+            font-size: 12px;
+            z-index: 9999;
+            border-radius: 5px;
+            max-width: 200px;
+        }
+        
+        /* Marcadores visuales para debugging */
+        .nav-item {
+            border: 1px solid blue !important;
+        }
+        
+        .nav-item-cta {
+            border: 3px solid red !important;
+            background-color: rgba(255, 255, 0, 0.3) !important;
+        }
+        
+        .nav-link-cta {
+            background: rgba(255, 0, 0, 0.8) !important;
+            color: white !important;
+        }
+        
+        .nav-menu.active {
+            background: rgba(240, 240, 240, 0.98) !important;
+        }
+    </style>
+</head>
+<body>
+    <div class="debug-info">
+        <div>Ancho: <span id="width"></span>px</div>
+        <div>Alto: <span id="height"></span>px</div>
+        <div>Menú: <span id="menu-status">Cerrado</span></div>
+        <div>CTA visible: <span id="cta-status">?</span></div>
+    </div>
+
+    <!-- Navbar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="nav-logo">
+                <a href="index.html">
+                    <img src="assets/CardMax.png" alt="CardMax Logo" class="logo-image">
+                </a>
+            </div>
+                
+                <div class="nav-menu" id="nav-menu">
+                    <ul class="nav-list">
+                        <li class="nav-item">
+                            <a href="index.html" class="nav-link">Inicio</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="servicios.html" class="nav-link">Servicios</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="proceso.html" class="nav-link">Proceso</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="envios.html" class="nav-link">Envíos</a>
+                        </li>
+                        <li class="nav-item">
+                            <a href="acerca-de-nosotros.html" class="nav-link">Nosotros</a>
+                        </li>
+                        <!-- CTA como última opción navegable en móvil -->
+                        <li class="nav-item nav-item-cta">
+                            <a href="#" class="nav-link nav-link-cta" data-quote-trigger>
+                                <i class="fas fa-clipboard-list"></i>
+                                Solicitar Cotización
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+                
+                <div class="nav-cta">
+                    <a href="#" class="btn btn-primary" data-quote-trigger>Solicitar Cotización</a>
+                </div>
+                
+                <div class="nav-toggle" id="nav-toggle">
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                    <span class="bar"></span>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+    <main style="margin-top: 100px; padding: 2rem;">
+        <h1>Prueba de Navegación Móvil</h1>
+        <p>Esta página es para probar la navegación móvil y verificar que el botón "Solicitar Cotización" aparece correctamente.</p>
+        
+        <div style="margin-top: 2rem;">
+            <h2>Instrucciones:</h2>
+            <ol>
+                <li>Abre las herramientas de desarrollador</li>
+                <li>Activa el modo de dispositivo móvil</li>
+                <li>Prueba diferentes tamaños de pantalla</li>
+                <li>Haz clic en el botón de hamburguesa para abrir el menú</li>
+                <li>Verifica que "Solicitar Cotización" aparece en la lista</li>
+            </ol>
+        </div>
+    </main>
+
+    <script src="js/global.js"></script>
+    <script>
+        // Script para mostrar dimensiones de pantalla y estado del menú
+        function updateDimensions() {
+            document.getElementById('width').textContent = window.innerWidth;
+            document.getElementById('height').textContent = window.innerHeight;
+        }
+        
+        function checkCTAVisibility() {
+            const ctaElement = document.querySelector('.nav-item-cta');
+            const ctaLink = document.querySelector('.nav-link-cta');
+            const menu = document.querySelector('.nav-menu');
+            
+            if (ctaElement && ctaLink) {
+                const ctaStyles = window.getComputedStyle(ctaElement);
+                const linkStyles = window.getComputedStyle(ctaLink);
+                
+                const isVisible = ctaStyles.display !== 'none' && 
+                                 ctaStyles.visibility !== 'hidden' && 
+                                 ctaStyles.opacity !== '0' &&
+                                 linkStyles.display !== 'none' && 
+                                 linkStyles.visibility !== 'hidden' && 
+                                 linkStyles.opacity !== '0';
+                
+                document.getElementById('cta-status').textContent = isVisible ? 'SÍ' : 'NO';
+                document.getElementById('cta-status').style.color = isVisible ? 'lime' : 'red';
+            }
+            
+            const menuStatus = menu && menu.classList.contains('active') ? 'Abierto' : 'Cerrado';
+            document.getElementById('menu-status').textContent = menuStatus;
+        }
+        
+        window.addEventListener('resize', () => {
+            updateDimensions();
+            setTimeout(checkCTAVisibility, 100);
+        });
+        
+        // Observar cambios en el menú
+        const menu = document.querySelector('.nav-menu');
+        if (menu) {
+            const observer = new MutationObserver(checkCTAVisibility);
+            observer.observe(menu, { attributes: true, attributeFilter: ['class'] });
+        }
+        
+        // Verificar cada segundo también
+        setInterval(checkCTAVisibility, 1000);
+        
+        // Inicializar
+        updateDimensions();
+        setTimeout(checkCTAVisibility, 500);
+    </script>
+</body>
+</html>
