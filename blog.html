@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Blog | CardMax</title>
+  <meta name="description" content="Consejos de impresión, NFC y branding por CardMax. Próximamente artículos con buenas prácticas y guías rápidas." />
+  <link rel="icon" type="image/png" href="img/cardmax_favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container flex-between gap-8">
+      <a class="topbar-link" href="tel:+526643053834">📞 +52 664 305 3834</a>
+      <a class="topbar-link" href="mailto:cardmaxmx@gmail.com">✉️ cardmaxmx@gmail.com</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="CardMax, ir al inicio">
+        <img src="img/cardmax_icon.png" alt="CardMax" width="40" height="40" loading="eager" />
+        <span>CardMax</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+  <label for="nav-toggle" class="nav-toggle-btn" aria-controls="mainmenu" aria-expanded="false" role="button">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="sr-only">Menú</span>
+      </label>
+      <nav class="menu" id="mainmenu" aria-label="Principal">
+        <ul class="menu-list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="pvc.html">Tarjetas PVC</a></li>
+          <li><a href="nfc.html">Tarjetas NFC</a></li>
+          <li><a href="etiquetas.html">Etiquetas adhesivas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blog.html" aria-current="page">Blog</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="category-hero container">
+      <h1 class="h1">Consejos de impresión, NFC y branding. (Próximamente)</h1>
+      <p class="lead">Suscríbete a nuestras novedades y recibe guías prácticas sobre cómo aprovechar tarjetas NFC, credenciales PVC y etiquetas para hacer crecer tu marca.</p>
+      <div class="cta-group" style="margin-top:20px">
+        <a class="btn btn-primary" href="mailto:cardmaxmx@gmail.com?subject=Suscripci%C3%B3n%20Blog%20CardMax">Quiero recibir artículos</a>
+        <a class="btn btn-soft" href="tel:+526643053834">Hablar con CardMax</a>
+      </div>
+    </section>
+
+    <section class="section container">
+      <div class="blog-grid">
+        <article class="blog-card">
+          <p class="muted small">Artículo del blog pendiente</p>
+          <h2 class="h3">Guía rápida de NFC</h2>
+          <p>Cómo usar tarjetas NFC para tu negocio.</p>
+          <a class="btn btn-soft" href="mailto:cardmaxmx@gmail.com?subject=Gu%C3%ADa%20r%C3%A1pida%20de%20NFC">Leer más</a>
+        </article>
+        <article class="blog-card">
+          <p class="muted small">Artículo del blog pendiente</p>
+          <h2 class="h3">PVC vs. Papel plastificado</h2>
+          <p>Durabilidad, costo y acabado.</p>
+          <a class="btn btn-soft" href="mailto:cardmaxmx@gmail.com?subject=PVC%20vs%20Papel%20plastificado">Leer más</a>
+        </article>
+        <article class="blog-card">
+          <p class="muted small">Artículo del blog pendiente</p>
+          <h2 class="h3">Tipos de etiquetas adhesivas</h2>
+          <p>Selecciona el sustrato ideal.</p>
+          <a class="btn btn-soft" href="mailto:cardmaxmx@gmail.com?subject=Tipos%20de%20etiquetas%20adhesivas">Leer más</a>
+        </article>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="img/cardmax_icon.png" alt="CardMax" width="36" height="36" />
+          <span>CardMax</span>
+        </a>
+        <p class="muted small">Tarjetas PVC, NFC y Etiquetas adhesivas en México.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Enlaces">
+        <h3 class="h5">Navegación</h3>
+        <ul class="list-unstyled">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="pvc.html">Tarjetas PVC</a></li>
+          <li><a href="nfc.html">Tarjetas NFC</a></li>
+          <li><a href="etiquetas.html">Etiquetas adhesivas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3 class="h5">Contacto</h3>
+        <ul class="list-unstyled">
+          <li><a href="tel:+526643053834">+52 664 305 3834</a></li>
+          <li><a href="mailto:cardmaxmx@gmail.com">cardmaxmx@gmail.com</a></li>
+          <li><a href="https://cardmax.com.mx/">cardmax.com.mx</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p class="small muted">© <span id="y"></span> CardMax. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="main.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,167 @@
+<!doctype html>
+<html lang="es-MX">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Detalle de producto | CardMax</title>
+  <meta name="description" content="Consulta especificaciones de tarjetas PVC, NFC y etiquetas adhesivas de CardMax." />
+  <link rel="icon" type="image/png" href="img/cardmax_favicon.png" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="topbar">
+    <div class="container flex-between gap-8">
+      <a class="topbar-link" href="tel:+526643053834">📞 +52 664 305 3834</a>
+      <a class="topbar-link" href="mailto:cardmaxmx@gmail.com">✉️ cardmaxmx@gmail.com</a>
+    </div>
+  </div>
+
+  <header class="header">
+    <div class="container nav">
+      <a class="brand" href="index.html" aria-label="CardMax, ir al inicio">
+        <img src="img/cardmax_icon.png" alt="CardMax" width="40" height="40" loading="eager" />
+        <span>CardMax</span>
+      </a>
+      <input type="checkbox" id="nav-toggle" class="nav-toggle" aria-label="Abrir menú" />
+  <label for="nav-toggle" class="nav-toggle-btn" aria-controls="mainmenu" aria-expanded="false" role="button">
+        <span class="bar"></span><span class="bar"></span><span class="bar"></span>
+        <span class="sr-only">Menú</span>
+      </label>
+      <nav class="menu" id="mainmenu" aria-label="Principal">
+        <ul class="menu-list">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="pvc.html">Tarjetas PVC</a></li>
+          <li><a href="nfc.html">Tarjetas NFC</a></li>
+          <li><a href="etiquetas.html">Etiquetas adhesivas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+          <li><a href="index.html#contacto">Contacto</a></li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <nav class="section container" aria-label="Migas de pan">
+      <ul class="list-unstyled" style="display:flex;gap:10px;flex-wrap:wrap;font-size:.875rem">
+        <li><a href="index.html#inicio">Inicio</a> /</li>
+        <li><span id="breadcrumb-category">Producto</span> /</li>
+        <li><span id="breadcrumb-name">Detalle</span></li>
+      </ul>
+    </nav>
+
+    <section class="section container" data-product-detail>
+      <div class="product-detail-layout">
+        <!-- Galería de imágenes -->
+        <div class="product-gallery-col">
+          <div class="product-main-image" data-zoom-container>
+            <img data-product-main src="img/hero-placeholder.png" alt="Producto CardMax" />
+            <div class="zoom-controls">
+              <button type="button" class="zoom-btn" data-zoom-in aria-label="Acercar">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M9 4v5H4v2h5v5h2v-5h5V9h-5V4H9z"/>
+                </svg>
+              </button>
+              <button type="button" class="zoom-btn" data-zoom-out aria-label="Alejar">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M4 9h12v2H4V9z"/>
+                </svg>
+              </button>
+              <button type="button" class="zoom-btn" data-zoom-reset aria-label="Restablecer">
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                  <path d="M10 2a8 8 0 100 16 8 8 0 000-16zm0 14a6 6 0 110-12 6 6 0 010 12z"/>
+                </svg>
+              </button>
+            </div>
+          </div>
+          <div class="product-thumbs" data-product-thumbs></div>
+        </div>
+
+        <!-- Información del producto -->
+        <div class="product-info-col">
+          <div class="product-header">
+            <p class="muted small" data-product-category>Producto CardMax</p>
+            <h1 class="product-title" data-product-name>Producto CardMax</h1>
+          </div>
+
+          <div class="product-badges">
+            <span class="badge badge-stock" data-product-stock>
+              <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor"><circle cx="8" cy="8" r="6"/></svg>
+              Disponibilidad: En Stock
+            </span>
+            <span class="badge badge-info" data-product-brand>Marca: CardMax</span>
+            <span class="badge badge-info" data-product-model>Modelo: ---</span>
+          </div>
+
+          <div class="product-features-list" data-product-features></div>
+
+          <div class="product-actions">
+            <div class="quantity-selector">
+              <button type="button" class="qty-btn qty-minus" aria-label="Disminuir cantidad">−</button>
+              <input type="text" class="qty-input" value="1" data-quantity-input inputmode="numeric" pattern="[0-9]*" />
+              <button type="button" class="qty-btn qty-plus" aria-label="Aumentar cantidad">+</button>
+            </div>
+            <button class="btn btn-quote-now" data-product-quote-now>COTIZAR AHORA</button>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tabs de descripción y especificaciones -->
+      <div class="product-tabs-section">
+        <div class="product-tabs-nav">
+          <button class="product-tab active" data-tab="description">Descripción</button>
+          <button class="product-tab" data-tab="specifications">Especificaciones</button>
+        </div>
+        <div class="product-tabs-content">
+          <div class="product-tab-panel active" data-tab-panel="description">
+            <h3>Descripción del producto</h3>
+            <div data-product-description></div>
+          </div>
+          <div class="product-tab-panel" data-tab-panel="specifications">
+            <h3>Especificaciones técnicas</h3>
+            <div data-product-specs></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="container footer-grid">
+      <div class="footer-brand">
+        <a class="brand" href="index.html">
+          <img src="img/cardmax_icon.png" alt="CardMax" width="36" height="36" />
+          <span>CardMax</span>
+        </a>
+        <p class="muted small">Tarjetas PVC, NFC y Etiquetas adhesivas en México.</p>
+      </div>
+      <nav class="footer-nav" aria-label="Enlaces">
+        <h3 class="h5">Navegación</h3>
+        <ul class="list-unstyled">
+          <li><a href="index.html#inicio">Inicio</a></li>
+          <li><a href="pvc.html">Tarjetas PVC</a></li>
+          <li><a href="nfc.html">Tarjetas NFC</a></li>
+          <li><a href="etiquetas.html">Etiquetas adhesivas</a></li>
+          <li><a href="nosotros.html">Nosotros</a></li>
+          <li><a href="blog.html">Blog</a></li>
+        </ul>
+      </nav>
+      <div class="footer-contact">
+        <h3 class="h5">Contacto</h3>
+        <ul class="list-unstyled">
+          <li><a href="tel:+526643053834">+52 664 305 3834</a></li>
+          <li><a href="mailto:cardmaxmx@gmail.com">cardmaxmx@gmail.com</a></li>
+          <li><a href="https://cardmax.com.mx/">cardmax.com.mx</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-legal">
+      <p class="small muted">© <span id="y"></span> CardMax. Todos los derechos reservados.</p>
+    </div>
+  </footer>
+
+  <script src="products.js" defer></script>
+  <script src="product-detail.js" defer></script>
+  <script src="main.js" defer></script>
+</body>
+</html>
