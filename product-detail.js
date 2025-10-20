@@ -1,3 +1,14 @@
+// Helper function to process markdown bold syntax (**text** → <strong>text</strong>)
+// and convert URLs to hyperlinks
+window.processMarkdown = function(text) {
+  if (!text) return '';
+  // Convert **text** to <strong>text</strong>
+  let processed = text.replace(/\*\*(.+?)\*\*/g, '<strong>$1</strong>');
+  // Convert URLs to hyperlinks
+  processed = processed.replace(/\((https?:\/\/[^\s)]+)\)/g, '(<a href="$1" target="_blank" rel="noopener">$1</a>)');
+  return processed;
+};
+
 (function renderProductDetail(){
   if (!window.cardmaxProducts) return;
   const detailRoot = document.querySelector('[data-product-detail]');
@@ -40,7 +51,6 @@
   const featureList = detailRoot.querySelector('[data-product-features]');
   const specsEl = detailRoot.querySelector('[data-product-specs]');
   const quoteNowBtn = detailRoot.querySelector('[data-product-quote-now]');
-  const quantityInput = detailRoot.querySelector('[data-quantity-input]');
   const breadcrumbCategory = document.getElementById('breadcrumb-category');
   const breadcrumbName = document.getElementById('breadcrumb-name');
 
@@ -63,7 +73,9 @@
 
   // Description
   if (descriptionEl) {
-    descriptionEl.innerHTML = product.description ? `<p>${product.description}</p>` : '<p>Descripción no disponible.</p>';
+    // Process markdown bold formatting
+    const processedDescription = window.processMarkdown ? window.processMarkdown(product.description) : product.description;
+    descriptionEl.innerHTML = processedDescription;
   }
 
   // Features List
@@ -86,14 +98,27 @@
     }
   }
 
-  // Quote button
-  const contactHref = product.contactHref || 'mailto:cardmaxmx@gmail.com';
-  if (quoteNowBtn) {
-    quoteNowBtn.addEventListener('click', () => {
-      const qty = quantityInput?.value || 1;
-      window.location.href = `${contactHref}?subject=Cotización: ${product.name} (Cantidad: ${qty})`;
-    });
+  // Applications - con markup SEO mejorado
+  const applicationsGrid = detailRoot.querySelector('[data-product-applications]');
+  if (applicationsGrid && product.applications) {
+    const apps = product.applications;
+    if (apps.length) {
+      applicationsGrid.innerHTML = apps.map((app, index) => `
+        <article class="application-card" itemscope itemtype="https://schema.org/HowTo" itemprop="itemListElement" role="listitem">
+          <meta itemprop="position" content="${index + 1}">
+          <span class="application-icon" aria-hidden="true">${app.icon}</span>
+          <h3 itemprop="name">${app.title}</h3>
+          <p itemprop="description">${app.description}</p>
+          ${app.industries ? `<div class="industry-tags" itemprop="keywords">${app.industries.map(industry => `<span class="industry-tag">${industry}</span>`).join('')}</div>` : ''}
+        </article>
+      `).join('');
+    } else {
+      applicationsGrid.innerHTML = '<p class="muted">Aplicaciones disponibles bajo consulta.</p>';
+    }
   }
+
+  // Quote button - El modal de cotización lo interceptará automáticamente
+  // No necesitamos agregar ningún listener aquí, el modal lo maneja
 
   // Gallery thumbs - always show 4 images (or repeat if less)
   if (thumbsWrapper && product.gallery?.length) {
@@ -124,59 +149,6 @@
       });
       thumbsWrapper.appendChild(thumb);
     }
-  }
-
-  // Quantity controls
-  const qtyMinus = detailRoot.querySelector('.qty-minus');
-  const qtyPlus = detailRoot.querySelector('.qty-plus');
-  
-  // Validate and format quantity input
-  if (quantityInput) {
-    // Allow only numbers, max 999999 (6 digits)
-    quantityInput.addEventListener('input', (e) => {
-      let value = e.target.value.replace(/[^0-9]/g, '');
-      if (value === '' || value === '0') {
-        e.target.value = '1';
-      } else {
-        const numValue = parseInt(value);
-        if (numValue > 999999) {
-          e.target.value = '999999';
-        } else {
-          e.target.value = value;
-        }
-      }
-    });
-
-    // Select all text on focus for easy editing
-    quantityInput.addEventListener('focus', (e) => {
-      e.target.select();
-    });
-
-    // Validate on blur
-    quantityInput.addEventListener('blur', (e) => {
-      let value = parseInt(e.target.value) || 1;
-      if (value < 1) value = 1;
-      if (value > 999999) value = 999999;
-      e.target.value = value;
-    });
-  }
-
-  if (qtyMinus && quantityInput) {
-    qtyMinus.addEventListener('click', () => {
-      const currentValue = parseInt(quantityInput.value) || 1;
-      if (currentValue > 1) {
-        quantityInput.value = currentValue - 1;
-      }
-    });
-  }
-
-  if (qtyPlus && quantityInput) {
-    qtyPlus.addEventListener('click', () => {
-      const currentValue = parseInt(quantityInput.value) || 1;
-      if (currentValue < 999999) {
-        quantityInput.value = currentValue + 1;
-      }
-    });
   }
 
   // Zoom controls
@@ -225,20 +197,32 @@
     });
   }
 
-  // Product tabs
-  const tabs = detailRoot.querySelectorAll('.product-tab');
-  const panels = detailRoot.querySelectorAll('.product-tab-panel');
+  // Product tabs - Sistema simple y directo
+  const tabs = document.querySelectorAll('.product-tab[data-tab-target]');
+  const panels = document.querySelectorAll('.product-tab-panel');
 
   tabs.forEach(tab => {
     tab.addEventListener('click', () => {
-      const targetTab = tab.dataset.tab;
+      const targetSelector = tab.dataset.tabTarget;
       
+      // Remover active de todas las tabs y panels
       tabs.forEach(t => t.classList.remove('active'));
       panels.forEach(p => p.classList.remove('active'));
       
+      // Activar la tab seleccionada y su panel correspondiente
       tab.classList.add('active');
-      const targetPanel = detailRoot.querySelector(`[data-tab-panel="${targetTab}"]`);
-      if (targetPanel) targetPanel.classList.add('active');
+      const targetPanel = document.querySelector(targetSelector);
+      if (targetPanel) {
+        targetPanel.classList.add('active');
+      }
     });
   });
+
+  // Customize WhatsApp button with product name
+  const whatsappBtn = document.getElementById('whatsapp-btn');
+  if (whatsappBtn && product) {
+    const message = `Hola, estoy interesado en el producto: ${product.name}`;
+    const whatsappUrl = `https://wa.me/5216643053834?text=${encodeURIComponent(message)}`;
+    whatsappBtn.href = whatsappUrl;
+  }
 })();

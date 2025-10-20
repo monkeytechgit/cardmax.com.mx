@@ -1,0 +1,33 @@
+# robots.txt para CardMax México
+# Optimizado para SEO - Permitir rastreo completo
+
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://cardmax.com.mx/sitemap.xml
+
+# Permitir rastreo de imágenes
+User-agent: Googlebot-Image
+Allow: /img/
+
+# Optimización para Google
+User-agent: Googlebot
+Allow: /
+Crawl-delay: 0
+
+# Optimización para Bing
+User-agent: Bingbot
+Allow: /
+Crawl-delay: 0
+
+# Permitir rastreo de CSS y JS para mejor renderizado
+User-agent: *
+Allow: /*.css$
+Allow: /*.js$
+Allow: /*.png$
+Allow: /*.jpg$
+Allow: /*.jpeg$
+Allow: /*.gif$
+Allow: /*.svg$
+Allow: /*.webp$

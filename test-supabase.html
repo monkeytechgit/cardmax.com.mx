@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Test Supabase Connection</title>
+</head>
+<body>
+  <h1>Test Supabase Connection</h1>
+  <button id="testBtn">Enviar Datos de Prueba</button>
+  <div id="result"></div>
+
+  <script>
+    const SUPABASE_URL = 'https://jdclxczkvffwwleppbbu.supabase.co';
+    const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkY2x4Y3prdmZmd3dsZXBwYmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwMTc2OTcsImV4cCI6MjA2NzU5MzY5N30.ixG7x4nOLn7VkgKdjORh_tVA9M7qhUvobBQYhvbw168';
+
+    document.getElementById('testBtn').addEventListener('click', async () => {
+      const resultDiv = document.getElementById('result');
+      resultDiv.innerHTML = 'Enviando...';
+
+      const data = {
+        nombre_completo: "Test Usuario",
+        correo: "test@cardmax.com",
+        telefono: "6643053834",
+        empresa: "CardMax Test",
+        tipo_tarjeta: "Tarjetas PVC",
+        cantidad: "100",
+        descripcion: "Test de conexión",
+        entrega: new Date('2025-10-20').toISOString(),
+        presupuesto: null
+      };
+
+      console.log('📤 Enviando:', data);
+
+      try {
+        const response = await fetch(`${SUPABASE_URL}/rest/v1/contacto_webpage`, {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'apikey': SUPABASE_ANON_KEY,
+            'Authorization': `Bearer ${SUPABASE_ANON_KEY}`,
+            'Prefer': 'return=minimal'
+          },
+          body: JSON.stringify(data)
+        });
+
+        if (!response.ok) {
+          const errorText = await response.text();
+          console.error('❌ Error:', errorText);
+          resultDiv.innerHTML = `<pre style="color:red;">Error ${response.status}:\n${errorText}</pre>`;
+        } else {
+          console.log('✅ Éxito');
+          resultDiv.innerHTML = '<p style="color:green;">✅ Datos enviados exitosamente!</p>';
+        }
+      } catch (error) {
+        console.error('❌ Error:', error);
+        resultDiv.innerHTML = `<pre style="color:red;">${error.message}</pre>`;
+      }
+    });
+  </script>
+</body>
+</html>
