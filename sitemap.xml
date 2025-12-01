@@ -94,78 +94,84 @@
     <priority>0.9</priority>
   </url>
 
-  <!-- Página de Detalles de Producto -->
-  <url>
-    <loc>https://cardmax.mx/product.html</loc>
-    <lastmod>2025-11-27</lastmod>
-    <changefreq>weekly</changefreq>
-    <priority>0.8</priority>
-  </url>
-
   <!-- Productos Específicos - Tarjetas PVC -->
   <url>
-    <loc>https://cardmax.mx/product.html?id=pvc-gafetes</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/gafetes-identificacion.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/product.html?id=pvc-credenciales</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/credenciales-escolares.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/product.html?id=pvc-impresion</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/tarjetas-pvc-color.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <!-- Productos Específicos - Tarjetas NFC -->
   <url>
-    <loc>https://cardmax.mx/product.html?id=nfc-smartcard</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/smartcard-nfc.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/product.html?id=nfc-chip</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/tarjetas-chip-nfc.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/product.html?id=nfc-social</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/tarjeta-social-nfc.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <!-- Productos Específicos - Etiquetas Adhesivas -->
   <url>
-    <loc>https://cardmax.mx/product.html?id=etq-rascables</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/etiquetas-rascables.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/product.html?id=etq-flexo</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/etiquetas-flexograficas.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/product.html?id=etq-industriales</loc>
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.mx/etiquetas-industriales.html</loc>
+    <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
-    <priority>0.85</priority>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cardmax.mx/etiquetas-poliester.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cardmax.mx/etiquetas-un-color.html</loc>
+    <lastmod>2025-12-01</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
   </url>
 
   <!-- Landing Pages por Sector (virtual - misma página con anclas) -->

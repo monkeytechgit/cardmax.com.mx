@@ -333,22 +333,17 @@
         e.preventDefault();
         e.stopPropagation();
         
-        // Para botones en product.html
-        const params = new URLSearchParams(window.location.search);
-        const productId = params.get('id');
-        
+        // Intentar obtener info del producto desde data attributes o el documento
         let productInfo = null;
-        if (productId && window.cardmaxProducts) {
-          const product = window.cardmaxProducts.find(p => p.id === productId);
-          if (product) {
-            productInfo = {
-              id: product.id,
-              nombre: product.name,
-              tipo: product.category === 'pvc' ? 'Tarjetas PVC' : 
-                    product.category === 'nfc' ? 'Tarjetas NFC' : 
-                    product.category === 'etiquetas' ? 'Etiquetas Adhesivas' : 'Otro'
-            };
-          }
+        const productName = document.querySelector('[data-product-name]')?.textContent || 
+                           document.querySelector('h1')?.textContent || null;
+        const productType = document.querySelector('[data-product-category]')?.textContent || null;
+        
+        if (productName) {
+          productInfo = {
+            nombre: productName,
+            tipo: productType || 'Producto'
+          };
         }
         
         openCotizacionModal(productInfo);
@@ -358,22 +353,17 @@
         e.preventDefault();
         e.stopPropagation();
         
-        // Intentar obtener info del producto si estamos en product.html
+        // Intentar obtener info del producto desde el documento
         let productInfo = null;
-        const params = new URLSearchParams(window.location.search);
-        const productId = params.get('id');
+        const productName = document.querySelector('[data-product-name]')?.textContent || 
+                           document.querySelector('h1')?.textContent || null;
+        const productType = document.querySelector('[data-product-category]')?.textContent || null;
         
-        if (productId && window.cardmaxProducts) {
-          const product = window.cardmaxProducts.find(p => p.id === productId);
-          if (product) {
-            productInfo = {
-              id: product.id,
-              nombre: product.name,
-              tipo: product.category === 'pvc' ? 'Tarjetas PVC' : 
-                    product.category === 'nfc' ? 'Tarjetas NFC' : 
-                    product.category === 'etiquetas' ? 'Etiquetas Adhesivas' : 'Otro'
-            };
-          }
+        if (productName) {
+          productInfo = {
+            nombre: productName,
+            tipo: productType || 'Producto'
+          };
         }
         
         openCotizacionModal(productInfo);
