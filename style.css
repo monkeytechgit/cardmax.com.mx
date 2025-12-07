@@ -1190,6 +1190,7 @@ h1,h2,h3,h4,h5,h6{
   background:#D10024;
   border:none;border-radius:0;
   color:#FFF;text-transform:uppercase;font-weight:700;text-align:center;
+  font-family:inherit;
   transition:.2s all
 }
 .primary-btn:hover,.primary-btn:focus,
@@ -1329,8 +1330,12 @@ h1,h2,h3,h4,h5,h6{
 /* Menú desktop con barra superior roja y subrayado animado */
 @media(min-width:992px){
   .nav-toggle-btn{display:none}
-  .menu{
-    all:unset;display:flex;align-items:center;gap:20px
+  /* Reset menu styles on desktop - fixes bug when resizing with hamburger open */
+  .menu,
+  .nav-toggle:checked ~ .menu{
+    all:unset;display:flex;align-items:center;gap:20px;
+    position:static;transform:none;visibility:visible;width:auto;max-width:none;
+    height:auto;background:transparent;border:none;padding:0;overflow:visible
   }
   .menu-list{
     display:flex;gap:30px;border-top:3px solid #D10024;
@@ -1361,22 +1366,22 @@ h1,h2,h3,h4,h5,h6{
 -----------------------------------------------------------*/
 .hero{
   position:relative;
-  padding:120px 0 130px;
+  padding:80px 0 90px;
   color:#2B2D42;
   background:linear-gradient(135deg,rgba(255,255,255,.96),rgba(255,255,255,.78)) , url('img/hero-placeholder.png') center/cover no-repeat;
 }
-.hero .container{position:relative;z-index:1;display:flex;align-items:center;min-height:220px}
-.hero-content{max-width:560px;display:grid;gap:16px}
-.hero .h1{margin:0;font-size:clamp(2.3rem,4vw,3.4rem)}
+.hero .container{position:relative;z-index:1;display:flex;align-items:center;min-height:180px}
+.hero-content{max-width:560px;display:grid;gap:14px}
+.hero .h1{margin:0;font-size:clamp(2rem,3.5vw,3rem)}
 .hero .lead{color:#333;margin:0}
-.hero .cta-group{display:flex;flex-wrap:wrap;gap:12px;margin-top:10px;justify-content:flex-start}
+.hero .cta-group{display:flex;flex-wrap:wrap;gap:12px;margin-top:8px;justify-content:flex-start}
 @media(max-width:640px){
-  .hero{padding:100px 0 110px}
+  .hero{padding:70px 0 80px}
   .hero .container{justify-content:flex-start}
-  .hero-content{gap:14px}
+  .hero-content{gap:12px}
 }
 @media(max-width:420px){
-  .hero{padding:90px 0 96px}
+  .hero{padding:65px 0 70px}
   .hero-content{text-align:left}
 }
 .h1{margin-bottom:10px}
@@ -1436,22 +1441,32 @@ h1,h2,h3,h4,h5,h6{
 }
 .card.cat .cat-list li{
   position:relative;
-  padding-left:16px;
+  padding-left:18px;
   margin-bottom:6px;
   color:#333;
   font-size:0.9rem;
   line-height:1.5;
 }
 .card.cat .cat-list li::before{
-  content:"—";
+  content:"";
   position:absolute;
   left:0;
-  color:#D10024;
-  font-weight:700;
+  top:8px;
+  width:6px;
+  height:6px;
+  background:#6C757D;
+  border-radius:50%;
 }
 .card.cat .btn-cat{
   align-self:flex-start;
   margin-top:16px;
+  background:#6C757D;
+  border-color:#6C757D;
+  box-shadow:none;
+}
+.card.cat .btn-cat:hover{
+  background:#5A6268;
+  border-color:#5A6268;
 }
 
 /*----------------------------------------------------------
@@ -1772,11 +1787,24 @@ h1,h2,h3,h4,h5,h6{
 
 /* Features List */
 .product-features-list{
-  margin:20px 0;padding-left:20px;list-style:none;
-  border-left:3px solid #D10024;padding-left:16px
+  margin:20px 0;padding-left:0;list-style:none;
 }
 .product-features-list li{
-  margin-bottom:8px;color:#333;position:relative;padding-left:0
+  margin-bottom:10px;color:#333;position:relative;padding-left:18px;
+  font-size:0.95rem;line-height:1.5;
+}
+.product-features-list li::before{
+  content:"";
+  position:absolute;
+  left:0;
+  top:8px;
+  width:6px;
+  height:6px;
+  background:#6C757D;
+  border-radius:50%;
+}
+.product-features-list li svg{
+  display:none;
 }
 
 /* Product Actions */
