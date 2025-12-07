@@ -89,12 +89,9 @@
   <!-- Styles -->
   <link rel="stylesheet" href="style.css" />
   
-  <!-- ========== JSON-LD: Product con Variantes por Formato ========== -->
+  <!-- ========== JSON-LD: BreadcrumbList ========== -->
   <script type="application/ld+json">
   {
-    "@context": "https://schema.org",
-    "@type": "Product",
-    "name": "Tarjetas con Chip NFC Programables",
     "@context": "https://schema.org",
     "@type": "BreadcrumbList",
     "itemListElement": [
@@ -102,6 +99,43 @@
       {"@type": "ListItem", "position": 2, "name": "Tarjetas NFC", "item": "https://cardmax.com.mx/nfc.html"},
       {"@type": "ListItem", "position": 3, "name": "Tarjetas con Chip NFC", "item": "https://cardmax.com.mx/tarjetas-chip-nfc.html"}
     ]
+  }
+  </script>
+
+  <!-- ========== JSON-LD: Product con Variantes por Formato ========== -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Product",
+    "name": "Tarjetas con Chip NFC Programables",
+    "description": "Tarjetas NFC programables de alta calidad para restaurantes, hoteles, marketing y control de acceso. Formatos disponibles: tarjeta PVC, llavero, sticker y epoxy. Programación de URL incluida.",
+    "sku": "CMNFC-CHIP-001",
+    "brand": {"@type": "Brand", "name": "CardMax"},
+    "image": ["https://cardmax.com.mx/img/nfc-tarjeta-chip.png"],
+    "offers": {
+      "@type": "AggregateOffer",
+      "url": "https://cardmax.com.mx/tarjetas-chip-nfc.html",
+      "priceCurrency": "MXN",
+      "lowPrice": "25",
+      "highPrice": "75",
+      "priceValidUntil": "2025-12-31",
+      "availability": "https://schema.org/InStock",
+      "itemCondition": "https://schema.org/NewCondition",
+      "seller": {"@type": "Organization", "name": "CardMax México", "url": "https://cardmax.com.mx"},
+      "offerCount": "4",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MX",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
+    }
   }
   </script>
   
@@ -209,6 +243,7 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
+        <button class="btn-nav-cta" onclick="openQuoteModal()">Solicitar Cotización</button>
       </nav>
     </div>
   </header>
@@ -400,7 +435,7 @@
     <section class="cta-panel" id="contacto">
       <h2>¿Listo para programar tus tarjetas con chip NFC?</h2>
       <p>Compártenos tu diseño y URL para producir tarjetas NFC profesionales en cuestión de días.</p>
-      <a href="https://wa.me/5216643053834?text=Hola%2C%20estoy%20interesado%20en%20las%20tarjetas%20con%20chip%20NFC%20de%20CardMax" class="btn btn-quote-now" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+      <button class="btn btn-quote-now" onclick="openQuoteModal()">SOLICITAR COTIZACIÓN</button>
     </section>
   </main>
 

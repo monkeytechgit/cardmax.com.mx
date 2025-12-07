@@ -112,6 +112,18 @@
       "itemCondition": "https://schema.org/NewCondition",
       "seller": {"@type": "Organization", "name": "CardMax México", "url": "https://cardmax.com.mx"},
       "offerCount": "6",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MX",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      },
       "offers": [
         {"@type": "Offer", "name": "Credenciales Escolares 5-49 piezas", "price": "35", "priceCurrency": "MXN"},
         {"@type": "Offer", "name": "Credenciales Escolares 50-99 piezas", "price": "28", "priceCurrency": "MXN"},
@@ -426,6 +438,7 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
+        <button class="btn-nav-cta" onclick="openQuoteModal()">Solicitar Cotización</button>
       </nav>
     </div>
   </header>
@@ -601,7 +614,7 @@
     <section class="cta-panel" id="contacto">
       <h2>¿Listo para renovar tus credenciales escolares?</h2>
       <p>Sistema Alerta Escolar con código QR, control de asistencia y notificaciones a padres en tiempo real.</p>
-      <a href="https://wa.me/5216643053834?text=Hola%2C%20necesito%20informaci%u00f3n%20sobre%20credenciales%20escolares%20CardMax" class="btn btn-quote-now" target="_blank" rel="noopener">COTIZAR POR WHATSAPP</a>
+<button class="btn btn-quote-now" onclick="openQuoteModal()">SOLICITAR COTIZACIÓN</button>
     </section>
   </main>
 

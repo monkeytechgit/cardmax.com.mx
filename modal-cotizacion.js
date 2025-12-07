@@ -33,12 +33,12 @@
               </div>
             </div>
 
-            <div class="form-group">
-              <label for="empresa">Empresa / Institución</label>
-              <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa (opcional)" />
-            </div>
-
             <div class="form-row">
+              <div class="form-group">
+                <label for="empresa">Empresa / Institución</label>
+                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+              </div>
+
               <div class="form-group">
                 <label for="tipo_producto">Tipo de Producto *</label>
                 <select id="tipo_producto" name="tipo_producto" required>
@@ -50,17 +50,19 @@
                 </select>
                 <span class="form-error"></span>
               </div>
+            </div>
 
+            <div class="form-row">
               <div class="form-group">
                 <label for="cantidad">Cantidad Estimada *</label>
                 <input type="number" id="cantidad" name="cantidad" required min="1" placeholder="Ej: 100" />
                 <span class="form-error"></span>
               </div>
-            </div>
 
-            <div class="form-group">
-              <label for="entrega">Fecha de Entrega Deseada</label>
-              <input type="date" id="entrega" name="entrega" />
+              <div class="form-group">
+                <label for="entrega">Fecha de Entrega Deseada</label>
+                <input type="date" id="entrega" name="entrega" />
+              </div>
             </div>
 
             <div class="form-group">
@@ -125,6 +127,9 @@
       form.querySelector('#nombre_completo').focus();
     }, 100);
   };
+
+  // Alias para compatibilidad con botones del navbar
+  window.openQuoteModal = window.openCotizacionModal;
 
   // Función para cerrar el modal
   function closeModal() {

@@ -182,6 +182,18 @@
       "seller": {
         "@type": "Organization",
         "name": "CardMax México"
+      },
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MX",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail"
       }
     },
     "hasVariant": [
@@ -795,7 +807,19 @@
       "priceCurrency": "MXN",
       "offerCount": "15",
       "availability": "https://schema.org/InStock",
-      "seller": {"@type": "Organization", "name": "CardMax México"}
+      "seller": {"@type": "Organization", "name": "CardMax México"},
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MX",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -1197,7 +1221,19 @@
       "offerCount": "5",
       "availability": "https://schema.org/InStock",
       "priceValidUntil": "2025-12-31",
-      "seller": {"@type": "Organization", "name": "CardMax México"}
+      "seller": {"@type": "Organization", "name": "CardMax México"},
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MX",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -1235,7 +1271,19 @@
       "lowPrice": "15",
       "highPrice": "45",
       "priceCurrency": "MXN",
-      "availability": "https://schema.org/InStock"
+      "availability": "https://schema.org/InStock",
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+      },
+      "hasMerchantReturnPolicy": {
+        "@type": "MerchantReturnPolicy",
+        "applicableCountry": "MX",
+        "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+        "merchantReturnDays": 30,
+        "returnMethod": "https://schema.org/ReturnByMail"
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",
@@ -1275,6 +1323,7 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
+        <button class="btn-nav-cta" onclick="openQuoteModal()">Solicitar Cotización</button>
       </nav>
     </div>
   </header>

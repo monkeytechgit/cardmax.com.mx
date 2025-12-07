@@ -907,7 +907,19 @@
         "lowPrice": "25",
         "highPrice": "45",
         "offerCount": "5",
-        "seller": {"@type": "Organization", "name": "CardMax México"}
+        "seller": {"@type": "Organization", "name": "CardMax México"},
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+          "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "MX",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail"
+        }
       },
       "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "3500", "bestRating": "5"}
     },
@@ -929,7 +941,19 @@
         "lowPrice": "30",
         "highPrice": "55",
         "offerCount": "5",
-        "seller": {"@type": "Organization", "name": "CardMax México"}
+        "seller": {"@type": "Organization", "name": "CardMax México"},
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+          "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "MX",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail"
+        }
       },
       "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "2800", "bestRating": "5"}
     },
@@ -951,7 +975,19 @@
         "lowPrice": "150",
         "highPrice": "350",
         "offerCount": "3",
-        "seller": {"@type": "Organization", "name": "CardMax México"}
+        "seller": {"@type": "Organization", "name": "CardMax México"},
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+          "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "MX",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail"
+        }
       },
       "aggregateRating": {"@type": "AggregateRating", "ratingValue": "5.0", "reviewCount": "1200", "bestRating": "5"}
     },
@@ -973,7 +1009,19 @@
         "lowPrice": "35",
         "highPrice": "120",
         "offerCount": "6",
-        "seller": {"@type": "Organization", "name": "CardMax México"}
+        "seller": {"@type": "Organization", "name": "CardMax México"},
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+          "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "MX",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail"
+        }
       },
       "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "1800", "bestRating": "5"}
     },
@@ -995,7 +1043,19 @@
         "lowPrice": "0.50",
         "highPrice": "2.50",
         "offerCount": "10",
-        "seller": {"@type": "Organization", "name": "CardMax México"}
+        "seller": {"@type": "Organization", "name": "CardMax México"},
+        "shippingDetails": {
+          "@type": "OfferShippingDetails",
+          "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+          "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        },
+        "hasMerchantReturnPolicy": {
+          "@type": "MerchantReturnPolicy",
+          "applicableCountry": "MX",
+          "returnPolicyCategory": "https://schema.org/MerchantReturnFiniteReturnWindow",
+          "merchantReturnDays": 30,
+          "returnMethod": "https://schema.org/ReturnByMail"
+        }
       },
       "aggregateRating": {"@type": "AggregateRating", "ratingValue": "4.9", "reviewCount": "950", "bestRating": "5"}
     }
@@ -1287,6 +1347,7 @@
           <li><a href="blog.html">Blog</a></li>
           <li><a href="contacto.html">Contacto</a></li>
         </ul>
+        <button class="btn-nav-cta" onclick="openQuoteModal()">Solicitar Cotización</button>
       </nav>
     </div>
   </header>
@@ -1351,9 +1412,10 @@
         <h1 class="h1">Tarjetas PVC, NFC y Etiquetas adhesivas</h1>
         <p class="lead">Personaliza y haz crecer tu marca con impresiones nítidas, materiales de alta calidad y tecnología NFC lista para compartir tus enlaces.</p>
         <div class="cta-group">
-          <a class="btn btn-primary" href="pvc.html">Ver tarjetas PVC</a>
+          <a class="btn btn-pvc" href="pvc.html">Ver tarjetas PVC</a>
           <a class="btn btn-nfc" href="nfc.html">Ver tarjetas NFC</a>
           <a class="btn btn-etiquetas" href="etiquetas.html">Ver etiquetas adhesivas</a>
+          <button class="btn btn-primary" onclick="openQuoteModal()">Solicitar Cotización</button>
         </div>
       </div>
     </div>
