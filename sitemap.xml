@@ -8,13 +8,13 @@
 
   <!-- Página Principal - CardMax México -->
   <url>
-    <loc>https://cardmax.mx/</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/" />
+    <loc>https://cardmax.com.mx/</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
     <image:image>
-      <image:loc>https://cardmax.mx/img/cardmax_icon.png</image:loc>
+      <image:loc>https://cardmax.com.mx/img/cardmax_icon.png</image:loc>
       <image:title>CardMax México - Tarjetas PVC, NFC y Etiquetas Adhesivas</image:title>
       <image:caption>Logo oficial de CardMax México, fabricante de credenciales y tarjetas personalizadas</image:caption>
     </image:image>
@@ -22,8 +22,8 @@
 
   <!-- Página de inicio (index.html) -->
   <url>
-    <loc>https://cardmax.mx/index.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/index.html" />
+    <loc>https://cardmax.com.mx/index.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/index.html" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
@@ -31,64 +31,64 @@
 
   <!-- Categorías de Productos -->
   <url>
-    <loc>https://cardmax.mx/pvc.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/pvc.html" />
+    <loc>https://cardmax.com.mx/pvc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/pvc.html" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://cardmax.mx/img/tarjetas-pvc-credenciales.jpg</image:loc>
+      <image:loc>https://cardmax.com.mx/img/tarjetas-pvc-credenciales.jpg</image:loc>
       <image:title>Tarjetas PVC y Credenciales Escolares México</image:title>
       <image:caption>Credenciales escolares, gafetes empresariales y tarjetas de identificación PVC personalizadas</image:caption>
     </image:image>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/nfc.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/nfc.html" />
+    <loc>https://cardmax.com.mx/nfc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/nfc.html" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://cardmax.mx/img/tarjetas-nfc-rfid.jpg</image:loc>
+      <image:loc>https://cardmax.com.mx/img/tarjetas-nfc-rfid.jpg</image:loc>
       <image:title>Tarjetas NFC y RFID para Control de Acceso México</image:title>
       <image:caption>Tarjetas NFC para hoteles, gimnasios, oficinas y business cards digitales inteligentes</image:caption>
     </image:image>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/etiquetas.html" />
-    <lastmod>2025-11-27</lastmod>
+    <loc>https://cardmax.com.mx/etiquetas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/etiquetas.html" />
+    <lastmod>2025-12-07</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
-      <image:loc>https://cardmax.mx/img/etiquetas-adhesivas.jpg</image:loc>
-      <image:title>Etiquetas Adhesivas Industriales México</image:title>
-      <image:caption>Etiquetas NOM-051 para alimentos, farmacéuticas, cosméticos, químicas GHS y logística</image:caption>
+      <image:loc>https://cardmax.com.mx/img/etiquetas-adhesivas.jpg</image:loc>
+      <image:title>Etiquetas Adhesivas Tijuana Baja California México</image:title>
+      <image:caption>Etiquetas adhesivas personalizadas, etiquetas industriales, flexográficas, poliéster, rascables y económicas en Tijuana</image:caption>
     </image:image>
   </url>
 
   <!-- Páginas de Información -->
   <url>
-    <loc>https://cardmax.mx/nosotros.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/nosotros.html" />
+    <loc>https://cardmax.com.mx/nosotros.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/nosotros.html" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/blog.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/blog.html" />
+    <loc>https://cardmax.com.mx/blog.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/blog.html" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/contacto.html</loc>
-    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.mx/contacto.html" />
+    <loc>https://cardmax.com.mx/contacto.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/contacto.html" />
     <lastmod>2025-11-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.9</priority>
@@ -96,21 +96,21 @@
 
   <!-- Productos Específicos - Tarjetas PVC -->
   <url>
-    <loc>https://cardmax.mx/gafetes-identificacion.html</loc>
+    <loc>https://cardmax.com.mx/gafetes-identificacion.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/credenciales-escolares.html</loc>
+    <loc>https://cardmax.com.mx/credenciales-escolares.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/tarjetas-pvc-color.html</loc>
+    <loc>https://cardmax.com.mx/tarjetas-pvc-color.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -118,21 +118,21 @@
 
   <!-- Productos Específicos - Tarjetas NFC -->
   <url>
-    <loc>https://cardmax.mx/smartcard-nfc.html</loc>
+    <loc>https://cardmax.com.mx/smartcard-nfc.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/tarjetas-chip-nfc.html</loc>
+    <loc>https://cardmax.com.mx/tarjetas-chip-nfc.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/tarjeta-social-nfc.html</loc>
+    <loc>https://cardmax.com.mx/tarjeta-social-nfc.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
@@ -140,85 +140,92 @@
 
   <!-- Productos Específicos - Etiquetas Adhesivas -->
   <url>
-    <loc>https://cardmax.mx/etiquetas-rascables.html</loc>
+    <loc>https://cardmax.com.mx/etiquetas-rascables.html</loc>
     <lastmod>2025-12-01</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas-flexograficas.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://cardmax.com.mx/etiquetas-flexograficas.html</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas-industriales.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://cardmax.com.mx/etiquetas-industriales.html</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas-poliester.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://cardmax.com.mx/etiquetas-poliester.html</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas-un-color.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <loc>https://cardmax.com.mx/etiquetas-rascables.html</loc>
+    <lastmod>2025-12-07</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/etiquetas-un-color.html</loc>
+    <lastmod>2025-12-07</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <!-- Landing Pages por Sector (virtual - misma página con anclas) -->
   <url>
-    <loc>https://cardmax.mx/pvc.html#credenciales-escolares</loc>
+    <loc>https://cardmax.com.mx/pvc.html#credenciales-escolares</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/pvc.html#gafetes-empresariales</loc>
+    <loc>https://cardmax.com.mx/pvc.html#gafetes-empresariales</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/pvc.html#credenciales-hospitales</loc>
+    <loc>https://cardmax.com.mx/pvc.html#credenciales-hospitales</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/nfc.html#tarjetas-hoteles</loc>
+    <loc>https://cardmax.com.mx/nfc.html#tarjetas-hoteles</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/nfc.html#tarjetas-gimnasios</loc>
+    <loc>https://cardmax.com.mx/nfc.html#tarjetas-gimnasios</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas.html#etiquetas-alimentos-nom051</loc>
+    <loc>https://cardmax.com.mx/etiquetas.html#etiquetas-alimentos-nom051</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
-    <loc>https://cardmax.mx/etiquetas.html#etiquetas-farmaceuticas</loc>
+    <loc>https://cardmax.com.mx/etiquetas.html#etiquetas-farmaceuticas</loc>
     <lastmod>2025-11-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>

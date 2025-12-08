@@ -2109,3 +2109,137 @@ select {
     grid-template-columns:1fr;
   }
 }
+
+/*----------------------------------------------------------
+  FAQ Section - Preguntas Frecuentes para SEO
+-----------------------------------------------------------*/
+.faq-section {
+  padding: 60px 0;
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+}
+
+.faq-section h2 {
+  text-align: center;
+  font-size: 1.8rem;
+  color: #2B2D42;
+  margin-bottom: 40px;
+  font-weight: 700;
+}
+
+.faq-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
+  max-width: 1000px;
+  margin: 0 auto;
+}
+
+.faq-item {
+  background: #fff;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.06);
+  overflow: hidden;
+  transition: box-shadow 0.3s ease;
+}
+
+.faq-item:hover {
+  box-shadow: 0 4px 16px rgba(0,0,0,0.1);
+}
+
+.faq-item summary {
+  padding: 20px;
+  font-weight: 600;
+  color: #2B2D42;
+  cursor: pointer;
+  list-style: none;
+  position: relative;
+  padding-right: 40px;
+  font-size: 0.95rem;
+  line-height: 1.4;
+}
+
+.faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.faq-item summary::after {
+  content: '+';
+  position: absolute;
+  right: 20px;
+  top: 50%;
+  transform: translateY(-50%);
+  font-size: 1.5rem;
+  color: #D10024;
+  font-weight: 400;
+  transition: transform 0.3s ease;
+}
+
+.faq-item[open] summary::after {
+  content: '−';
+}
+
+.faq-item p {
+  padding: 0 20px 20px;
+  margin: 0;
+  color: #555;
+  font-size: 0.9rem;
+  line-height: 1.7;
+  border-top: 1px solid #f0f0f0;
+}
+
+@media(max-width: 768px) {
+  .faq-grid {
+    grid-template-columns: 1fr;
+  }
+  
+  .faq-section h2 {
+    font-size: 1.5rem;
+    padding: 0 15px;
+  }
+}
+
+/*----------------------------------------------------------
+  SEO Cities Section - Contenido Geográfico
+-----------------------------------------------------------*/
+.seo-cities {
+  padding: 50px 0;
+  background: #fff;
+}
+
+.seo-cities h2 {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #2B2D42;
+  margin-bottom: 25px;
+  font-weight: 600;
+}
+
+.seo-cities p {
+  max-width: 900px;
+  margin: 0 auto 20px;
+  text-align: center;
+  color: #555;
+  font-size: 0.95rem;
+  line-height: 1.8;
+  padding: 0 20px;
+}
+
+.seo-cities strong {
+  color: #D10024;
+  font-weight: 600;
+}
+
+@media(max-width: 768px) {
+  .seo-cities {
+    padding: 40px 0;
+  }
+  
+  .seo-cities h2 {
+    font-size: 1.3rem;
+  }
+  
+  .seo-cities p {
+    font-size: 0.9rem;
+    text-align: left;
+  }
+}

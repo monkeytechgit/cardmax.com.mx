@@ -1,5 +1,5 @@
 # robots.txt para CardMax México
-# https://cardmax.mx/
+# https://cardmax.com.mx/
 # Optimizado para SEO - Permitir rastreo completo con prioridad a bots principales
 # Última actualización: 2025-01-27
 
@@ -8,10 +8,10 @@ User-agent: *
 Allow: /
 
 # Sitemap principal
-Sitemap: https://cardmax.mx/sitemap.xml
+Sitemap: https://cardmax.com.mx/sitemap.xml
 
 # Knowledge Graph Schema JSON
-Host: https://cardmax.mx
+Host: https://cardmax.com.mx
 
 # Google - Máxima prioridad
 User-agent: Googlebot
@@ -150,5 +150,5 @@ Disallow: /
 
 User-agent: CCBot
 Disallow: /# Host preferido
-Host: https://cardmax.mx
+Host: https://cardmax.com.mx
 
