@@ -33,13 +33,13 @@
   <url>
     <loc>https://cardmax.com.mx/pvc.html</loc>
     <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/pvc.html" />
-    <lastmod>2025-11-27</lastmod>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.95</priority>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/tarjetas-pvc-credenciales.jpg</image:loc>
-      <image:title>Tarjetas PVC y Credenciales Escolares México</image:title>
-      <image:caption>Credenciales escolares, gafetes empresariales y tarjetas de identificación PVC personalizadas</image:caption>
+      <image:title>Credenciales y Gafetes PVC Tijuana Baja California México</image:title>
+      <image:caption>Credenciales escolares, gafetes empresariales y tarjetas de identificación PVC personalizadas en Tijuana</image:caption>
     </image:image>
   </url>
 
@@ -97,21 +97,21 @@
   <!-- Productos Específicos - Tarjetas PVC -->
   <url>
     <loc>https://cardmax.com.mx/gafetes-identificacion.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://cardmax.com.mx/credenciales-escolares.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
 
   <url>
     <loc>https://cardmax.com.mx/tarjetas-pvc-color.html</loc>
-    <lastmod>2025-12-01</lastmod>
+    <lastmod>2025-01-10</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
