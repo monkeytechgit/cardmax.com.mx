@@ -712,7 +712,12 @@
       "shippingDetails": {
         "@type": "OfferShippingDetails",
         "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
-        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "MXN"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
       },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
@@ -1058,7 +1063,12 @@
       "shippingDetails": {
         "@type": "OfferShippingDetails",
         "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
-        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "MXN"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
       },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
