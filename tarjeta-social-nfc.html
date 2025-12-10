@@ -125,7 +125,20 @@
         {"@type": "Offer", "name": "Tarjeta Social NFC Pack 5", "price": "300", "priceCurrency": "MXN", "description": "Precio por unidad en pack de 5 (ideal negocios)"},
         {"@type": "Offer", "name": "Tarjeta Social NFC Empresarial 10+", "price": "280", "priceCurrency": "MXN", "description": "Precio por unidad para equipos de 10+ (restaurantes)"}
       ],
-      "shippingDetails": {"@type": "OfferShippingDetails", "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "d"}}}
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",

@@ -112,18 +112,29 @@
       },
       "shippingDetails": {
         "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "MX"
+        },
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
         "deliveryTime": {
           "@type": "ShippingDeliveryTime",
           "handlingTime": {
             "@type": "QuantitativeValue",
-            "minValue": 5,
-            "maxValue": 7,
+            "minValue": 3,
+            "maxValue": 5,
+            "unitCode": "d"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 5,
             "unitCode": "d"
           }
-        },
-        "shippingDestination": {
-          "@type": "DefinedRegion",
-          "addressCountry": "MX"
         }
       }
     },
@@ -505,80 +516,6 @@
         "position": 8,
         "name": "Restaurantes y Comida Rápida",
         "description": "McDonald's, Burger King, Domino's, Starbucks, cadenas locales"
-      }
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema para Rich Snippets - Etiquetas Rascables -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuestan las etiquetas rascables para promociones?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las etiquetas rascables en CardMax Tijuana tienen precios desde $0.80 MXN por etiqueta dependiendo del tamaño, cantidad y tipo de promoción. Incluimos diseño gráfico sin costo adicional. Cotización inmediata al +52 664 305 3834."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cómo funcionan las etiquetas rasca y gana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las etiquetas rascables tienen una capa de tinta plateada que oculta el mensaje debajo. Al raspar con una moneda, se revela el premio, código, descuento o mensaje personalizado. Perfectas para sorteos, promociones y fidelización de clientes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el pedido mínimo de etiquetas rascables?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El pedido mínimo de etiquetas rascables es de 500 piezas. Para promociones grandes recomendamos pedidos de 5,000+ con descuentos de hasta 30%. Manejamos entregas parciales para campañas prolongadas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Pueden personalizar completamente las etiquetas rascables?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, personalizamos al 100%: forma, tamaño, colores, diseño, área de raspado, mensajes variables, numeración única, códigos QR ocultos y más. Nuestro equipo de diseño crea la promoción perfecta para tu marca."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo tardan en producir etiquetas rascables?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Producción de etiquetas rascables en 5-7 días hábiles incluyendo diseño y pruebas de calidad. Servicio express disponible en 3 días para urgencias. Entrega a todo México con envío gratis en pedidos mayores a $3,000 MXN."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las etiquetas rascables pueden tener códigos únicos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, cada etiqueta puede tener un código único, numeración seriada o código QR exclusivo para validación digital. Podemos integrar la promoción con tu sistema de puntos de venta o plataforma web."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué tipo de promociones funcionan mejor con etiquetas rascables?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las promociones más exitosas incluyen: Raspa y Gana premios instantáneos, descuentos sorpresa, códigos de lealtad, sorteos con códigos únicos, promociones 2x1, y reveal de productos nuevos. Funcionan excelente en bebidas, alimentos, retail y servicios."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las etiquetas rascables se adhieren a cualquier superficie?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, nuestras etiquetas rascables tienen adhesivo permanente de alta resistencia compatible con vidrio, plástico, cartón, metal y superficies lisas. Ideales para botellas, empaques, recibos, boletos y productos de consumo."
-        }
       }
     ]
   }

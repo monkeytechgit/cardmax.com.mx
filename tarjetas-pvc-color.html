@@ -133,7 +133,16 @@
       "shippingDetails": {
         "@type": "OfferShippingDetails",
         "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
-        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "d"}}
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
       }
     },
     "aggregateRating": {
@@ -353,66 +362,6 @@
       {"@type": "ListItem", "position": 18, "name": "Karaokes y Centros Nocturnos"},
       {"@type": "ListItem", "position": 19, "name": "Centros de Entretenimiento"},
       {"@type": "ListItem", "position": 20, "name": "Programas de Fidelización Corporativos"}
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema para Rich Snippets - Tarjetas PVC a Color -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Dónde hacer tarjetas PVC a color en Tijuana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CardMax es la fábrica líder de tarjetas PVC a color en Tijuana, Baja California. Fabricamos tarjetas personalizadas full color para negocios: gift cards, membresías, credenciales a color, tarjetas de lealtad. Cotización inmediata al (664) 305-3834."
-        }
-      },
-     
-      {
-        "@type": "Question",
-        "name": "¿Qué tipos de tarjetas a color fabrican?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Fabricamos gift cards para tiendas y restaurantes, tarjetas de lealtad y cliente frecuente, membresías VIP para gimnasios, spas y clubes, pases para eventos y festivales, tarjetas de descuento, credenciales a color para empresas y cualquier tarjeta personalizada."
-        }
-      },
-  
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo tardan las tarjetas a color?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Producción de tarjetas a color en 5-7 días hábiles. Servicio express en 3 días disponible. Entrega a todo México con envío gratis en pedidos mayores a $2,000 MXN."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Pueden incluir código de barras y QR?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, todas las tarjetas pueden incluir código de barras, código QR, numeración consecutiva, datos variables y banda magnética. Perfectas para programas de lealtad y control de inventario."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hacen tarjetas para gimnasios y clubes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, fabricamos membresías para gimnasios, spas, clubes deportivos, country clubs, academias de natación, tenis, golf y cualquier club. Con foto, código de barras y chip de acceso opcional."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el pedido mínimo de tarjetas a color?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El pedido mínimo es de 5 tarjetas. Ideal para pruebas o negocios pequeños. Precios de mayoreo desde 100 piezas. Atendemos desde emprendedores hasta cadenas nacionales."
-        }
-      }
     ]
   }
   </script>

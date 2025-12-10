@@ -202,7 +202,12 @@
       "shippingDetails": {
         "@type": "OfferShippingDetails",
         "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
-        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        "shippingRate": {"@type": "MonetaryAmount", "value": "0", "currency": "MXN"},
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
       },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
@@ -1170,96 +1175,6 @@
       "ratingValue": "5.0",
       "reviewCount": "876"
     }
-  }
-  </script>
-
-  <!-- FAQ Schema para Rich Snippets - Etiquetas Adhesivas General -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Dónde comprar etiquetas adhesivas en Tijuana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CardMax es el líder en fabricación de etiquetas adhesivas en Tijuana, Baja California. Ubicados en Zona Río, atendemos a toda la región: Tijuana, Rosarito, Tecate, Ensenada, Mexicali y todo México. Cotización inmediata al +52 664 305 3834."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué tipos de etiquetas fabrican en CardMax?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Fabricamos etiquetas flexográficas a todo color, etiquetas industriales térmicas, etiquetas de poliéster resistente, etiquetas rascables promocionales, y etiquetas económicas de un color. Todas personalizables según tu necesidad."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuestan las etiquetas personalizadas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Los precios varían según el tipo: etiquetas de un color desde $0.15 MXN, etiquetas a full color desde $0.30 MXN, etiquetas de poliéster desde $0.50 MXN. Descuentos por volumen de hasta 40%. Cotización personalizada sin compromiso."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el tiempo de entrega para etiquetas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Tiempos de producción: etiquetas simples 24-48 horas, etiquetas a color 3-5 días, etiquetas especiales 5-7 días. Entrega a todo México. Servicio express disponible. Envío gratis en pedidos mayores a $2,000 MXN."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hacen envíos de etiquetas a todo México?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, enviamos a todo México: CDMX, Monterrey, Guadalajara, León, Puebla, Querétaro, Cancún y todas las ciudades. Envío gratis en pedidos mayores a $2,000 MXN. Paquetería Estafeta, DHL y Fedex con rastreo."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el pedido mínimo de etiquetas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El pedido mínimo depende del tipo: 500 etiquetas para productos simples, 1,000 para flexográficas a color. Atendemos desde PyMEs hasta grandes corporativos. No hay pedido demasiado pequeño o grande."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las etiquetas incluyen diseño gráfico?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, el diseño gráfico está incluido sin costo adicional en todos nuestros productos. Nuestro equipo de diseñadores crea o adapta tu diseño para obtener la mejor calidad de impresión."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué materiales de etiquetas manejan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Trabajamos con papel couché, polipropileno (BOPP) mate y brillante, poliéster (PET), vinil, papel kraft, materiales especiales para congelación, y materiales con certificación FDA para alimentos y farmacéuticos."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Pueden hacer etiquetas con código de barras?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, imprimimos todos los formatos de códigos: Code 128, Code 39, EAN-13, UPC-A, ITF-14, QR, DataMatrix. Incluimos numeración seriada y datos variables. Garantizamos 100% de lectura en scanners."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Ofrecen etiquetas resistentes al agua y químicos?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, nuestras etiquetas de polipropileno y poliéster son resistentes al agua, aceites, grasas, solventes y condiciones extremas. Ideales para productos que estarán expuestos a humedad, refrigeración o intemperie."
-        }
-      }
-    ]
   }
   </script>
 </head>

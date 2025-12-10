@@ -125,7 +125,20 @@
         {"@type": "Offer", "name": "SmartCard NFC Pack 5", "price": "380", "priceCurrency": "MXN", "description": "Precio por unidad en pack de 5"},
         {"@type": "Offer", "name": "SmartCard NFC Empresarial 10+", "price": "350", "priceCurrency": "MXN", "description": "Precio por unidad para equipos de 10+"}
       ],
-      "shippingDetails": {"@type": "OfferShippingDetails", "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"}, "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 7, "unitCode": "d"}}}
+      "shippingDetails": {
+        "@type": "OfferShippingDetails",
+        "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
+      }
     },
     "aggregateRating": {
       "@type": "AggregateRating",

@@ -113,18 +113,29 @@
       },
       "shippingDetails": {
         "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "MX"
+        },
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
         "deliveryTime": {
           "@type": "ShippingDeliveryTime",
           "handlingTime": {
             "@type": "QuantitativeValue",
-            "minValue": 5,
-            "maxValue": 7,
+            "minValue": 1,
+            "maxValue": 3,
+            "unitCode": "d"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 2,
+            "maxValue": 5,
             "unitCode": "d"
           }
-        },
-        "shippingDestination": {
-          "@type": "DefinedRegion",
-          "addressCountry": "MX"
         }
       }
     },
@@ -518,80 +529,6 @@
         "position": 10,
         "name": "Retail y Supermercados",
         "description": "Control de inventario, recepción de mercancía, precios"
-      }
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema para Rich Snippets - Etiquetas Industriales -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuestan las etiquetas industriales térmicas en Tijuana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El precio de las etiquetas industriales térmicas en CardMax Tijuana depende del tamaño, cantidad y tipo de material (térmica directa o transferencia térmica). Manejamos precios competitivos desde $150 MXN por rollo de 1,000 etiquetas. Cotización inmediata al +52 664 305 3834."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué tipos de etiquetas industriales manejan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Manejamos etiquetas térmicas directas para envíos y corta duración, etiquetas de transferencia térmica para mayor durabilidad, etiquetas de poliéster para condiciones extremas, y etiquetas especiales para congelación. Todas compatibles con impresoras Zebra, TSC, Honeywell y Datamax."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las etiquetas soportan temperaturas extremas de congelación?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, contamos con etiquetas especiales para congelación que resisten temperaturas de hasta -40°C. Ideales para industria alimentaria, farmacéutica y logística de cadena de frío. El adhesivo criogénico garantiza adherencia permanente."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el tiempo de entrega para etiquetas industriales?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Producción en 24-48 horas para medidas estándar en Tijuana. Entregas en 3-5 días hábiles a todo México. Servicio express disponible para pedidos urgentes. Envíos gratis en pedidos mayores a $2,000 MXN."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué impresoras son compatibles con sus etiquetas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Nuestras etiquetas son 100% compatibles con todas las marcas principales: Zebra (ZT230, ZT410, GK420), TSC, Honeywell, Datamax, SATO, Godex y Brother. Garantizamos la medida exacta y el core correcto para tu impresora."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hacen etiquetas con código de barras preimpresas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, podemos preimprimir códigos de barras, códigos QR, logos, texto fijo y numeración seriada. Soportamos formatos Code 128, Code 39, EAN-13, UPC-A, ITF-14 y DataMatrix para trazabilidad completa."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el pedido mínimo de etiquetas industriales?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El pedido mínimo es de 1 rollo (aproximadamente 1,000 etiquetas dependiendo del tamaño). Para precios de mayoreo, recomendamos pedidos de 10 rollos o más con descuentos de hasta 25%."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Ofrecen ribbons y consumibles para impresoras térmicas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, somos distribuidores de ribbons de cera, cera-resina y resina pura para todas las impresoras térmicas. También ofrecemos cabezales de impresión, rodillos y refacciones originales y compatibles."
-        }
       }
     ]
   }

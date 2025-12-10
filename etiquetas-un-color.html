@@ -112,18 +112,29 @@
       },
       "shippingDetails": {
         "@type": "OfferShippingDetails",
+        "shippingDestination": {
+          "@type": "DefinedRegion",
+          "addressCountry": "MX"
+        },
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
         "deliveryTime": {
           "@type": "ShippingDeliveryTime",
           "handlingTime": {
             "@type": "QuantitativeValue",
-            "minValue": 2,
+            "minValue": 1,
+            "maxValue": 2,
+            "unitCode": "d"
+          },
+          "transitTime": {
+            "@type": "QuantitativeValue",
+            "minValue": 1,
             "maxValue": 3,
             "unitCode": "d"
           }
-        },
-        "shippingDestination": {
-          "@type": "DefinedRegion",
-          "addressCountry": "MX"
         }
       }
     },
@@ -517,80 +528,6 @@
         "position": 10,
         "name": "Restaurantes y Alimentos",
         "description": "Fechas de preparación, caducidad, rotación PEPS"
-      }
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema para Rich Snippets - Etiquetas Un Color -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuestan las etiquetas a un solo color en Tijuana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las etiquetas a un solo color en CardMax Tijuana son las más económicas del mercado. Precios desde $0.15 MXN por etiqueta en pedidos de volumen. Ideales para empresas que buscan reducir costos sin sacrificar calidad. Cotización al +52 664 305 3834."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo tardan en entregar etiquetas a un color?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Producción en 24-48 horas para etiquetas de un solo color en medidas estándar. Somos los más rápidos de Tijuana y Baja California. Entregas en 3-5 días a todo México. Servicio express el mismo día disponible."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué colores manejan para etiquetas de un color?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Imprimimos en cualquier color sólido: negro (el más económico), azul, rojo, verde, naranja, morado, café, dorado, plateado y colores Pantone específicos. El costo es el mismo para cualquier color que elijas."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuál es el pedido mínimo de etiquetas económicas?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "El pedido mínimo es de 500 etiquetas o 1 rollo. Para mejores precios recomendamos pedidos de 5,000 etiquetas o más con descuentos de hasta 40%. Manejamos entregas programadas mensuales."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Pueden imprimir mi logo en las etiquetas de un color?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, imprimimos logos, texto, códigos de barras, QR y cualquier diseño en un solo color. El diseño gráfico está incluido sin costo. Solo necesitamos tu logo en formato vectorial o de alta resolución."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las etiquetas de un color incluyen códigos de barras?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, podemos incluir códigos de barras (Code 128, EAN-13, UPC-A), códigos QR, numeración seriada y cualquier dato variable dentro del mismo precio. Perfectas para inventario, logística y punto de venta."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué tamaños de etiquetas manejan?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Fabricamos etiquetas en cualquier tamaño: desde mini etiquetas de 1x1cm hasta etiquetas grandes de 20x30cm. Las medidas más populares son 5x3cm, 5x5cm y 10x5cm. Cotizamos cualquier medida personalizada."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las etiquetas de un color son resistentes?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, usamos materiales de alta calidad con adhesivo permanente. Disponibles en papel couché, polipropileno mate/brillante y poliéster para mayor resistencia. El material se selecciona según tu aplicación específica."
-        }
       }
     ]
   }

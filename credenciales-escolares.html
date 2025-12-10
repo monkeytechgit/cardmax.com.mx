@@ -115,7 +115,16 @@
       "shippingDetails": {
         "@type": "OfferShippingDetails",
         "shippingDestination": {"@type": "DefinedRegion", "addressCountry": "MX"},
-        "deliveryTime": {"@type": "ShippingDeliveryTime", "handlingTime": {"@type": "QuantitativeValue", "minValue": 3, "maxValue": 5, "unitCode": "d"}}
+        "shippingRate": {
+          "@type": "MonetaryAmount",
+          "value": "0",
+          "currency": "MXN"
+        },
+        "deliveryTime": {
+          "@type": "ShippingDeliveryTime",
+          "handlingTime": {"@type": "QuantitativeValue", "minValue": 1, "maxValue": 3, "unitCode": "d"},
+          "transitTime": {"@type": "QuantitativeValue", "minValue": 2, "maxValue": 5, "unitCode": "d"}
+        }
       },
       "hasMerchantReturnPolicy": {
         "@type": "MerchantReturnPolicy",
@@ -404,80 +413,6 @@
       {"@type": "ListItem", "position": 10, "name": "Escuelas Bilingües y de Idiomas"},
       {"@type": "ListItem", "position": 11, "name": "Academias de Artes, Música, Danza"},
       {"@type": "ListItem", "position": 12, "name": "Centros de Capacitación y Formación"}
-    ]
-  }
-  </script>
-
-  <!-- FAQ Schema para Rich Snippets - Credenciales Escolares -->
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": [
-      {
-        "@type": "Question",
-        "name": "¿Dónde hacer credenciales escolares en Tijuana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "CardMax es la fábrica líder de credenciales escolares en Tijuana, Baja California. Fabricamos credenciales PVC para primarias, secundarias, preparatorias y universidades con Sistema Alerta Escolar QR. Cotización inmediata al (664) 305-3834."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto cuestan las credenciales escolares en Tijuana?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Las credenciales escolares en CardMax Tijuana tienen precios desde $18 MXN por pieza con foto, datos del alumno, logo de la escuela y código QR. Descuentos especiales para escuelas: 100+ credenciales 20% descuento, 500+ credenciales 30% descuento."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Qué es el Sistema Alerta Escolar con QR?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Es un sistema de control de asistencia automatizado. Cuando el alumno escanea su credencial al entrar o salir de la escuela, los padres reciben una notificación push instantánea en su celular. Aumenta la seguridad escolar y facilita el control de asistencia."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Cuánto tiempo tardan las credenciales escolares?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Producción de credenciales escolares en 5-7 días hábiles. Servicio express disponible en 3 días. Entrega a todo México. Entregas masivas para inicio de ciclo escolar con planeación anticipada."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hacen renovación de credenciales escolares por ciclo escolar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, ofrecemos servicio de renovación masiva de credenciales escolares cada ciclo escolar. Manejamos desde 50 hasta 10,000+ credenciales. Conservamos los diseños y datos para agilizar el proceso."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Las credenciales escolares son de alta durabilidad?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, usamos PVC 30 mil de alta durabilidad que resiste todo el ciclo escolar sin desgastarse. Resistentes al agua, rayones y uso diario intenso. Ideales para niños y jóvenes."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Pueden incluir foto del alumno en las credenciales?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, cada credencial incluye foto individual del alumno, nombre completo, grado, grupo, matrícula, datos de la escuela, código QR y cualquier información adicional que requieran."
-        }
-      },
-      {
-        "@type": "Question",
-        "name": "¿Hacen credenciales para maestros y personal escolar?",
-        "acceptedAnswer": {
-          "@type": "Answer",
-          "text": "Sí, fabricamos credenciales para maestros, administrativos, personal de intendencia, vigilancia y todo el staff escolar. Diferenciamos por color o diseño según el tipo de personal."
-        }
-      }
     ]
   }
   </script>
