@@ -13,43 +13,43 @@
         </div>
         <div class="modal-body">
           <form id="cotizacion-form" novalidate>
-            <div class="form-group">
-              <label for="nombre_completo">Nombre Completo *</label>
-              <input type="text" id="nombre_completo" name="nombre_completo" required placeholder="Ej: Juan Pérez González" />
-              <span class="form-error"></span>
-            </div>
-
             <div class="form-row">
+              <div class="form-group">
+                <label for="nombre_completo">Nombre Completo *</label>
+                <input type="text" id="nombre_completo" name="nombre_completo" required placeholder="Ej: Juan Pérez González" />
+                <span class="form-error"></span>
+              </div>
+
               <div class="form-group">
                 <label for="correo">Correo Electrónico *</label>
                 <input type="email" id="correo" name="correo" required placeholder="Ej. tu@empresa.com" />
                 <span class="form-error"></span>
               </div>
+            </div>
 
+            <div class="form-row">
               <div class="form-group">
                 <label for="telefono">Teléfono *</label>
                 <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 664 123 4567" />
                 <span class="form-error"></span>
               </div>
-            </div>
 
-            <div class="form-row">
               <div class="form-group">
                 <label for="empresa">Empresa / Institución</label>
                 <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
               </div>
+            </div>
 
-              <div class="form-group">
-                <label for="tipo_producto">Tipo de Producto *</label>
-                <select id="tipo_producto" name="tipo_producto" required>
-                  <option value="">Selecciona un tipo</option>
-                  <option value="Tarjetas PVC">Tarjetas PVC</option>
-                  <option value="Tarjetas NFC">Tarjetas NFC</option>
-                  <option value="Etiquetas Adhesivas">Etiquetas Adhesivas</option>
-                  <option value="Otro">Otro producto</option>
-                </select>
-                <span class="form-error"></span>
-              </div>
+            <div class="form-group">
+              <label for="tipo_producto">Tipo de Producto *</label>
+              <select id="tipo_producto" name="tipo_producto" required>
+                <option value="">Selecciona un tipo</option>
+                <option value="Tarjetas PVC">Tarjetas PVC</option>
+                <option value="Tarjetas NFC">Tarjetas NFC</option>
+                <option value="Etiquetas Adhesivas">Etiquetas Adhesivas</option>
+                <option value="Otro">Otro producto</option>
+              </select>
+              <span class="form-error"></span>
             </div>
 
             <div class="form-row">
