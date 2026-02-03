@@ -3,6 +3,55 @@
   const SUPABASE_URL = 'https://jdclxczkvffwwleppbbu.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkY2x4Y3prdmZmd3dsZXBwYmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwMTc2OTcsImV4cCI6MjA2NzU5MzY5N30.ixG7x4nOLn7VkgKdjORh_tVA9M7qhUvobBQYhvbw168';
 
+  // EmailJS (GitHub Pages compatible, envío desde el navegador)
+  // Script SDK recomendado: https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js
+  const EMAILJS_PUBLIC_KEY = '5vTFdcXJ0G3y7ZaPs';
+  const EMAILJS_SERVICE_ID = 'service_y17nwsa';
+  const EMAILJS_TEMPLATE_ID = 'template_y4y0gl8';
+
+  let emailJsInitPromise = null;
+
+  function ensureEmailJsLoadedAndInit() {
+    if (emailJsInitPromise) return emailJsInitPromise;
+
+    emailJsInitPromise = new Promise((resolve, reject) => {
+      const init = () => {
+        try {
+          if (!window.emailjs || typeof window.emailjs.send !== 'function') {
+            throw new Error('EmailJS SDK no disponible');
+          }
+          window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+          resolve();
+        } catch (e) {
+          reject(e);
+        }
+      };
+
+      if (window.emailjs && typeof window.emailjs.send === 'function') {
+        init();
+        return;
+      }
+
+      const existing = document.querySelector('script[data-emailjs-sdk="true"]');
+      if (existing) {
+        existing.addEventListener('load', init, { once: true });
+        existing.addEventListener('error', () => reject(new Error('No se pudo cargar EmailJS')), { once: true });
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      script.async = true;
+      script.setAttribute('data-emailjs-sdk', 'true');
+      script.onload = init;
+      script.onerror = () => reject(new Error('No se pudo cargar EmailJS'));
+      document.head.appendChild(script);
+    });
+
+    return emailJsInitPromise;
+  }
+
   // Crear el HTML del modal
   const modalHTML = `
     <div id="cotizacion-modal" class="modal-overlay" style="display:none;" role="dialog" aria-modal="true" aria-labelledby="modal-title">
@@ -15,34 +64,34 @@
           <form id="cotizacion-form" novalidate>
             <div class="form-row">
               <div class="form-group">
-                <label for="nombre_completo">Nombre Completo *</label>
-                <input type="text" id="nombre_completo" name="nombre_completo" required placeholder="Ej: Juan Pérez González" />
+                <label for="cot_nombre_completo">Nombre Completo *</label>
+                <input type="text" id="cot_nombre_completo" name="nombre_completo" required placeholder="Ej: Juan Pérez González" />
                 <span class="form-error"></span>
               </div>
 
               <div class="form-group">
-                <label for="correo">Correo Electrónico *</label>
-                <input type="email" id="correo" name="correo" required placeholder="Ej. tu@empresa.com" />
+                <label for="cot_correo">Correo Electrónico *</label>
+                <input type="email" id="cot_correo" name="correo" required placeholder="Ej. tu@empresa.com" />
                 <span class="form-error"></span>
               </div>
             </div>
 
             <div class="form-row">
               <div class="form-group">
-                <label for="telefono">Teléfono *</label>
-                <input type="tel" id="telefono" name="telefono" required placeholder="Ej. 664 123 4567" />
+                <label for="cot_telefono">Teléfono *</label>
+                <input type="tel" id="cot_telefono" name="telefono" required placeholder="Ej. 664 123 4567" />
                 <span class="form-error"></span>
               </div>
 
               <div class="form-group">
-                <label for="empresa">Empresa / Institución</label>
-                <input type="text" id="empresa" name="empresa" placeholder="Nombre de tu empresa" />
+                <label for="cot_empresa">Empresa / Institución</label>
+                <input type="text" id="cot_empresa" name="empresa" placeholder="Nombre de tu empresa" />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="tipo_producto">Tipo de Producto *</label>
-              <select id="tipo_producto" name="tipo_producto" required>
+              <label for="cot_tipo_producto">Tipo de Producto *</label>
+              <select id="cot_tipo_producto" name="tipo_producto" required>
                 <option value="">Selecciona un tipo</option>
                 <option value="Tarjetas PVC">Tarjetas PVC</option>
                 <option value="Tarjetas NFC">Tarjetas NFC</option>
@@ -54,20 +103,20 @@
 
             <div class="form-row">
               <div class="form-group">
-                <label for="cantidad">Cantidad Estimada *</label>
-                <input type="number" id="cantidad" name="cantidad" required min="1" placeholder="Ej: 100" />
+                <label for="cot_cantidad">Cantidad Estimada *</label>
+                <input type="number" id="cot_cantidad" name="cantidad" required min="1" placeholder="Ej: 100" />
                 <span class="form-error"></span>
               </div>
 
               <div class="form-group">
-                <label for="entrega">Fecha de Entrega Deseada</label>
-                <input type="date" id="entrega" name="entrega" />
+                <label for="cot_entrega">Fecha de Entrega Deseada</label>
+                <input type="date" id="cot_entrega" name="entrega" />
               </div>
             </div>
 
             <div class="form-group">
-              <label for="descripcion">Descripción del Proyecto *</label>
-              <textarea id="descripcion" name="descripcion" required rows="4" placeholder="Describe tu proyecto: materiales, acabados, colores, características especiales..."></textarea>
+              <label for="cot_descripcion">Descripción del Proyecto *</label>
+              <textarea id="cot_descripcion" name="descripcion" required rows="4" placeholder="Describe tu proyecto: materiales, acabados, colores, características especiales..."></textarea>
               <span class="form-error"></span>
             </div>
 
@@ -80,14 +129,14 @@
             </div>
           </form>
 
-          <div id="form-success" class="form-message form-success" style="display:none;">
+          <div id="cotizacion-form-success" class="form-message form-success" style="display:none;">
             <div class="success-icon">✅</div>
             <h3>¡Cotización Enviada!</h3>
             <p>Hemos recibido tu solicitud correctamente. Nuestro equipo te contactará en menos de 24 horas.</p>
             <button type="button" class="btn btn-primary modal-close-success">Cerrar</button>
           </div>
 
-          <div id="form-error" class="form-message form-error-message" style="display:none;">
+          <div id="cotizacion-form-error" class="form-message form-error-message" style="display:none;">
             <div class="error-icon">❌</div>
             <h3>Error al Enviar</h3>
             <p>Hubo un problema al enviar tu cotización. Por favor intenta nuevamente o contáctanos directamente.</p>
@@ -104,8 +153,8 @@
   const modal = document.getElementById('cotizacion-modal');
   const form = document.getElementById('cotizacion-form');
   const closeButtons = modal.querySelectorAll('.modal-close, .modal-cancel, .modal-close-success');
-  const successMessage = document.getElementById('form-success');
-  const errorMessage = document.getElementById('form-error');
+  const successMessage = modal.querySelector('#cotizacion-form-success');
+  const errorMessage = modal.querySelector('#cotizacion-form-error');
   const retryButton = modal.querySelector('.modal-retry');
 
   let currentProductInfo = null;
@@ -118,13 +167,13 @@
 
     // Si hay info del producto, pre-llenar el campo tipo_producto
     if (productInfo && productInfo.tipo) {
-      const tipoSelect = form.querySelector('#tipo_producto');
+      const tipoSelect = form.querySelector('#cot_tipo_producto');
       tipoSelect.value = productInfo.tipo;
     }
 
     // Focus en el primer campo
     setTimeout(() => {
-      form.querySelector('#nombre_completo').focus();
+      form.querySelector('#cot_nombre_completo').focus();
     }, 100);
   };
 
@@ -219,6 +268,11 @@
     });
   }
 
+  function setErrorText(text) {
+    const p = errorMessage ? errorMessage.querySelector('p') : null;
+    if (p && text) p.textContent = text;
+  }
+
   // Retry button
   retryButton.addEventListener('click', () => {
     errorMessage.style.display = 'none';
@@ -257,6 +311,9 @@
       
       // Obtener el nombre del archivo actual (ej: pvc.html, index.html)
       const currentPage = window.location.pathname.split('/').pop() || 'index.html';
+
+      const entregaISO = formData.get('entrega') ? new Date(formData.get('entrega')).toISOString() : null;
+      const entregaLocal = formData.get('entrega') ? new Date(formData.get('entrega')).toLocaleDateString('es-MX') : '';
       
       const data = {
         nombre_completo: formData.get('nombre_completo'),
@@ -266,13 +323,37 @@
         tipo_tarjeta: formData.get('tipo_producto'),
         cantidad: formData.get('cantidad') || null,
         descripcion: formData.get('descripcion'),
-        entrega: formData.get('entrega') ? new Date(formData.get('entrega')).toISOString() : null,
+        entrega: entregaISO,
         presupuesto: null
       };
 
       console.log('📤 Enviando cotización:', data);
 
-      // Enviar a Supabase
+      // 1) Enviar correo por EmailJS
+      // Variables del template:
+      // {{nombre}} {{empresa}} {{correo}} {{telefono}} {{producto}} {{cantidad}} {{entrega}} {{descripcion}} {{title}} {{name}}
+      await ensureEmailJsLoadedAndInit();
+
+      const productoNombre = (currentProductInfo && currentProductInfo.nombre) ? currentProductInfo.nombre : '';
+      const productoFinal = productoNombre || data.tipo_tarjeta || '';
+
+      const templateParams = {
+        nombre: data.nombre_completo,
+        empresa: data.empresa || '',
+        correo: data.correo,
+        telefono: data.telefono,
+        producto: productoFinal,
+        cantidad: data.cantidad || '',
+        entrega: entregaLocal,
+        descripcion: data.descripcion,
+        title: `Cotización: ${data.tipo_tarjeta || 'Producto'} (${currentPage})`,
+        name: data.nombre_completo
+      };
+
+      const emailResp = await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      console.log('✅ EmailJS enviado:', emailResp);
+
+      // 2) Enviar a Supabase
       const response = await fetch(`${SUPABASE_URL}/rest/v1/contacto_webpage`, {
         method: 'POST',
         headers: {
@@ -300,13 +381,15 @@
       if (typeof gtag !== 'undefined') {
         gtag('event', 'form_submit', {
           event_category: 'cotizacion',
-          event_label: data.tipo_producto,
+          event_label: data.tipo_tarjeta,
           value: data.cantidad
         });
       }
 
     } catch (error) {
       console.error('❌ Error al enviar cotización:', error);
+
+      setErrorText('No pudimos enviar tu cotización. Por favor intenta nuevamente o contáctanos por WhatsApp.');
       
       // Mostrar mensaje de error
       form.style.display = 'none';

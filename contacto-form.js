@@ -3,6 +3,55 @@
   const SUPABASE_URL = 'https://jdclxczkvffwwleppbbu.supabase.co';
   const SUPABASE_ANON_KEY = 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6ImpkY2x4Y3prdmZmd3dsZXBwYmJ1Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3NTIwMTc2OTcsImV4cCI6MjA2NzU5MzY5N30.ixG7x4nOLn7VkgKdjORh_tVA9M7qhUvobBQYhvbw168';
 
+  // EmailJS (GitHub Pages compatible, envío desde el navegador)
+  // Script SDK recomendado: https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js
+  const EMAILJS_PUBLIC_KEY = '5vTFdcXJ0G3y7ZaPs';
+  const EMAILJS_SERVICE_ID = 'service_y17nwsa';
+  const EMAILJS_TEMPLATE_ID = 'template_y4y0gl8';
+
+  let emailJsInitPromise = null;
+
+  function ensureEmailJsLoadedAndInit() {
+    if (emailJsInitPromise) return emailJsInitPromise;
+
+    emailJsInitPromise = new Promise((resolve, reject) => {
+      const init = () => {
+        try {
+          if (!window.emailjs || typeof window.emailjs.send !== 'function') {
+            throw new Error('EmailJS SDK no disponible');
+          }
+          window.emailjs.init({ publicKey: EMAILJS_PUBLIC_KEY });
+          resolve();
+        } catch (e) {
+          reject(e);
+        }
+      };
+
+      if (window.emailjs && typeof window.emailjs.send === 'function') {
+        init();
+        return;
+      }
+
+      const existing = document.querySelector('script[data-emailjs-sdk="true"]');
+      if (existing) {
+        existing.addEventListener('load', init, { once: true });
+        existing.addEventListener('error', () => reject(new Error('No se pudo cargar EmailJS')), { once: true });
+        return;
+      }
+
+      const script = document.createElement('script');
+      script.type = 'text/javascript';
+      script.src = 'https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js';
+      script.async = true;
+      script.setAttribute('data-emailjs-sdk', 'true');
+      script.onload = init;
+      script.onerror = () => reject(new Error('No se pudo cargar EmailJS'));
+      document.head.appendChild(script);
+    });
+
+    return emailJsInitPromise;
+  }
+
   const form = document.getElementById('contacto-form');
   const successMessage = document.getElementById('form-success');
   const errorMessage = document.getElementById('form-error');
@@ -41,6 +90,11 @@
       if (!phoneRegex.test(field.value)) {
         isValid = false;
         errorMsg = 'Introduce un teléfono válido (mín. 10 dígitos)';
+      }
+    } else if (field.type === 'number' && field.value) {
+      if (parseInt(field.value, 10) < 1) {
+        isValid = false;
+        errorMsg = 'La cantidad debe ser mayor a 0';
       }
     }
 
@@ -96,15 +150,18 @@
     // Obtener el nombre del archivo actual (ej: contacto.html)
     const currentPage = window.location.pathname.split('/').pop() || 'contacto.html';
     
+    const entregaISO = formData.get('entrega') ? new Date(formData.get('entrega')).toISOString() : null;
+    const entregaLocal = formData.get('entrega') ? new Date(formData.get('entrega')).toLocaleDateString('es-MX') : '';
+
     const data = {
       nombre_completo: formData.get('nombre_completo'),
       correo: formData.get('correo'),
       telefono: formData.get('telefono'),
       empresa: formData.get('empresa') || null,
-      tipo_tarjeta: formData.get('asunto'),
-      cantidad: null,
-      descripcion: formData.get('mensaje'),
-      entrega: null,
+      tipo_tarjeta: formData.get('tipo_producto'),
+      cantidad: formData.get('cantidad') || null,
+      descripcion: formData.get('descripcion'),
+      entrega: entregaISO,
       presupuesto: null
     };
 
@@ -118,6 +175,27 @@
     if (submitBtn) submitBtn.disabled = true;
 
     try {
+      // 1) Enviar correo por EmailJS
+      // Variables del template:
+      // {{nombre}} {{empresa}} {{correo}} {{telefono}} {{producto}} {{cantidad}} {{entrega}} {{descripcion}} {{title}} {{name}}
+      await ensureEmailJsLoadedAndInit();
+
+      const templateParams = {
+        nombre: data.nombre_completo,
+        empresa: data.empresa || '',
+        correo: data.correo,
+        telefono: data.telefono,
+        producto: data.tipo_tarjeta || '',
+        cantidad: data.cantidad || '',
+        entrega: entregaLocal,
+        descripcion: data.descripcion,
+        title: `Cotización: ${data.tipo_tarjeta || 'Producto'} (${currentPage})`,
+        name: data.nombre_completo
+      };
+
+      const emailResp = await window.emailjs.send(EMAILJS_SERVICE_ID, EMAILJS_TEMPLATE_ID, templateParams);
+      console.log('✅ EmailJS enviado (contacto):', emailResp);
+
       // Enviar a Supabase
       const response = await fetch(`${SUPABASE_URL}/rest/v1/contacto_webpage`, {
         method: 'POST',
@@ -131,9 +209,9 @@
       });
 
       if (!response.ok) {
-        const errorText = await response.text();
-        console.error('❌ Error de Supabase:', errorText);
-        throw new Error(`Error HTTP: ${response.status} - ${errorText}`);
+        const supabaseErrorText = await response.text();
+        console.error('❌ Error de Supabase:', supabaseErrorText);
+        throw new Error(`Error HTTP: ${response.status} - ${supabaseErrorText}`);
       }
 
       // Éxito
@@ -145,9 +223,10 @@
 
       // Google Analytics event (si está configurado)
       if (typeof gtag !== 'undefined') {
-        gtag('event', 'form_submission', {
-          'event_category': 'Contact',
-          'event_label': 'Contact Form'
+        gtag('event', 'form_submit', {
+          event_category: 'cotizacion',
+          event_label: data.tipo_tarjeta,
+          value: data.cantidad
         });
       }
 
@@ -159,7 +238,7 @@
       errorMessage.style.display = 'block';
       
       if (errorText) {
-        errorText.textContent = 'No pudimos enviar tu mensaje. Por favor, inténtalo de nuevo o contáctanos directamente por teléfono o WhatsApp.';
+        errorText.textContent = 'No pudimos enviar tu cotización. Por favor, inténtalo de nuevo o contáctanos directamente por teléfono o WhatsApp.';
       }
       
       // Scroll al mensaje de error
