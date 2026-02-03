@@ -346,7 +346,7 @@
         cantidad: data.cantidad || '',
         entrega: entregaLocal,
         descripcion: data.descripcion,
-        title: `Cotización: ${data.tipo_tarjeta || 'Producto'} (${currentPage})`,
+        title: `CardMax | Cotización: ${data.tipo_tarjeta || 'Producto'} (${currentPage})`,
         name: data.nombre_completo
       };
 
