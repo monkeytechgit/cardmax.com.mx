@@ -1167,6 +1167,17 @@ h1,h2,h3,h4,h5,h6{
 .small{font-size:.875rem}
 .w-100{width:100%}
 .lead{font-size:1.125rem;color:#333}
+.sr-only{
+  position:absolute;
+  width:1px;
+  height:1px;
+  padding:0;
+  margin:-1px;
+  overflow:hidden;
+  clip:rect(0,0,0,0);
+  white-space:nowrap;
+  border:0
+}
 .btn-group{display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:12px}
 
 /* Grids responsivas */
@@ -1564,12 +1575,14 @@ h1,h2,h3,h4,h5,h6{
 .product-grid-row .card .card-media {
   height: 220px;
   overflow: hidden;
+  background:#fbfbfd;
 }
 
 .product-grid-row .card .card-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  padding: 14px;
 }
 
 @media(max-width:1024px){
@@ -1613,6 +1626,22 @@ h1,h2,h3,h4,h5,h6{
   float:none;
   justify-content:flex-start;
   margin-top:8px;
+}
+
+.accessories-grid{
+  display:grid;
+  grid-template-columns:repeat(2,minmax(0,1fr));
+  gap:24px;
+}
+
+.accessory-card .product-features-list{
+  margin:0;
+}
+
+@media(max-width:768px){
+  .accessories-grid{
+    grid-template-columns:1fr;
+  }
 }
 
 /* Grid de 3 columnas para productos (sin scroll horizontal) */
