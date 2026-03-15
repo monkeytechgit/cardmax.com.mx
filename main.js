@@ -81,27 +81,30 @@
 })();
 
 (function handleProductCardNavigation(){
-  const cards = document.querySelectorAll('.card.product[data-href]');
-  if (!cards.length) return;
-
-  function isInteractiveTarget(target){
-    return Boolean(target.closest('a, button, input, select, textarea, form'));
+  function getProductCard(target){
+    if (!(target instanceof Element)) return null;
+    return target.closest('.card.product[data-href]');
   }
 
-  cards.forEach(card => {
-    const href = card.dataset.href;
+  function isInteractiveTarget(target){
+    return target instanceof Element && Boolean(target.closest('a, button, input, select, textarea, form'));
+  }
+
+  document.addEventListener('click', (event) => {
+    if (isInteractiveTarget(event.target)) return;
+    const card = getProductCard(event.target);
+    const href = card?.dataset.href;
     if (!href) return;
+    window.location.href = href;
+  });
 
-    card.addEventListener('click', (event) => {
-      if (isInteractiveTarget(event.target)) return;
-      window.location.href = href;
-    });
-
-    card.addEventListener('keydown', (event) => {
-      if (event.key !== 'Enter' && event.key !== ' ') return;
-      if (isInteractiveTarget(event.target)) return;
-      event.preventDefault();
-      window.location.href = href;
-    });
+  document.addEventListener('keydown', (event) => {
+    if (event.key !== 'Enter' && event.key !== ' ') return;
+    if (isInteractiveTarget(event.target)) return;
+    const card = getProductCard(event.target);
+    const href = card?.dataset.href;
+    if (!href) return;
+    event.preventDefault();
+    window.location.href = href;
   });
 })();
