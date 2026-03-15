@@ -1585,6 +1585,14 @@ h1,h2,h3,h4,h5,h6{
   padding: 14px;
 }
 
+.card.product .card-media img,
+.product-grid-3col .card .card-media img,
+.product-card-image{
+  object-fit: contain;
+  background:#fbfbfd;
+  padding:14px;
+}
+
 @media(max-width:1024px){
   .product-grid-row{
     grid-template-columns:repeat(2,minmax(0,1fr));
