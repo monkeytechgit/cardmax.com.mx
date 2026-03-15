@@ -79,3 +79,29 @@
     yearEl.textContent = new Date().getFullYear();
   }
 })();
+
+(function handleProductCardNavigation(){
+  const cards = document.querySelectorAll('.card.product[data-href]');
+  if (!cards.length) return;
+
+  function isInteractiveTarget(target){
+    return Boolean(target.closest('a, button, input, select, textarea, form'));
+  }
+
+  cards.forEach(card => {
+    const href = card.dataset.href;
+    if (!href) return;
+
+    card.addEventListener('click', (event) => {
+      if (isInteractiveTarget(event.target)) return;
+      window.location.href = href;
+    });
+
+    card.addEventListener('keydown', (event) => {
+      if (event.key !== 'Enter' && event.key !== ' ') return;
+      if (isInteractiveTarget(event.target)) return;
+      event.preventDefault();
+      window.location.href = href;
+    });
+  });
+})();
