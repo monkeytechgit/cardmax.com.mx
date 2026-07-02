@@ -1,0 +1,229 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
+        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1"
+        xmlns:video="http://www.google.com/schemas/sitemap-video/1.1"
+        xmlns:xhtml="http://www.w3.org/1999/xhtml">
+
+  <!-- Página principal -->
+  <url>
+    <loc>https://cardmax.com.mx/</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>1.0</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/hero-credenciales.webp</image:loc>
+      <image:title>Tarjetas PVC y NFC para empresas y corporativos</image:title>
+      <image:caption>Tarjetas PVC, credenciales y tarjetas NFC personalizadas CardMax.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/hero-tarjeta-nfc.webp</image:loc>
+      <image:title>Tarjetas de presentación digital NFC CardMax</image:title>
+      <image:caption>Tarjetas NFC para compartir contacto, redes, WhatsApp y sitio web.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/hero-tarjeta-nfc-metalica.webp</image:loc>
+      <image:title>Tarjeta NFC metálica personalizada CardMax</image:title>
+      <image:caption>Tarjetas metálicas NFC con grabado, chip NFC y código QR.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Categorías principales -->
+  <url>
+    <loc>https://cardmax.com.mx/tarjetas-pvc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjetas-pvc.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/tarjetas-pvc-personalizadas.webp</image:loc>
+      <image:title>Tarjetas PVC personalizadas</image:title>
+      <image:caption>Tarjetas PVC impresas a color por uno o ambos lados con diseño personalizado.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/credenciales-empresariales.webp</image:loc>
+      <image:title>Credenciales empresariales</image:title>
+      <image:caption>Credenciales PVC para empleados, oficinas, fábricas, eventos y control de personal.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/credenciales-escolares.webp</image:loc>
+      <image:title>Credenciales escolares</image:title>
+      <image:caption>Credenciales para alumnos, docentes y personal administrativo.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/tarjetas-chip-nfc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjetas-chip-nfc.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/tarjeta-digital-nfc.webp</image:loc>
+      <image:title>Tarjeta de presentación digital NFC</image:title>
+      <image:caption>Tarjeta NFC en PVC conectada a un perfil digital personalizado.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/tarjeta-nfc-metalica.webp</image:loc>
+      <image:title>Tarjeta NFC metálica</image:title>
+      <image:caption>Tarjeta metálica personalizada con NFC y QR.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/tarjeta-resenas-google.webp</image:loc>
+      <image:title>Tarjeta NFC para reseñas de Google</image:title>
+      <image:caption>Tarjeta NFC y QR para dirigir clientes a reseñas de Google.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/tarjetas-para-empresas.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjetas-para-empresas.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.95</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/hero-equipos.webp</image:loc>
+      <image:title>Tarjetas PVC y NFC para equipos</image:title>
+      <image:caption>Soluciones de credenciales, tarjetas NFC y tarjetas para reseñas para empresas y equipos.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Productos PVC -->
+  <url>
+    <loc>https://cardmax.com.mx/tarjeta-pvc-personalizada.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjeta-pvc-personalizada.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-principal.webp</image:loc>
+      <image:title>Tarjetas PVC personalizadas CardMax</image:title>
+      <image:caption>Tarjetas PVC con impresión personalizada para empresas, proyectos y promociones.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/credenciales-empresariales.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/credenciales-empresariales.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-credencial-empresarial-principal.webp</image:loc>
+      <image:title>Credenciales empresariales personalizadas</image:title>
+      <image:caption>Credenciales PVC para colaboradores, visitantes y personal operativo.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/credenciales-escolares.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/credenciales-escolares.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-credencial-escolar-principal.webp</image:loc>
+      <image:title>Credenciales escolares personalizadas</image:title>
+      <image:caption>Credenciales escolares PVC para alumnos, docentes y personal administrativo.</image:caption>
+    </image:image>
+  </url>
+
+  <!-- Productos NFC -->
+  <url>
+    <loc>https://cardmax.com.mx/tarjeta-presentacion-digital-nfc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjeta-presentacion-digital-nfc.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-digital-nfc-principal.webp</image:loc>
+      <image:title>Tarjeta de presentación digital NFC personalizada</image:title>
+      <image:caption>Tarjeta NFC en PVC con perfil digital para contacto, redes y enlaces.</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://cardmax.com.mx/img/productos/video-nfc-pvc-poster.webp</video:thumbnail_loc>
+      <video:title>Video de tarjeta de presentación digital NFC</video:title>
+      <video:description>Demostración visual de tarjeta NFC en PVC personalizada.</video:description>
+      <video:content_loc>https://cardmax.com.mx/vid/vid-nfc-pvc.mp4</video:content_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/tarjeta-nfc-metalica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjeta-nfc-metalica.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-nfc-metalica-principal.webp</image:loc>
+      <image:title>Tarjeta NFC metálica personalizada</image:title>
+      <image:caption>Tarjeta metálica NFC con grabado, código QR y perfil digital.</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://cardmax.com.mx/img/productos/video-nfc-metal-poster.webp</video:thumbnail_loc>
+      <video:title>Video de tarjeta NFC metálica</video:title>
+      <video:description>Demostración visual de tarjeta NFC metálica personalizada.</video:description>
+      <video:content_loc>https://cardmax.com.mx/vid/vid-nfc-metal.mp4</video:content_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/tarjeta-social-nfc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjeta-social-nfc.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-social-google-principal.webp</image:loc>
+      <image:title>Tarjeta NFC para reseñas de Google</image:title>
+      <image:caption>Tarjeta NFC y código QR para solicitar reseñas de Google a clientes.</image:caption>
+    </image:image>
+    <video:video>
+      <video:thumbnail_loc>https://cardmax.com.mx/img/productos/video-google-resenas-poster.webp</video:thumbnail_loc>
+      <video:title>Video de tarjeta NFC para reseñas de Google</video:title>
+      <video:description>Demostración visual de tarjeta NFC y QR para recibir reseñas de Google.</video:description>
+      <video:content_loc>https://cardmax.com.mx/vid/vid-google-rese%C3%B1as.mp4</video:content_loc>
+      <video:family_friendly>yes</video:family_friendly>
+    </video:video>
+  </url>
+
+  <!-- Información y confianza -->
+  <url>
+    <loc>https://cardmax.com.mx/como-funciona.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/como-funciona.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/hero-como-funciona.webp</image:loc>
+      <image:title>Cómo funciona CardMax</image:title>
+      <image:caption>Proceso de cotización, diseño, revisión, producción y envío de tarjetas CardMax.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/rese%C3%B1as.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/rese%C3%B1as.html" />
+    <lastmod>2026-07-02</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.85</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/hero-resenas.webp</image:loc>
+      <image:title>Reseñas de clientes CardMax</image:title>
+      <image:caption>Opiniones y fotografías de proyectos reales de tarjetas PVC, credenciales y tarjetas NFC.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena1.webp</image:loc>
+      <image:title>Reseña CardMax de credencial PVC para empleado</image:title>
+      <image:caption>Credencial PVC personalizada para Alexander Cosmetics.</image:caption>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena14.webp</image:loc>
+      <image:title>Reseña CardMax de tarjeta metálica NFC</image:title>
+      <image:caption>Tarjeta metálica NFC personalizada para NBG Technologies.</image:caption>
+    </image:image>
+  </url>
+
+</urlset>
