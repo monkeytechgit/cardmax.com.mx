@@ -1,0 +1,19 @@
+{
+  "redirects": [
+    {
+      "source": "/tarjetas-nfc.html",
+      "destination": "/tarjetas-chip-nfc.html",
+      "permanent": true
+    },
+    {
+      "source": "/credenciales-pvc.html",
+      "destination": "/tarjetas-pvc.html",
+      "permanent": true
+    },
+    {
+      "source": "/resenas.html",
+      "destination": "/rese%C3%B1as.html",
+      "permanent": true
+    }
+  ]
+}
