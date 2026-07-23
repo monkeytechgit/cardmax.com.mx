@@ -1,6 +1,17 @@
 {
   "redirects": [
     {
+      "source": "/:path*",
+      "has": [
+        {
+          "type": "host",
+          "value": "www.cardmax.com.mx"
+        }
+      ],
+      "destination": "https://cardmax.com.mx/:path*",
+      "permanent": true
+    },
+    {
       "source": "/tarjetas-nfc.html",
       "destination": "/tarjetas-chip-nfc.html",
       "permanent": true

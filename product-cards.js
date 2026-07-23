@@ -14,6 +14,8 @@
   const quoteProducts = [
     "Ayúdame a elegir",
     "Tarjetas PVC personalizadas",
+    "Tarjetas PVC a color personalizadas",
+    "Soluciones en PVC personalizadas",
     "Credenciales empresariales",
     "Credenciales escolares",
     "Tarjeta de presentación digital NFC personalizada",
@@ -24,6 +26,8 @@
   ];
   const pageProductMap = {
     "tarjeta-pvc-personalizada.html": "Tarjetas PVC personalizadas",
+    "tarjetas-pvc-color.html": "Tarjetas PVC a color personalizadas",
+    "pvc.html": "Soluciones en PVC personalizadas",
     "credenciales-empresariales.html": "Credenciales empresariales",
     "credenciales-escolares.html": "Credenciales escolares",
     "tarjeta-presentacion-digital-nfc.html": "Tarjeta de presentación digital NFC personalizada",
@@ -36,6 +40,10 @@
   const whatsappPageMessages = {
     "tarjeta-pvc-personalizada.html":
       "Hola CardMax, me interesa recibir una cotización de tarjetas PVC personalizadas.",
+    "tarjetas-pvc-color.html":
+      "Hola CardMax, me interesa recibir una cotización de tarjetas PVC a color personalizadas.",
+    "pvc.html":
+      "Hola CardMax, me interesa recibir una cotización de soluciones en PVC personalizadas.",
     "credenciales-empresariales.html":
       "Hola CardMax, me interesa recibir una cotización de credenciales empresariales.",
     "credenciales-escolares.html":

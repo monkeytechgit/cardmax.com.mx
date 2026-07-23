@@ -2209,6 +2209,10 @@ section[id],
   background: #111116;
 }
 
+.gallery-stage video.gallery-image {
+  object-fit: contain;
+}
+
 #gallery-1:checked ~ .gallery-stage .gallery-image-1,
 #gallery-2:checked ~ .gallery-stage .gallery-image-2,
 #gallery-3:checked ~ .gallery-stage .gallery-image-3,
@@ -2228,7 +2232,9 @@ section[id],
 }
 
 .gallery-thumbnails label {
+  display: block;
   overflow: hidden;
+  aspect-ratio: 1 / 1;
   cursor: pointer;
   border: 2px solid transparent;
   border-radius: 13px;
@@ -2244,13 +2250,13 @@ section[id],
 
 .gallery-thumbnails img,
 .gallery-thumbnails video {
+  display: block;
   width: 100%;
-  aspect-ratio: 1 / 1;
+  height: 100%;
   object-fit: cover;
 }
 
 .gallery-thumbnails video {
-  display: block;
   pointer-events: none;
 }
 
