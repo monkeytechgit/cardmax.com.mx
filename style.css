@@ -303,7 +303,8 @@ background: rgba(255, 255, 255, 0.96);
 
 #hero-slide-1:checked ~ .hero-slides .hero-slide-1,
 #hero-slide-2:checked ~ .hero-slides .hero-slide-2,
-#hero-slide-3:checked ~ .hero-slides .hero-slide-3 {
+#hero-slide-3:checked ~ .hero-slides .hero-slide-3,
+#hero-slide-4:checked ~ .hero-slides .hero-slide-4 {
   position: relative;
   opacity: 1;
   pointer-events: auto;
@@ -414,6 +415,17 @@ background: rgba(255, 255, 255, 0.96);
   background: #ececef;
 }
 
+.hero-media-light {
+  position: relative;
+  background: var(--white);
+}
+
+/* La imagen vertical se ajusta a la altura del slide sin estirarlo */
+.hero-media-light img {
+  position: absolute;
+  inset: 0;
+}
+
 .hero-media img {
   width: 100%;
   height: 100%;
@@ -435,7 +447,8 @@ background: rgba(255, 255, 255, 0.96);
 
 #hero-slide-1:checked ~ .hero-arrows .hero-arrow-pair-1,
 #hero-slide-2:checked ~ .hero-arrows .hero-arrow-pair-2,
-#hero-slide-3:checked ~ .hero-arrows .hero-arrow-pair-3 {
+#hero-slide-3:checked ~ .hero-arrows .hero-arrow-pair-3,
+#hero-slide-4:checked ~ .hero-arrows .hero-arrow-pair-4 {
   display: block;
 }
 
@@ -581,11 +594,6 @@ background: rgba(255, 255, 255, 0.96);
   grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
-.product-image-contain {
-  object-fit: contain;
-  background: var(--white);
-}
-
 .taploop-section {
   background: linear-gradient(180deg, #fffafb 0%, #ffffff 100%);
 }
@@ -631,9 +639,9 @@ background: rgba(255, 255, 255, 0.96);
 .product-image {
   width: 100%;
   height: 270px;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  background: var(--brand-soft);
+  background: var(--white);
 }
 
 .product-copy {
@@ -1039,12 +1047,13 @@ background: rgba(255, 255, 255, 0.96);
 
 .review-item > img {
   width: 100%;
-  height: 220px;
-  object-fit: cover;
+  height: 300px;
+  object-fit: contain;
+  background: #f7f7f9;
 }
 
 .review-case-card > img {
-  height: 205px;
+  height: 280px;
 }
 
 .review-item-copy {
@@ -2223,9 +2232,9 @@ section[id],
   display: none;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   object-position: center;
-  background: #111116;
+  background: #f7f7f9;
 }
 
 .gallery-stage video.gallery-image {
@@ -2273,7 +2282,8 @@ section[id],
   display: block;
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--white);
 }
 
 .gallery-thumbnails video {
@@ -2672,7 +2682,8 @@ section[id],
 .related-product-card img {
   width: 100%;
   height: 290px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--white);
 }
 
 .related-product-card > div {
@@ -2812,7 +2823,7 @@ section[id],
 .product-final-cta-media img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
 }
 
 .product-final-cta-inner > div:last-child {
@@ -2865,11 +2876,6 @@ section[id],
 }
 
 /* TapLoop */
-.product-taploop .gallery-stage img.gallery-image {
-  object-fit: contain;
-  background: var(--white);
-}
-
 .gallery-stage iframe.gallery-image {
   border: 0;
   background: #000000;
@@ -2976,6 +2982,27 @@ section[id],
   color: var(--black);
 }
 
+.taploop-official-link {
+  display: inline-flex;
+  margin-top: 14px;
+  align-items: center;
+  gap: 7px;
+  color: var(--muted);
+  font-size: 0.8rem;
+  font-weight: 600;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+  transition: color 160ms ease;
+}
+
+.taploop-official-link:hover {
+  color: var(--brand);
+}
+
+.taploop-official-link i {
+  font-size: 0.72rem;
+}
+
 .taploop-steps-section {
   background: var(--brand-pale);
 }
@@ -2998,7 +3025,8 @@ section[id],
 .taploop-step img {
   width: 100%;
   height: 210px;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--white);
 }
 
 .taploop-step-copy {
@@ -3033,40 +3061,48 @@ section[id],
   margin-top: 18px;
 }
 
-.taploop-guide {
+.taploop-tutorial-section {
+  background: var(--white);
+}
+
+.taploop-tutorial {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+}
+
+.taploop-tutorial h2 {
+  max-width: 720px;
+  margin-bottom: 26px;
+  color: var(--black);
+  font-size: clamp(2.2rem, 4.6vw, 3.8rem);
+  line-height: 1.05;
+}
+
+.taploop-tutorial-button {
+  min-height: 56px;
+  padding-inline: 34px;
+  border-radius: 999px;
+  box-shadow: 0 14px 30px rgba(233, 22, 79, 0.22);
+}
+
+.taploop-video {
+  width: 100%;
+  max-width: 980px;
   margin-top: 36px;
-  padding: 24px 28px;
-  flex-wrap: wrap;
-  align-items: center;
-  justify-content: space-between;
-  gap: 18px;
-  border-radius: 20px;
-  color: var(--white);
-  background: var(--black);
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  border-radius: 22px;
+  background: #000000;
+  box-shadow: 0 24px 60px rgba(25, 20, 22, 0.16);
 }
 
-.taploop-guide > div {
-  display: flex;
-  align-items: center;
-  gap: 16px;
-}
-
-.taploop-guide > div > i {
-  color: var(--brand);
-  font-size: 2.4rem;
-}
-
-.taploop-guide h3 {
-  margin-bottom: 4px;
-  color: var(--white);
-  font-size: 1.15rem;
-}
-
-.taploop-guide p {
-  margin: 0;
-  color: #c9c9cf;
-  font-size: 0.86rem;
+.taploop-video iframe {
+  display: block;
+  width: 100%;
+  height: 100%;
+  border: 0;
 }
 
 @media (max-width: 1080px) {
@@ -3080,8 +3116,12 @@ section[id],
     grid-template-columns: 1fr;
   }
 
-  .taploop-guide .primary-button {
+  .taploop-tutorial-button {
     width: 100%;
+  }
+
+  .taploop-video {
+    border-radius: 14px;
   }
 }
 

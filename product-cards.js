@@ -190,17 +190,23 @@
   let quoteIsLoading = false;
   let lastFocusedElement = null;
 
-  const getCurrentPageProduct = () => {
-    const pageName = window.location.pathname.split("/").pop() || "index.html";
+  // Funciona con URLs con o sin ".html" (el hosting sirve ambas)
+  const getCurrentPageName = () => {
+    let pageName = window.location.pathname.replace(/\/+$/, "").split("/").pop() || "index";
 
-    return pageProductMap[pageName] || "Ayúdame a elegir";
+    try {
+      pageName = decodeURIComponent(pageName);
+    } catch (error) {
+      // Se conserva el nombre sin decodificar
+    }
+
+    return pageName.toLowerCase().endsWith(".html") ? pageName : `${pageName}.html`;
   };
 
-  const getCurrentWhatsappMessage = () => {
-    const pageName = window.location.pathname.split("/").pop() || "index.html";
+  const getCurrentPageProduct = () => pageProductMap[getCurrentPageName()] || "Ayúdame a elegir";
 
-    return whatsappPageMessages[pageName] || defaultWhatsappMessage;
-  };
+  const getCurrentWhatsappMessage = () =>
+    whatsappPageMessages[getCurrentPageName()] || defaultWhatsappMessage;
 
   document.querySelectorAll('a[href*="wa.me/526643053834"]').forEach((link) => {
     link.href = `https://wa.me/526643053834?text=${encodeURIComponent(getCurrentWhatsappMessage())}`;
@@ -233,7 +239,7 @@
     }
   };
 
-  document.querySelectorAll('a[href="#cotizacion"]').forEach((trigger) => {
+  document.querySelectorAll('a[href="#cotizacion"], a[href^="mailto:"]').forEach((trigger) => {
     const href = trigger.getAttribute("href") || "";
     const label = trigger.textContent.toLowerCase();
     const isQuoteTrigger =
