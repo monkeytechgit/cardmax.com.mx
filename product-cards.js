@@ -18,8 +18,10 @@
     "Soluciones en PVC personalizadas",
     "Credenciales empresariales",
     "Credenciales escolares",
-    "Tarjeta de presentación digital NFC personalizada",
-    "Tarjeta de presentación NFC metálica",
+    "Tarjeta NFC personalizable",
+    "Tarjeta NFC metálica personalizable",
+    "Tarjeta de presentación digital TapLoop PVC",
+    "Tarjeta de presentación digital TapLoop metálica",
     "Tarjeta NFC para recibir reseñas de Google",
     "Tarjetas con chip NFC",
     "Tarjetas PVC para empresas, escuelas y proyectos",
@@ -30,8 +32,11 @@
     "pvc.html": "Soluciones en PVC personalizadas",
     "credenciales-empresariales.html": "Credenciales empresariales",
     "credenciales-escolares.html": "Credenciales escolares",
-    "tarjeta-presentacion-digital-nfc.html": "Tarjeta de presentación digital NFC personalizada",
-    "tarjeta-nfc-metalica.html": "Tarjeta de presentación NFC metálica",
+    "tarjeta-presentacion-digital-nfc.html": "Tarjeta NFC personalizable",
+    "tarjeta-nfc-metalica.html": "Tarjeta NFC metálica personalizable",
+    "tarjeta-presentacion-digital-taploop-pvc.html": "Tarjeta de presentación digital TapLoop PVC",
+    "tarjeta-presentacion-digital-taploop-metalica.html":
+      "Tarjeta de presentación digital TapLoop metálica",
     "tarjeta-social-nfc.html": "Tarjeta NFC para recibir reseñas de Google",
     "tarjetas-chip-nfc.html": "Tarjetas con chip NFC",
     "tarjetas-pvc.html": "Tarjetas PVC personalizadas",
@@ -49,9 +54,13 @@
     "credenciales-escolares.html":
       "Hola CardMax, me interesa recibir una cotización de credenciales escolares.",
     "tarjeta-presentacion-digital-nfc.html":
-      "Hola CardMax, me interesa recibir una cotización de tarjetas de presentación digital NFC.",
+      "Hola CardMax, me interesa recibir una cotización de tarjetas NFC personalizables.",
     "tarjeta-nfc-metalica.html":
-      "Hola CardMax, me interesa recibir una cotización de tarjetas de presentación NFC metálicas.",
+      "Hola CardMax, me interesa recibir una cotización de tarjetas NFC metálicas personalizables.",
+    "tarjeta-presentacion-digital-taploop-pvc.html":
+      "Hola CardMax, me interesa recibir una cotización de tarjetas de presentación digital TapLoop PVC.",
+    "tarjeta-presentacion-digital-taploop-metalica.html":
+      "Hola CardMax, me interesa recibir una cotización de tarjetas de presentación digital TapLoop metálicas.",
     "tarjeta-social-nfc.html":
       "Hola CardMax, me interesa recibir una cotización de tarjetas NFC para reseñas de Google.",
     "tarjetas-chip-nfc.html":

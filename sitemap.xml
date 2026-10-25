@@ -164,6 +164,33 @@
     </image:image>
   </url>
 
+  <!-- Productos TapLoop -->
+  <url>
+    <loc>https://cardmax.com.mx/tarjeta-presentacion-digital-taploop-pvc.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjeta-presentacion-digital-taploop-pvc.html" />
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/taploop/producto1pvc.webp</image:loc>
+      <image:title>Tarjeta de presentación digital TapLoop PVC</image:title>
+      <image:caption>Tarjeta PVC con NFC, QR y perfil digital TapLoop editable.</image:caption>
+    </image:image>
+  </url>
+
+  <url>
+    <loc>https://cardmax.com.mx/tarjeta-presentacion-digital-taploop-metalica.html</loc>
+    <xhtml:link rel="alternate" hreflang="es-mx" href="https://cardmax.com.mx/tarjeta-presentacion-digital-taploop-metalica.html" />
+    <lastmod>2026-10-25</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.9</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/taploop/producto1metal.webp</image:loc>
+      <image:title>Tarjeta de presentación digital TapLoop metálica</image:title>
+      <image:caption>Tarjeta metálica con NFC, QR y perfil digital TapLoop editable.</image:caption>
+    </image:image>
+  </url>
+
   <!-- Productos NFC -->
   <url>
     <loc>https://cardmax.com.mx/tarjeta-presentacion-digital-nfc.html</loc>
@@ -173,12 +200,12 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-digital-nfc-principal.webp</image:loc>
-      <image:title>Tarjeta de presentación digital NFC personalizada</image:title>
+      <image:title>Tarjeta NFC personalizable</image:title>
       <image:caption>Tarjeta NFC en PVC con perfil digital para contacto, redes y enlaces.</image:caption>
     </image:image>
     <video:video>
       <video:thumbnail_loc>https://cardmax.com.mx/img/productos/video-nfc-pvc-poster.webp</video:thumbnail_loc>
-      <video:title>Video de tarjeta de presentación digital NFC</video:title>
+      <video:title>Video de tarjeta NFC personalizable</video:title>
       <video:description>Demostración visual de tarjeta NFC en PVC personalizada.</video:description>
       <video:content_loc>https://cardmax.com.mx/vid/vid-nfc-pvc.mp4</video:content_loc>
       <video:family_friendly>yes</video:family_friendly>
@@ -193,7 +220,7 @@
     <priority>0.9</priority>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-nfc-metalica-principal.webp</image:loc>
-      <image:title>Tarjeta NFC metálica personalizada</image:title>
+      <image:title>Tarjeta NFC metálica personalizable</image:title>
       <image:caption>Tarjeta metálica NFC con grabado, código QR y perfil digital.</image:caption>
     </image:image>
     <video:video>
