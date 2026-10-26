@@ -111,6 +111,21 @@
       });
     });
 
+  // Video con portada: el reproductor de YouTube se carga solo al dar clic
+  document.querySelectorAll(".taploop-video-facade[data-youtube-id]").forEach((facade) => {
+    facade.addEventListener("click", () => {
+      const iframe = document.createElement("iframe");
+
+      iframe.src = `https://www.youtube-nocookie.com/embed/${facade.dataset.youtubeId}?autoplay=1&rel=0`;
+      iframe.title = facade.dataset.youtubeTitle || "Video de YouTube";
+      iframe.allow =
+        "accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share";
+      iframe.referrerPolicy = "strict-origin-when-cross-origin";
+      iframe.allowFullscreen = true;
+      facade.replaceWith(iframe);
+    });
+  });
+
   const buildQuoteModal = () => {
     const productOptions = quoteProducts
       .map((product) => `<option value="${escapeHtml(product)}">${escapeHtml(product)}</option>`)
