@@ -2164,30 +2164,11 @@ section[id],
   scroll-margin-top: 118px;
 }
 
-/* Variantes de fondo según la familia del producto */
-.product-family-pvc .product-detail-hero {
-  background:
-    radial-gradient(circle at 8% 8%, rgba(233, 22, 79, 0.11), transparent 25%),
-    linear-gradient(180deg, #ffffff 0%, #fffafb 100%);
-}
-
-.product-family-nfc .product-detail-hero,
-.product-family-social .product-detail-hero {
-  background:
-    radial-gradient(circle at 92% 10%, rgba(233, 22, 79, 0.12), transparent 27%),
-    linear-gradient(180deg, #ffffff 0%, #fffafb 100%);
-}
-
-.product-family-metal .product-detail-hero {
-  background:
-    radial-gradient(circle at 92% 8%, rgba(233, 22, 79, 0.10), transparent 25%),
-    linear-gradient(180deg, #ffffff 0%, #f7f7f9 100%);
-}
-
 /* Encabezado del producto */
 .product-detail-hero {
   position: relative;
-  padding-block: 86px 104px;
+  padding-block: 36px 88px;
+  background: var(--white);
 }
 
 .product-detail-grid {
@@ -2199,7 +2180,7 @@ section[id],
 
 .product-gallery {
   position: sticky;
-  top: 140px;
+  top: 100px;
   min-width: 0;
 }
 
@@ -2211,7 +2192,7 @@ section[id],
 
 .gallery-stage {
   position: relative;
-  min-height: 590px;
+  min-height: 540px;
   overflow: hidden;
   border: 1px solid rgba(233, 233, 237, 0.9);
   border-radius: 28px;
@@ -2320,54 +2301,89 @@ section[id],
 
 .product-detail-info {
   min-width: 0;
-  padding-top: 10px;
+  padding-top: 4px;
 }
 
 .product-kicker {
-  margin-bottom: 12px;
+  display: inline-block;
+  margin-bottom: 8px;
   color: var(--brand);
-  font-size: 0.83rem;
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-size: 0.98rem;
   font-weight: 700;
 }
 
 .product-detail-info h1 {
   max-width: 720px;
-  margin-bottom: 20px;
+  margin-bottom: 14px;
   color: var(--black);
-  font-size: clamp(2.45rem, 3.9vw, 3.75rem);
+  font-size: clamp(2.1rem, 3.3vw, 3.15rem);
   line-height: 1.04;
 }
 
-.product-family-metal .product-detail-info h1 {
-  max-width: 760px;
+.h1-accent {
+  color: var(--brand);
+  background: var(--brand-gradient);
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
 }
 
 .product-lead {
   max-width: 660px;
-  margin-bottom: 24px;
+  margin-bottom: 14px;
   color: #393940;
-  font-size: 1rem;
-  line-height: 1.65;
+  font-size: 0.98rem;
+  line-height: 1.55;
 }
 
-.product-stat {
+.product-rating {
   display: flex;
-  margin-bottom: 24px;
+  margin-bottom: 18px;
+  flex-wrap: wrap;
   align-items: center;
-  gap: 10px;
-  color: #25252a;
-  font-size: 0.88rem;
+  gap: 4px 12px;
+  color: var(--muted);
+  font-size: 0.86rem;
+  font-weight: 600;
 }
 
-.product-stat i {
-  color: var(--brand);
+.product-rating-stars {
+  color: #f5a623;
+  font-size: 1.05rem;
+  letter-spacing: 0.06em;
+}
+
+.product-rating strong {
+  color: var(--black);
+  font-size: 1.05rem;
+}
+
+.product-quote {
+  margin-bottom: 14px;
+}
+
+.product-quote h2 {
+  margin-bottom: 2px;
+  color: var(--black);
+  font-size: 1.35rem;
+  line-height: 1.2;
+}
+
+.product-quote p {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
 }
 
 .product-feature-list {
   display: grid;
-  margin: 0 0 28px;
+  margin: 0 0 20px;
   padding: 0;
-  gap: 14px;
+  gap: 10px;
   list-style: none;
 }
 
@@ -2376,14 +2392,14 @@ section[id],
   align-items: center;
   gap: 12px;
   color: #313137;
-  font-size: 0.87rem;
+  font-size: 0.92rem;
 }
 
 .product-feature-list li i {
   display: grid;
-  width: 36px;
-  height: 36px;
-  flex: 0 0 36px;
+  width: 34px;
+  height: 34px;
+  flex: 0 0 34px;
   place-content: center;
   border-radius: 50%;
   color: var(--brand);
@@ -2392,7 +2408,7 @@ section[id],
 
 .product-actions {
   display: flex;
-  margin-bottom: 30px;
+  margin-bottom: 26px;
   flex-wrap: wrap;
   gap: 12px;
 }
@@ -2403,6 +2419,53 @@ section[id],
 
 .product-primary-cta {
   box-shadow: 0 14px 30px rgba(233, 22, 79, 0.22);
+}
+
+/* Pantallas de poca altura: el panel se compacta para que los botones queden visibles sin scroll */
+@media (min-width: 1081px) and (max-height: 920px) {
+  .product-detail-hero {
+    padding-top: 24px;
+  }
+
+  .product-detail-info h1 {
+    font-size: clamp(2rem, 2.8vw, 2.6rem);
+  }
+
+  .product-lead {
+    font-size: 0.94rem;
+  }
+
+  .product-rating {
+    margin-bottom: 14px;
+  }
+
+  .product-feature-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 10px 16px;
+  }
+
+  .gallery-stage {
+    min-height: 480px;
+  }
+}
+
+.dark-button {
+  display: inline-flex;
+  min-height: 48px;
+  align-items: center;
+  justify-content: center;
+  gap: 9px;
+  padding: 12px 20px;
+  border-radius: 9px;
+  color: var(--white);
+  background: var(--black);
+  font-size: 0.84rem;
+  font-weight: 700;
+  transition: transform 170ms ease;
+}
+
+.dark-button:hover {
+  transform: translateY(-2px);
 }
 
 .soft-button,
@@ -2872,44 +2935,6 @@ section[id],
 .gallery-stage iframe.gallery-image {
   border: 0;
   background: #000000;
-}
-
-.taploop-rating {
-  display: flex;
-  margin-bottom: 24px;
-  flex-wrap: wrap;
-  align-items: center;
-  gap: 6px 10px;
-  color: var(--muted);
-  font-size: 0.84rem;
-}
-
-.taploop-rating strong {
-  color: var(--black);
-}
-
-.taploop-quote-box {
-  margin-bottom: 26px;
-  padding: 22px 24px 4px;
-  border: 1px solid var(--line);
-  border-radius: 18px;
-  background: var(--white);
-}
-
-.taploop-quote-box > p {
-  margin-bottom: 18px;
-  color: #393940;
-  font-size: 0.92rem;
-}
-
-.taploop-quote-box > p strong {
-  display: block;
-  color: var(--black);
-  font-size: 1.15rem;
-}
-
-.taploop-quote-box .product-feature-list {
-  margin-bottom: 20px;
 }
 
 .taploop-includes {
@@ -3571,6 +3596,21 @@ body.quote-modal-open {
   }
 }
 
+/* Fondo blanco en todas las secciones de contenido (el hero y la franja final de cotización conservan el rojo de marca). */
+main .section,
+main .catalog-start,
+main .process-page-start,
+main .reviews-page-start,
+main .product-detail-hero,
+main .product-final-cta {
+  background: var(--white);
+}
+
+.product-benefits-section::before,
+.product-benefits-section::after {
+  display: none;
+}
+
 /* Acabado sin sombras en todos los componentes. */
 *,
 *::before,
@@ -3589,4 +3629,543 @@ body.quote-modal-open {
 
 .quote-loading-spinner {
   border-radius: 50% !important;
+}
+
+/* ==========================================================================
+   Desarrollo Web: submenú del navbar y páginas de servicios web
+   ========================================================================== */
+.desktop-nav {
+  gap: 22px;
+}
+
+.nav-dropdown {
+  position: relative;
+  display: flex;
+  align-items: center;
+}
+
+.desktop-nav .nav-dropdown-toggle {
+  display: inline-flex;
+  align-items: center;
+  gap: 5px;
+}
+
+.desktop-nav .nav-dropdown-toggle .fa {
+  font-size: 0.9rem;
+  transition: transform 170ms ease;
+}
+
+.desktop-nav .nav-dropdown-toggle.is-active {
+  color: var(--brand);
+}
+
+.desktop-nav .nav-dropdown-toggle.is-active::after {
+  position: absolute;
+  right: 0;
+  bottom: -13px;
+  left: 0;
+  height: 2px;
+  border-radius: 999px;
+  background: var(--brand-gradient);
+  content: "";
+}
+
+.nav-submenu {
+  position: absolute;
+  top: calc(100% + 22px);
+  left: 50%;
+  z-index: 120;
+  display: grid;
+  width: 360px;
+  padding: 10px;
+  gap: 2px;
+  border: 1px solid var(--line);
+  border-radius: 18px;
+  background: var(--white);
+  opacity: 0;
+  visibility: hidden;
+  transform: translate(-50%, 8px);
+  transition:
+    opacity 160ms ease,
+    transform 160ms ease,
+    visibility 160ms;
+}
+
+/* Puente invisible para que el hover no se pierda entre el enlace y el submenú. */
+.nav-submenu::before {
+  position: absolute;
+  top: -24px;
+  right: 0;
+  left: 0;
+  height: 24px;
+  content: "";
+}
+
+.nav-dropdown:hover .nav-submenu,
+.nav-dropdown:focus-within .nav-submenu {
+  opacity: 1;
+  visibility: visible;
+  transform: translate(-50%, 0);
+}
+
+.nav-dropdown:hover .nav-dropdown-toggle .fa,
+.nav-dropdown:focus-within .nav-dropdown-toggle .fa {
+  transform: rotate(180deg);
+}
+
+.desktop-nav .nav-submenu > a {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px 12px;
+  border-radius: 12px;
+  color: var(--black);
+  transition: background 150ms ease;
+}
+
+.desktop-nav .nav-submenu > a::after {
+  content: none !important;
+}
+
+.desktop-nav .nav-submenu > a:hover,
+.desktop-nav .nav-submenu > a:focus-visible,
+.desktop-nav .nav-submenu > a[aria-current="page"] {
+  color: var(--black);
+  background: var(--brand-pale);
+}
+
+.nav-submenu > a > i {
+  display: grid;
+  width: 36px;
+  height: 36px;
+  flex: 0 0 36px;
+  place-content: center;
+  border-radius: 10px;
+  color: var(--brand);
+  background: var(--brand-soft);
+  font-size: 0.95rem;
+}
+
+.nav-submenu strong,
+.nav-submenu small {
+  display: block;
+}
+
+.nav-submenu strong {
+  font-size: 0.8rem;
+  font-weight: 700;
+}
+
+.nav-submenu small {
+  margin-top: 1px;
+  color: var(--muted);
+  font-size: 0.7rem;
+  font-weight: 500;
+}
+
+.nav-submenu-note {
+  margin: 6px 0 0;
+  padding: 10px 12px 4px;
+  border-top: 1px solid var(--line);
+  font-size: 0.7rem;
+}
+
+.desktop-nav .nav-submenu-note a {
+  color: var(--brand);
+  font-size: inherit;
+  font-weight: 700;
+}
+
+/* Submenú en el menú móvil */
+.mobile-menu nav {
+  max-height: calc(100vh - 96px);
+  overflow-y: auto;
+}
+
+.mobile-menu .mobile-submenu summary {
+  display: flex;
+  width: auto;
+  height: auto;
+  align-items: center;
+  justify-content: space-between;
+  border: 0;
+  border-radius: 0;
+  font-size: 0.88rem;
+  font-weight: 600;
+}
+
+.mobile-menu .mobile-submenu summary.is-active {
+  color: var(--brand);
+}
+
+.mobile-submenu[open] summary .fa {
+  transform: rotate(180deg);
+}
+
+.mobile-submenu-links {
+  display: grid;
+  margin-top: 10px;
+  padding: 6px 0 6px 12px;
+  gap: 10px;
+  border-left: 2px solid var(--brand-soft);
+}
+
+.mobile-submenu-links a {
+  font-size: 0.82rem;
+  font-weight: 500;
+}
+
+.mobile-submenu-links a .fa {
+  width: 18px;
+  color: var(--brand);
+}
+
+.mobile-submenu-links a[aria-current="page"] {
+  color: var(--brand);
+  font-weight: 700;
+}
+
+/* Hero web */
+.business-hero-copy > p.web-partner-badge {
+  display: inline-flex;
+  margin: 26px 0 0;
+  align-items: center;
+  gap: 8px;
+  color: rgba(255, 255, 255, 0.9);
+  font-size: 0.76rem;
+  font-weight: 600;
+}
+
+.web-partner-badge a {
+  color: var(--white);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.page-web .business-hero-media {
+  background: #ffe3ea;
+}
+
+/* Migas de pan */
+.web-breadcrumbs ol {
+  display: flex;
+  margin: 0;
+  padding: 18px 0 0;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+  color: var(--muted);
+  font-size: 0.74rem;
+}
+
+.web-breadcrumbs li + li::before {
+  margin-right: 6px;
+  color: #c3c3ca;
+  content: "/";
+}
+
+.web-breadcrumbs a:hover {
+  color: var(--brand);
+}
+
+.web-breadcrumbs li[aria-current="page"] {
+  color: var(--black);
+  font-weight: 600;
+}
+
+/* Tarjetas de servicio */
+.web-service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.web-service-card {
+  display: flex;
+  flex-direction: column;
+  padding: 28px;
+  border: 1px solid var(--line);
+  border-radius: 22px;
+  background: var(--white);
+  transition:
+    border-color 170ms ease,
+    transform 170ms ease;
+  scroll-margin-top: 118px;
+}
+
+.web-service-card:hover,
+.web-service-card:target {
+  border-color: rgba(233, 22, 79, 0.4);
+  transform: translateY(-4px);
+}
+
+.web-service-icon {
+  display: grid;
+  width: 54px;
+  height: 54px;
+  margin-bottom: 18px;
+  place-content: center;
+  border-radius: 16px;
+  color: var(--white);
+  background: var(--brand-gradient);
+  font-size: 1.3rem;
+}
+
+.web-service-card h3 {
+  margin-bottom: 10px;
+  color: var(--black);
+  font-size: 1.25rem;
+}
+
+.web-service-card p {
+  margin-bottom: 16px;
+  font-size: 0.84rem;
+}
+
+.web-service-card ul,
+.web-plan ul {
+  display: grid;
+  margin: 0 0 20px;
+  padding: 0;
+  gap: 8px;
+  list-style: none;
+  font-size: 0.8rem;
+}
+
+.web-service-card li .fa,
+.web-plan li .fa {
+  margin-right: 6px;
+  color: var(--brand);
+}
+
+.web-service-card .text-link {
+  margin-top: auto;
+  color: var(--brand);
+  font-size: 0.82rem;
+  font-weight: 700;
+}
+
+/* Paquetes */
+.web-plans {
+  display: grid;
+  align-items: stretch;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 22px;
+}
+
+.web-plan {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  padding: 32px 28px;
+  border: 1px solid var(--line);
+  border-radius: 24px;
+  background: var(--white);
+}
+
+.web-plan-featured {
+  border: 2px solid var(--brand);
+  background: var(--brand-pale);
+}
+
+.web-plan-tag {
+  align-self: flex-start;
+  margin-bottom: 12px;
+  padding: 5px 10px;
+  border-radius: 6px;
+  color: var(--brand);
+  background: var(--brand-soft);
+  font-size: 0.68rem;
+  font-weight: 700;
+}
+
+.web-plan-featured .web-plan-tag {
+  color: var(--white);
+  background: var(--brand-gradient);
+}
+
+.web-plan h3 {
+  margin-bottom: 8px;
+  color: var(--black);
+  font-size: 1.45rem;
+}
+
+.web-plan-price {
+  margin-bottom: 6px;
+  color: var(--brand);
+  font-size: 2.2rem;
+  font-weight: 800;
+  letter-spacing: -0.03em;
+}
+
+.web-plan-price small {
+  color: var(--muted);
+  font-size: 0.78rem;
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+.web-plan-time {
+  margin-bottom: 20px;
+  font-size: 0.8rem;
+  font-weight: 600;
+}
+
+.web-plan .primary-button {
+  width: 100%;
+  margin-top: auto;
+}
+
+.web-plans-note {
+  max-width: 760px;
+  margin: 26px auto 0;
+  font-size: 0.78rem;
+  text-align: center;
+}
+
+/* Proceso de 5 pasos */
+.business-volume-list.web-steps {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+}
+
+.web-steps strong {
+  display: block;
+  margin-bottom: 6px;
+  color: var(--black);
+  font-size: 1rem;
+}
+
+.web-steps p {
+  font-weight: 500 !important;
+}
+
+/* Colaboración con Top Web Digital */
+.web-partner-section {
+  color: var(--white);
+  background: var(--black);
+}
+
+.web-partner {
+  display: grid;
+  align-items: center;
+  grid-template-columns: 1.1fr 0.9fr;
+  gap: clamp(32px, 6vw, 72px);
+}
+
+.web-partner h2 {
+  margin-bottom: 14px;
+  color: var(--white);
+  font-size: clamp(2rem, 3.4vw, 3rem);
+}
+
+.web-partner p:not(.section-kicker) {
+  margin-bottom: 0;
+  color: #c9c9d0;
+}
+
+.web-partner p a {
+  color: var(--white);
+  font-weight: 700;
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+.web-partner-points {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 14px;
+  list-style: none;
+}
+
+.web-partner-points li {
+  padding: 22px;
+  border: 1px solid #2f2f35;
+  border-radius: 18px;
+}
+
+.web-partner-points strong {
+  display: block;
+  color: #ff4f6d;
+  font-size: 2rem;
+  font-weight: 800;
+  line-height: 1.1;
+}
+
+.web-partner-points span {
+  color: #c9c9d0;
+  font-size: 0.78rem;
+}
+
+/* Garantías y tecnologías */
+.web-guarantee-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.web-tech-list {
+  display: flex;
+  margin: 0;
+  padding: 0;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 12px;
+  list-style: none;
+}
+
+.web-tech-list li {
+  padding: 12px 20px;
+  border: 1px solid var(--line);
+  border-radius: 999px;
+  color: var(--black);
+  font-size: 0.84rem;
+  font-weight: 600;
+}
+
+@media (max-width: 1240px) and (min-width: 1121px) {
+  .desktop-nav {
+    gap: 16px;
+  }
+
+  .desktop-nav a {
+    font-size: 0.78rem;
+  }
+}
+
+@media (max-width: 1120px) {
+  .web-service-grid,
+  .web-plans {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .business-volume-list.web-steps {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .web-guarantee-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .web-partner {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 850px) {
+  .business-hero-copy > p.web-partner-badge {
+    justify-content: center;
+  }
+}
+
+@media (max-width: 620px) {
+  .web-service-grid,
+  .web-plans,
+  .business-volume-list.web-steps,
+  .web-guarantee-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .business-hero-copy > p.web-partner-badge {
+    flex-wrap: wrap;
+  }
 }

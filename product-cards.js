@@ -11,8 +11,8 @@
     templateId: "template_y4y0gl8",
     publicKey: "5vTFdcXJ0G3y7ZaPs",
   };
+  const quoteHelpOption = "Ayúdame a elegir";
   const quoteProducts = [
-    "Ayúdame a elegir",
     "Tarjetas PVC personalizadas",
     "Tarjetas PVC a color personalizadas",
     "Soluciones en PVC personalizadas",
@@ -25,6 +25,18 @@
     "Tarjeta NFC para recibir reseñas de Google",
     "Tarjetas con chip NFC",
     "Tarjetas PVC para empresas, escuelas y proyectos",
+  ];
+  // Servicios de desarrollo web (en colaboración con Top Web Digital)
+  const quoteWebServices = [
+    "Desarrollo web: página web para mi negocio",
+    "Desarrollo web: diseño de página web Básico",
+    "Desarrollo web: diseño de página web Profesional",
+    "Desarrollo web: tienda en línea",
+    "Desarrollo web: posicionamiento SEO",
+    "Desarrollo web: Google Maps y Perfil de Negocio",
+    "Desarrollo web: mantenimiento web",
+    "Desarrollo web: publicidad en Google y Meta",
+    "Desarrollo web: página web + tarjetas NFC",
   ];
   const pageProductMap = {
     "tarjeta-pvc-personalizada.html": "Tarjetas PVC personalizadas",
@@ -41,6 +53,11 @@
     "tarjetas-chip-nfc.html": "Tarjetas con chip NFC",
     "tarjetas-pvc.html": "Tarjetas PVC personalizadas",
     "tarjetas-para-empresas.html": "Tarjetas PVC para empresas, escuelas y proyectos",
+    "desarrollo-web.html": "Desarrollo web: página web para mi negocio",
+    "diseno-de-paginas-web.html": "Desarrollo web: página web para mi negocio",
+    "tienda-en-linea.html": "Desarrollo web: tienda en línea",
+    "posicionamiento-seo.html": "Desarrollo web: posicionamiento SEO",
+    "mantenimiento-web.html": "Desarrollo web: mantenimiento web",
   };
   const whatsappPageMessages = {
     "tarjeta-pvc-personalizada.html":
@@ -68,7 +85,20 @@
     "tarjetas-pvc.html": "Hola CardMax, me interesa recibir una cotización de tarjetas PVC.",
     "tarjetas-para-empresas.html":
       "Hola CardMax, me interesa recibir una cotización de tarjetas para empresas y equipos.",
+    "desarrollo-web.html":
+      "Hola CardMax, me interesa cotizar servicios de desarrollo web para mi negocio.",
+    "diseno-de-paginas-web.html":
+      "Hola CardMax, me interesa cotizar el diseño de una página web.",
+    "tienda-en-linea.html": "Hola CardMax, me interesa cotizar una tienda en línea.",
+    "posicionamiento-seo.html":
+      "Hola CardMax, me interesa cotizar posicionamiento SEO y una auditoría de mi sitio.",
+    "mantenimiento-web.html":
+      "Hola CardMax, me interesa cotizar mantenimiento web para mi sitio.",
   };
+  const webMessagePlaceholder =
+    "Ejemplo: Tengo un consultorio dental y necesito una página web con 5 secciones, WhatsApp y aparecer en Google Maps.";
+  const cardsMessagePlaceholder =
+    "Ejemplo: Necesitamos 15 tarjetas para el equipo comercial, personalizadas con el logo y los datos de cada asesor.";
   const defaultWhatsappMessage = "Hola CardMax, me interesa recibir una cotización.";
 
   const escapeHtml = (value) =>
@@ -127,9 +157,13 @@
   });
 
   const buildQuoteModal = () => {
-    const productOptions = quoteProducts
-      .map((product) => `<option value="${escapeHtml(product)}">${escapeHtml(product)}</option>`)
-      .join("");
+    const toOptions = (list) =>
+      list
+        .map((product) => `<option value="${escapeHtml(product)}">${escapeHtml(product)}</option>`)
+        .join("");
+    const productOptions = `<option value="${escapeHtml(quoteHelpOption)}">${escapeHtml(quoteHelpOption)}</option>
+                  <optgroup label="Tarjetas y credenciales">${toOptions(quoteProducts)}</optgroup>
+                  <optgroup label="Desarrollo web (en colaboración con Top Web Digital)">${toOptions(quoteWebServices)}</optgroup>`;
 
     document.body.insertAdjacentHTML(
       "beforeend",
@@ -172,7 +206,7 @@
               </label>
               <label class="quote-form-full">
                 <span>Cuéntanos brevemente qué tienes en mente <small>opcional</small></span>
-                <textarea name="message" rows="4" placeholder="Ejemplo: Necesitamos 15 tarjetas para el equipo comercial, personalizadas con el logo y los datos de cada asesor."></textarea>
+                <textarea name="message" rows="4" placeholder="${escapeHtml(cardsMessagePlaceholder)}"></textarea>
               </label>
             </div>
             <button class="primary-button quote-submit" type="submit">
@@ -218,7 +252,21 @@
     return pageName.toLowerCase().endsWith(".html") ? pageName : `${pageName}.html`;
   };
 
-  const getCurrentPageProduct = () => pageProductMap[getCurrentPageName()] || "Ayúdame a elegir";
+  const getCurrentPageProduct = () => pageProductMap[getCurrentPageName()] || quoteHelpOption;
+
+  // Ajusta el ejemplo del mensaje según se elija una tarjeta o un servicio web
+  const messageField = quoteForm?.querySelector('textarea[name="message"]');
+  const syncMessagePlaceholder = () => {
+    if (!productSelect || !messageField) {
+      return;
+    }
+
+    messageField.placeholder = quoteWebServices.includes(productSelect.value)
+      ? webMessagePlaceholder
+      : cardsMessagePlaceholder;
+  };
+
+  productSelect?.addEventListener("change", syncMessagePlaceholder);
 
   const getCurrentWhatsappMessage = () =>
     whatsappPageMessages[getCurrentPageName()] || defaultWhatsappMessage;
@@ -232,6 +280,7 @@
 
     if (productSelect) {
       productSelect.value = getCurrentPageProduct();
+      syncMessagePlaceholder();
     }
 
     quoteModal.hidden = false;
@@ -313,6 +362,7 @@
 
     if (productSelect) {
       productSelect.value = getCurrentPageProduct();
+      syncMessagePlaceholder();
     }
   };
 
@@ -399,7 +449,7 @@
     const formData = new FormData(quoteForm);
     const quantity = Number.parseInt(formData.get("quantity"), 10);
     const payload = {
-      tipo_producto: getFormValue(formData, "product", "Ayúdame a elegir"),
+      tipo_producto: getFormValue(formData, "product", quoteHelpOption),
       cantidad_aproximada: Number.isNaN(quantity) ? null : quantity,
       nombre_completo: getFormValue(formData, "name"),
       empresa: getFormValue(formData, "company") || null,
