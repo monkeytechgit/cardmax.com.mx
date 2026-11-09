@@ -153,14 +153,6 @@
   "inLanguage": "es-MX",
   "publisher": {
     "@id": "https://cardmax.com.mx/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://cardmax.com.mx/?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
   }
 }
 </script>
@@ -462,8 +454,8 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Productos CardMax",
-  "numberOfItems": 3,
+  "name": "Catálogo de tarjetas NFC CardMax",
+  "numberOfItems": 5,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -474,14 +466,26 @@
     {
       "@type": "ListItem",
       "position": 2,
-      "name": "Tarjeta NFC metálica personalizable",
+      "name": "Tarjeta NFC metálica",
       "url": "https://cardmax.com.mx/tarjeta-nfc-metalica.html"
     },
     {
       "@type": "ListItem",
       "position": 3,
-      "name": "Tarjeta NFC para reseñas de Google",
+      "name": "Tarjeta NFC para reseñas",
       "url": "https://cardmax.com.mx/tarjeta-social-nfc.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 4,
+      "name": "Tarjeta digital TapLoop PVC",
+      "url": "https://cardmax.com.mx/tarjeta-presentacion-digital-taploop-pvc.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Tarjeta digital TapLoop metálica",
+      "url": "https://cardmax.com.mx/tarjeta-presentacion-digital-taploop-metalica.html"
     }
   ]
 }
@@ -493,34 +497,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto tiempo tarda la entrega de tarjetas CardMax?",
+      "name": "¿Todos los teléfonos pueden leer NFC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El tiempo se confirma según cantidad, aprobación del diseño y destino. Coordinamos producción y envío a diferentes ciudades de México."
+        "text": "La mayoría de los teléfonos modernos pueden leer NFC. El código QR funciona como alternativa cuando el NFC no está disponible."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Pueden personalizar cada tarjeta con datos diferentes?",
+      "name": "¿La tarjeta incluye código QR?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Podemos trabajar nombres, fotografías, puestos, matrículas, códigos QR, folios, enlaces y otros datos variables dentro del mismo pedido."
+        "text": "Sí. Podemos incluir un código QR que dirija al mismo enlace programado en el chip NFC."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué pasa si no tengo diseño?",
+      "name": "¿Qué información puedo compartir?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Podemos incluir servicio de diseño. Nuestro equipo prepara una propuesta con tu logotipo, colores, datos y referencias antes de producir."
+        "text": "Puedes compartir contacto, WhatsApp, redes sociales, sitio web, catálogo, perfil digital o enlace de reseñas."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Realizan envíos a todo México?",
+      "name": "¿Pueden personalizar una tarjeta para cada integrante?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. CardMax coordina envíos por paquetería a México para tarjetas PVC, credenciales y tarjetas NFC personalizadas."
+        "text": "Sí. Podemos cambiar nombre, puesto, datos, diseño o enlace para cada integrante del equipo."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿La tarjeta metálica también tiene NFC?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. La tarjeta metálica integra NFC y puede incluir código QR y grabado personalizado."
       }
     }
   ]
@@ -590,72 +602,73 @@
 </div>
 </header>
 <main class="site-main inner-page-main" id="contenido">
-<section class="catalog-start catalog-start-nfc" id="productos">
-<div class="site-width">
-<header class="catalog-heading">
-<p class="section-kicker">Productos disponibles</p>
+<section class="catalog-start catalog-start-nfc catalog-page" id="productos">
+<div class="site-width" data-filter-scope="">
+<nav aria-label="Ruta de navegación" class="web-breadcrumbs page-breadcrumbs"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">Tarjetas NFC</li></ol></nav>
+<header class="catalog-heading catalog-heading-split">
+<div>
+<p class="section-kicker">Catálogo NFC</p>
 <h1>Tarjetas NFC personalizadas con QR</h1>
-<p>
-            Selecciona una tarjeta en PVC, una opción metálica o una tarjeta
-            para dirigir a tus clientes a la página de reseñas.
-          </p>
+</div>
+<p>Comparte tu contacto, redes o reseñas de Google con un toque. En PVC o metal, con tu marca.</p>
 </header>
-<div class="product-grid">
-<article aria-label="Ver Tarjeta NFC personalizable" class="product-card" data-href="tarjeta-presentacion-digital-nfc.html" role="link" tabindex="0">
-<img alt="Tarjeta NFC personalizable" class="product-image" loading="lazy" src="img/tarjeta-digital-nfc.webp" width="1300" height="975" decoding="async"/>
+<div class="catalog-toolbar">
+<div aria-label="Filtrar productos" class="catalog-filter" role="group" data-singular="producto" data-plural="productos"><button type="button" data-filter="todos" class="is-active" aria-pressed="true">Todos</button><button type="button" data-filter="nfc" aria-pressed="false">Tarjetas NFC</button><button type="button" data-filter="taploop" aria-pressed="false">TapLoop</button><button type="button" data-filter="metal" aria-pressed="false">Metálicas</button></div>
+<p aria-live="polite" class="catalog-count">5 productos</p>
+</div>
+<div class="product-grid catalog-grid">
+<article aria-label="Ver Tarjeta NFC personalizable" class="product-card catalog-card" data-category="nfc" data-href="tarjeta-presentacion-digital-nfc.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img fetchpriority="high" alt="Tarjeta NFC personalizable" class="product-image" src="img/tarjeta-digital-nfc.webp" width="1300" height="975" decoding="async"/></div>
 <div class="product-copy">
-<span class="product-tag">NFC + QR</span>
-<h3>Tarjeta NFC personalizable</h3>
-<p>Comparte contacto, WhatsApp, redes sociales, sitio web y otros enlaces desde una sola tarjeta.</p>
-<a class="primary-button product-button" href="tarjeta-presentacion-digital-nfc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<span class="product-tag">NFC en PVC</span>
+<h2>Tarjeta NFC personalizable</h2>
+<p>Comparte contacto, WhatsApp, redes y sitio web desde una sola tarjeta.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Chip NFC programado</li><li><i aria-hidden="true" class="fa fa-check"></i>Código QR integrado</li><li><i aria-hidden="true" class="fa fa-check"></i>Perfil digital incluido</li></ul>
+<a class="catalog-card-link" href="tarjeta-presentacion-digital-nfc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-<article aria-label="Ver Tarjeta NFC metálica personalizable" class="product-card product-card-dark" data-href="tarjeta-nfc-metalica.html" role="link" tabindex="0">
-<img alt="Tarjeta NFC metálica personalizable" class="product-image" loading="lazy" src="img/tarjeta-nfc-metalica.webp" width="1300" height="975" decoding="async"/>
+<article aria-label="Ver Tarjeta NFC metálica" class="product-card catalog-card" data-category="nfc metal" data-href="tarjeta-nfc-metalica.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Tarjeta NFC metálica personalizable" class="product-image" src="img/tarjeta-nfc-metalica.webp" width="1300" height="975" decoding="async"/></div>
 <div class="product-copy">
-<span class="product-tag product-tag-dark">Metal negro mate</span>
-<h3>Tarjeta NFC metálica personalizable</h3>
-<p>Tarjeta metálica personalizada con grabado, chip NFC y código QR.</p>
-<a class="primary-button product-button" href="tarjeta-nfc-metalica.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<span class="product-tag">Metal negro mate</span>
+<h2>Tarjeta NFC metálica</h2>
+<p>Tarjeta de presentación premium con grabado personalizado, NFC y QR.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Acabado negro mate</li><li><i aria-hidden="true" class="fa fa-check"></i>Grabado personalizado</li><li><i aria-hidden="true" class="fa fa-check"></i>Chip NFC y código QR</li></ul>
+<a class="catalog-card-link" href="tarjeta-nfc-metalica.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-<article aria-label="Ver Tarjetas NFC para reseñas de Google" class="product-card" data-href="tarjeta-social-nfc.html" role="link" tabindex="0">
-<img alt="Tarjeta NFC para reseñas de Google" class="product-image" loading="lazy" src="img/tarjeta-resenas-google.webp" width="1300" height="975" decoding="async"/>
+<article aria-label="Ver Tarjeta NFC para reseñas" class="product-card catalog-card" data-category="nfc" data-href="tarjeta-social-nfc.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Tarjeta NFC para reseñas de Google" class="product-image" src="img/tarjeta-resenas-google.webp" width="1300" height="975" decoding="async"/></div>
 <div class="product-copy">
-<span class="product-tag">Google</span>
-<h3>Tarjetas NFC para reseñas de Google</h3>
-<p>Dirige a tus clientes a la página de reseñas acercando el teléfono o escaneando el QR.</p>
-<a class="primary-button product-button" href="tarjeta-social-nfc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<span class="product-tag">Reseñas de Google</span>
+<h2>Tarjeta NFC para reseñas</h2>
+<p>Lleva a tus clientes directo a dejar una reseña de tu negocio en Google.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Enlace directo a Google</li><li><i aria-hidden="true" class="fa fa-check"></i>NFC y código QR</li><li><i aria-hidden="true" class="fa fa-check"></i>Diseño con tu marca</li></ul>
+<a class="catalog-card-link" href="tarjeta-social-nfc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-</div>
-<div class="taploop-catalog" id="taploop">
-<header class="section-heading centered">
-<p class="section-kicker">Nuevo · TapLoop</p>
-<h2>Tarjetas de presentación digital TapLoop</h2>
-<p>Tarjeta física con NFC y QR conectada a un perfil digital editable, con métricas, agenda y formularios.</p>
-</header>
-<div class="product-grid product-grid-two">
-<article aria-label="Ver Tarjeta de presentación digital TapLoop PVC" class="product-card" data-href="tarjeta-presentacion-digital-taploop-pvc.html" role="link" tabindex="0">
-<img alt="Tarjeta de presentación digital TapLoop PVC con perfil digital" class="product-image" loading="lazy" src="img/productos/taploop/producto1pvc.webp" width="1300" height="1000" decoding="async"/>
+<article aria-label="Ver Tarjeta digital TapLoop PVC" class="product-card catalog-card" data-category="taploop" data-href="tarjeta-presentacion-digital-taploop-pvc.html" id="taploop" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Tarjeta de presentación digital TapLoop PVC con perfil digital" class="product-image" loading="lazy" src="img/productos/taploop/producto1pvc.webp" width="1300" height="1000" decoding="async"/></div>
 <div class="product-copy">
 <span class="product-tag">TapLoop PVC</span>
-<h3>Tarjeta de presentación digital TapLoop PVC</h3>
-<p>Personalizada con tu marca y conectada a tu perfil digital TapLoop.</p>
-<a class="primary-button product-button" href="tarjeta-presentacion-digital-taploop-pvc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<h2>Tarjeta digital TapLoop PVC</h2>
+<p>Tarjeta con tu marca conectada a un perfil digital que editas cuando quieras.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>NFC + QR integrado</li><li><i aria-hidden="true" class="fa fa-check"></i>Métricas, agenda y formularios</li><li><i aria-hidden="true" class="fa fa-check"></i>Compatible con iPhone y Android</li></ul>
+<a class="catalog-card-link" href="tarjeta-presentacion-digital-taploop-pvc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-<article aria-label="Ver Tarjeta de presentación digital TapLoop metálica" class="product-card product-card-dark" data-href="tarjeta-presentacion-digital-taploop-metalica.html" role="link" tabindex="0">
-<img alt="Tarjeta de presentación digital TapLoop metálica con perfil digital" class="product-image" loading="lazy" src="img/productos/taploop/producto1metal.webp" width="1300" height="1000" decoding="async"/>
+<article aria-label="Ver Tarjeta digital TapLoop metálica" class="product-card catalog-card" data-category="taploop metal" data-href="tarjeta-presentacion-digital-taploop-metalica.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Tarjeta de presentación digital TapLoop metálica con perfil digital" class="product-image" loading="lazy" src="img/productos/taploop/producto1metal.webp" width="1300" height="1000" decoding="async"/></div>
 <div class="product-copy">
-<span class="product-tag product-tag-dark">TapLoop metálica</span>
-<h3>Tarjeta de presentación digital TapLoop metálica</h3>
-<p>Acabado metálico premium con NFC, QR y perfil digital TapLoop.</p>
-<a class="primary-button product-button" href="tarjeta-presentacion-digital-taploop-metalica.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<span class="product-tag">TapLoop metálica</span>
+<h2>Tarjeta digital TapLoop metálica</h2>
+<p>Acabado metálico premium con grabado y perfil digital TapLoop editable.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Grabado personalizado</li><li><i aria-hidden="true" class="fa fa-check"></i>NFC + QR integrado</li><li><i aria-hidden="true" class="fa fa-check"></i>Métricas e interacciones</li></ul>
+<a class="catalog-card-link" href="tarjeta-presentacion-digital-taploop-metalica.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
 </div>
-</div>
+<p class="catalog-cross">¿Necesitas credenciales o tarjetas impresas? <a href="tarjetas-pvc.html">Ver catálogo PVC <i aria-hidden="true" class="fa fa-arrow-right"></i></a></p>
 </div>
 </section>
 <section class="section applications-section">
@@ -855,10 +868,6 @@
 </div>
 <div class="site-width footer-bottom">
 <p>© 2026 CardMax. Todos los derechos reservados.</p>
-<div>
-<a href="#">Aviso de privacidad</a>
-<a href="#">Términos y condiciones</a>
-</div>
 </div>
 </footer>
 <div class="whatsapp-widget">

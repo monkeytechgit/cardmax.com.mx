@@ -66,10 +66,16 @@
       <image:loc>https://cardmax.com.mx/img/tarjetas-pvc-personalizadas.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-detalle-2.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/credenciales-empresariales.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/credenciales-escolares.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-detalle-3.webp</image:loc>
     </image:image>
   </url>
 

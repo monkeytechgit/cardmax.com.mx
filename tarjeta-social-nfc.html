@@ -153,14 +153,6 @@
   "inLanguage": "es-MX",
   "publisher": {
     "@id": "https://cardmax.com.mx/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://cardmax.com.mx/?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
   }
 }
 </script>
@@ -599,42 +591,50 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto tiempo tarda la entrega de tarjetas CardMax?",
+      "name": "¿A dónde dirige la tarjeta?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El tiempo se confirma según cantidad, aprobación del diseño y destino. Coordinamos producción y envío a diferentes ciudades de México."
+        "text": "Dirige al enlace de reseñas de Google configurado para tu negocio."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Pueden personalizar cada tarjeta con datos diferentes?",
+      "name": "¿El cliente necesita una aplicación?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Podemos trabajar nombres, fotografías, puestos, matrículas, códigos QR, folios, enlaces y otros datos variables dentro del mismo pedido."
+        "text": "No. El enlace se abre desde el navegador."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué pasa si no tengo diseño?",
+      "name": "¿Funciona únicamente con NFC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Podemos incluir servicio de diseño. Nuestro equipo prepara una propuesta con tu logotipo, colores, datos y referencias antes de producir."
+        "text": "No. También incluye un código QR."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Realizan envíos a todo México?",
+      "name": "¿Qué enlace debo enviar?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. CardMax coordina envíos por paquetería a México para tarjetas PVC, credenciales y tarjetas NFC personalizadas."
+        "text": "Puedes compartir el enlace directo de reseñas o la información de tu ficha para configurarlo."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué incluye Tarjeta NFC para reseñas de Google?",
+      "name": "¿Se personaliza con mi logotipo?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Tarjeta personalizada que abre directamente el enlace de reseñas de tu negocio mediante NFC o código QR."
+        "text": "Sí. Personalizamos colores, logotipo, mensaje e instrucciones."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Se puede cambiar el enlace?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "La posibilidad de reprogramación se revisa según el producto y la configuración."
       }
     }
   ]
@@ -704,6 +704,7 @@
 </div>
 </header>
 <main class="site-main product-detail-main" id="contenido">
+<nav aria-label="Ruta de navegación" class="web-breadcrumbs site-width"><ol><li><a href="index.html">Inicio</a></li><li><a href="tarjetas-chip-nfc.html">Tarjetas NFC</a></li><li aria-current="page">Tarjeta NFC para reseñas de Google</li></ol></nav>
 <section class="product-detail-hero">
 <div class="site-width product-detail-grid">
 <div class="product-gallery">
@@ -1014,10 +1015,6 @@
 </div>
 <div class="site-width footer-bottom">
 <p>© 2026 CardMax. Todos los derechos reservados.</p>
-<div>
-<a href="#">Aviso de privacidad</a>
-<a href="#">Términos y condiciones</a>
-</div>
 </div>
 </footer>
 <div class="whatsapp-widget">

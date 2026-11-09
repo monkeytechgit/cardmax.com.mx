@@ -153,14 +153,6 @@
   "inLanguage": "es-MX",
   "publisher": {
     "@id": "https://cardmax.com.mx/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://cardmax.com.mx/?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
   }
 }
 </script>
@@ -462,8 +454,8 @@
 {
   "@context": "https://schema.org",
   "@type": "ItemList",
-  "name": "Productos CardMax",
-  "numberOfItems": 3,
+  "name": "Catálogo de tarjetas PVC CardMax",
+  "numberOfItems": 5,
   "itemListElement": [
     {
       "@type": "ListItem",
@@ -474,14 +466,26 @@
     {
       "@type": "ListItem",
       "position": 2,
+      "name": "Tarjetas PVC a color",
+      "url": "https://cardmax.com.mx/tarjetas-pvc-color.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
       "name": "Credenciales empresariales",
       "url": "https://cardmax.com.mx/credenciales-empresariales.html"
     },
     {
       "@type": "ListItem",
-      "position": 3,
+      "position": 4,
       "name": "Credenciales escolares",
       "url": "https://cardmax.com.mx/credenciales-escolares.html"
+    },
+    {
+      "@type": "ListItem",
+      "position": 5,
+      "name": "Gafetes y soluciones en PVC",
+      "url": "https://cardmax.com.mx/pvc.html"
     }
   ]
 }
@@ -493,34 +497,42 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto tiempo tarda la entrega de tarjetas CardMax?",
+      "name": "¿Qué medida tienen las tarjetas PVC?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El tiempo se confirma según cantidad, aprobación del diseño y destino. Coordinamos producción y envío a diferentes ciudades de México."
+        "text": "El formato estándar es CR80, aproximadamente 8.56 × 5.4 cm, similar al tamaño de una tarjeta bancaria."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Pueden personalizar cada tarjeta con datos diferentes?",
+      "name": "¿Pueden imprimir nombres y fotografías diferentes?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Podemos trabajar nombres, fotografías, puestos, matrículas, códigos QR, folios, enlaces y otros datos variables dentro del mismo pedido."
+        "text": "Sí. Podemos personalizar cada tarjeta con nombre, puesto, fotografía, matrícula, número de empleado o código QR."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué pasa si no tengo diseño?",
+      "name": "¿Se puede imprimir por ambos lados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Podemos incluir servicio de diseño. Nuestro equipo prepara una propuesta con tu logotipo, colores, datos y referencias antes de producir."
+        "text": "Sí. Podemos imprimir a color por uno o ambos lados, según el diseño solicitado."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Realizan envíos a todo México?",
+      "name": "¿Pueden perforar las credenciales?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. CardMax coordina envíos por paquetería a México para tarjetas PVC, credenciales y tarjetas NFC personalizadas."
+        "text": "La perforación y los accesorios pueden cotizarse según el tipo de portagafete o colgante requerido."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito enviar el diseño terminado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No necesariamente. Puedes compartir logotipo, colores, datos y referencias para preparar la propuesta."
       }
     }
   ]
@@ -590,45 +602,73 @@
 </div>
 </header>
 <main class="site-main inner-page-main" id="contenido">
-<section class="catalog-start catalog-start-pvc" id="productos">
-<div class="site-width">
-<header class="catalog-heading">
-<p class="section-kicker">Productos disponibles</p>
+<section class="catalog-start catalog-start-pvc catalog-page" id="productos">
+<div class="site-width" data-filter-scope="">
+<nav aria-label="Ruta de navegación" class="web-breadcrumbs page-breadcrumbs"><ol><li><a href="index.html">Inicio</a></li><li aria-current="page">Tarjetas PVC</li></ol></nav>
+<header class="catalog-heading catalog-heading-split">
+<div>
+<p class="section-kicker">Catálogo PVC</p>
 <h1>Tarjetas PVC personalizadas para empresas y escuelas</h1>
-<p>
-            Elige el tipo de tarjeta y personalízala con el diseño, datos y
-            elementos de identificación que necesita tu organización.
-          </p>
+</div>
+<p>Tarjetas y credenciales CR80 impresas a color, con tu diseño, fotografía, QR y datos variables.</p>
 </header>
-<div class="product-grid">
-<article aria-label="Ver Tarjetas PVC personalizadas" class="product-card" data-href="tarjeta-pvc-personalizada.html" role="link" tabindex="0">
-<img alt="Tarjetas PVC personalizadas" class="product-image" loading="lazy" src="img/tarjetas-pvc-personalizadas.webp" width="1300" height="975" decoding="async"/>
+<div class="catalog-toolbar">
+<div aria-label="Filtrar productos" class="catalog-filter" role="group" data-singular="producto" data-plural="productos"><button type="button" data-filter="todos" class="is-active" aria-pressed="true">Todos</button><button type="button" data-filter="tarjetas" aria-pressed="false">Tarjetas</button><button type="button" data-filter="credenciales" aria-pressed="false">Credenciales</button></div>
+<p aria-live="polite" class="catalog-count">5 productos</p>
+</div>
+<div class="product-grid catalog-grid">
+<article aria-label="Ver Tarjetas PVC personalizadas" class="product-card catalog-card" data-category="tarjetas" data-href="tarjeta-pvc-personalizada.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img fetchpriority="high" alt="Tarjetas PVC personalizadas" class="product-image" src="img/tarjetas-pvc-personalizadas.webp" width="1300" height="975" decoding="async"/></div>
 <div class="product-copy">
 <span class="product-tag">Impresión PVC</span>
-<h3>Tarjetas PVC personalizadas</h3>
-<p>Impresión a color por uno o ambos lados para identificaciones, membresías y tarjetas informativas.</p>
-<a class="primary-button product-button" href="tarjeta-pvc-personalizada.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<h2>Tarjetas PVC personalizadas</h2>
+<p>Impresión a color por uno o ambos lados para membresías, gift cards y tarjetas informativas.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Formato CR80 full color</li><li><i aria-hidden="true" class="fa fa-check"></i>QR, código de barras o folio</li><li><i aria-hidden="true" class="fa fa-check"></i>Datos variables por tarjeta</li></ul>
+<a class="catalog-card-link" href="tarjeta-pvc-personalizada.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-<article aria-label="Ver Credenciales empresariales" class="product-card" data-href="credenciales-empresariales.html" role="link" tabindex="0">
-<img alt="Credenciales empresariales" class="product-image" loading="lazy" src="img/credenciales-empresariales.webp" width="1300" height="975" decoding="async"/>
+<article aria-label="Ver Tarjetas PVC a color" class="product-card catalog-card" data-category="tarjetas" data-href="tarjetas-pvc-color.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Tarjetas PVC a color para gift cards y promociones" class="product-image" src="img/productos/producto-tarjeta-pvc-personalizada-detalle-2.webp" width="1300" height="975" decoding="async"/></div>
+<div class="product-copy">
+<span class="product-tag">Full color</span>
+<h2>Tarjetas PVC a color</h2>
+<p>Gift cards, membresías y tarjetas promocionales con colores vivos y acabado profesional.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Impresión por uno o ambos lados</li><li><i aria-hidden="true" class="fa fa-check"></i>Ideal para promociones y lealtad</li><li><i aria-hidden="true" class="fa fa-check"></i>Envío a todo México</li></ul>
+<a class="catalog-card-link" href="tarjetas-pvc-color.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+</div>
+</article>
+<article aria-label="Ver Credenciales empresariales" class="product-card catalog-card" data-category="credenciales" data-href="credenciales-empresariales.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Credenciales empresariales" class="product-image" src="img/credenciales-empresariales.webp" width="1300" height="975" decoding="async"/></div>
 <div class="product-copy">
 <span class="product-tag">Empresas</span>
-<h3>Credenciales empresariales</h3>
-<p>Identificación para empleados, visitantes, contratistas, oficinas, fábricas y eventos.</p>
-<a class="primary-button product-button" href="credenciales-empresariales.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<h2>Credenciales empresariales</h2>
+<p>Identificación para empleados, visitantes y contratistas con la imagen de tu empresa.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Nombre, puesto y fotografía</li><li><i aria-hidden="true" class="fa fa-check"></i>Número, QR o código de barras</li><li><i aria-hidden="true" class="fa fa-check"></i>Compatibles con portagafete</li></ul>
+<a class="catalog-card-link" href="credenciales-empresariales.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
-<article aria-label="Ver Credenciales escolares" class="product-card" data-href="credenciales-escolares.html" role="link" tabindex="0">
-<img alt="Credenciales escolares" class="product-image" loading="lazy" src="img/credenciales-escolares.webp" width="1300" height="975" decoding="async"/>
+<article aria-label="Ver Credenciales escolares" class="product-card catalog-card" data-category="credenciales" data-href="credenciales-escolares.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Credenciales escolares" class="product-image" loading="lazy" src="img/credenciales-escolares.webp" width="1300" height="975" decoding="async"/></div>
 <div class="product-copy">
 <span class="product-tag">Escuelas</span>
-<h3>Credenciales escolares</h3>
-<p>Credenciales personalizadas para alumnos, docentes y personal administrativo.</p>
-<a class="primary-button product-button" href="credenciales-escolares.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+<h2>Credenciales escolares</h2>
+<p>Credenciales para alumnos, docentes y personal con el diseño de tu institución.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Fotografía y datos del alumno</li><li><i aria-hidden="true" class="fa fa-check"></i>Matrícula, grado y grupo</li><li><i aria-hidden="true" class="fa fa-check"></i>Código QR opcional</li></ul>
+<a class="catalog-card-link" href="credenciales-escolares.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
+</div>
+</article>
+<article aria-label="Ver Gafetes y soluciones en PVC" class="product-card catalog-card" data-category="tarjetas credenciales" data-href="pvc.html" role="link" tabindex="0">
+<div class="catalog-card-media"><img alt="Gafetes y piezas en PVC personalizadas" class="product-image" loading="lazy" src="img/productos/producto-tarjeta-pvc-personalizada-detalle-3.webp" width="1300" height="975" decoding="async"/></div>
+<div class="product-copy">
+<span class="product-tag">Proyectos especiales</span>
+<h2>Gafetes y soluciones en PVC</h2>
+<p>Gafetes, membresías y piezas en PVC para proyectos con requerimientos específicos.</p>
+<ul class="catalog-specs"><li><i aria-hidden="true" class="fa fa-check"></i>Diseño a la medida</li><li><i aria-hidden="true" class="fa fa-check"></i>QR y datos variables</li><li><i aria-hidden="true" class="fa fa-check"></i>Para empresas y escuelas</li></ul>
+<a class="catalog-card-link" href="pvc.html">Ver detalles <i aria-hidden="true" class="fa fa-arrow-right"></i></a>
 </div>
 </article>
 </div>
+<p class="catalog-cross">¿Buscas una tarjeta inteligente? <a href="tarjetas-chip-nfc.html">Ver catálogo NFC <i aria-hidden="true" class="fa fa-arrow-right"></i></a></p>
 </div>
 </section>
 <section class="section applications-section">
@@ -828,10 +868,6 @@
 </div>
 <div class="site-width footer-bottom">
 <p>© 2026 CardMax. Todos los derechos reservados.</p>
-<div>
-<a href="#">Aviso de privacidad</a>
-<a href="#">Términos y condiciones</a>
-</div>
 </div>
 </footer>
 <div class="whatsapp-widget">

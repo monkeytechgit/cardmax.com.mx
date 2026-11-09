@@ -2443,3 +2443,271 @@ main .web-partner-section h2 {
     gap: 22px;
   }
 }
+
+/* ==========================================================================
+   Espaciado más compacto entre secciones
+   ========================================================================== */
+:root {
+  --section-space: clamp(48px, 5.5vw, 72px);
+}
+
+.section,
+.product-detail-page .section,
+.taploop-tutorial-section {
+  padding-block: var(--section-space);
+}
+
+.catalog-start,
+.process-page-start,
+.reviews-page-start {
+  padding-block: clamp(48px, 5.5vw, 72px);
+}
+
+.product-final-cta,
+.final-cta {
+  padding-block: clamp(56px, 6vw, 80px);
+}
+
+.section-heading,
+.product-section-heading {
+  margin-bottom: clamp(30px, 3.6vw, 44px);
+}
+
+.value-grid,
+.stat-row {
+  margin-bottom: clamp(36px, 4.5vw, 56px);
+}
+
+/* ==========================================================================
+   Catálogos PVC y NFC
+   ========================================================================== */
+.catalog-heading-split {
+  display: grid;
+  max-width: none;
+  margin: 0 0 clamp(28px, 3.5vw, 40px);
+  grid-template-columns: minmax(0, 1.25fr) minmax(0, 1fr);
+  align-items: end;
+  gap: 18px 56px;
+  text-align: left;
+}
+
+.catalog-heading-split h1 {
+  margin-bottom: 0;
+  font-size: clamp(2.1rem, 3.8vw, 3.3rem);
+}
+
+.catalog-heading-split > p:last-child {
+  max-width: 460px;
+  margin: 0 0 6px;
+  color: var(--muted);
+  font-size: 1.02rem;
+  line-height: 1.65;
+}
+
+.catalog-heading-split .section-kicker::before {
+  display: inline-block;
+}
+
+.catalog-toolbar {
+  display: flex;
+  margin-bottom: clamp(24px, 3vw, 32px);
+  padding-bottom: 14px;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  border-bottom: 1px solid var(--line);
+}
+
+.catalog-filter {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px 30px;
+}
+
+.catalog-filter button {
+  position: relative;
+  padding: 4px 0 8px;
+  border: 0;
+  color: var(--muted);
+  background: transparent;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 600;
+  cursor: pointer;
+  transition: color 200ms ease;
+}
+
+.catalog-filter button::after {
+  position: absolute;
+  right: 0;
+  bottom: -15px;
+  left: 0;
+  height: 2px;
+  background: var(--brand);
+  transform: scaleX(0);
+  transform-origin: left;
+  transition: transform 320ms var(--ease-out);
+  content: "";
+}
+
+.catalog-filter button:hover,
+.catalog-filter button.is-active {
+  color: var(--brand);
+}
+
+.catalog-filter button.is-active::after {
+  transform: scaleX(1);
+}
+
+.catalog-count {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.88rem;
+}
+
+.catalog-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.catalog-card {
+  display: flex;
+  flex-direction: column;
+  text-align: left;
+}
+
+.catalog-card[hidden] {
+  display: none;
+}
+
+.catalog-card-media {
+  overflow: hidden;
+  border-bottom: 1px solid var(--line);
+  background: #ffffff;
+}
+
+.catalog-card .product-image {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 4 / 3;
+  object-fit: cover;
+}
+
+.catalog-card .product-copy {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+  padding: 22px 24px 24px;
+  text-align: left;
+}
+
+.catalog-card .product-copy h2,
+.catalog-card .product-copy h3 {
+  min-height: 0;
+  margin-bottom: 8px;
+  color: var(--ink);
+  font-size: 1.22rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+}
+
+.catalog-card .product-copy p {
+  min-height: 0;
+  margin-bottom: 16px;
+}
+
+.catalog-specs {
+  display: grid;
+  margin: 0 0 22px;
+  padding: 16px 0 0;
+  gap: 8px;
+  border-top: 1px dashed var(--line);
+  list-style: none;
+}
+
+.catalog-specs li {
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+  color: var(--text);
+  font-size: 0.88rem;
+}
+
+.catalog-specs .fa {
+  color: var(--brand);
+  font-size: 0.8rem;
+}
+
+.catalog-card-link {
+  display: inline-flex;
+  margin-top: auto;
+  align-items: center;
+  gap: 8px;
+  color: var(--brand);
+  font-size: 0.92rem;
+  font-weight: 700;
+}
+
+.catalog-card-link .fa {
+  transition: transform 260ms var(--ease-out);
+}
+
+.catalog-card:hover .catalog-card-link .fa {
+  transform: translateX(5px);
+}
+
+.catalog-cross {
+  margin: clamp(28px, 3.5vw, 40px) 0 0;
+  color: var(--muted);
+  font-size: 0.95rem;
+  text-align: center;
+}
+
+.catalog-cross a {
+  display: inline-flex;
+  margin-left: 6px;
+  align-items: center;
+  gap: 6px;
+  color: var(--brand);
+  font-weight: 700;
+}
+
+@media (max-width: 1020px) {
+  .catalog-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .catalog-heading-split {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .catalog-filter {
+    gap: 6px 20px;
+  }
+}
+
+/* Migas de pan visibles en catálogos, proceso y reseñas */
+.page-breadcrumbs {
+  position: relative;
+  z-index: 2;
+}
+
+.page-breadcrumbs ol {
+  padding: 0 0 clamp(18px, 2.4vw, 26px);
+}
+
+.process-page-start .page-breadcrumbs ol,
+.reviews-page-start .page-breadcrumbs ol {
+  justify-content: center;
+}
+
+.product-detail-main > .web-breadcrumbs ol {
+  padding-top: 22px;
+}

@@ -153,14 +153,6 @@
   "inLanguage": "es-MX",
   "publisher": {
     "@id": "https://cardmax.com.mx/#organization"
-  },
-  "potentialAction": {
-    "@type": "SearchAction",
-    "target": {
-      "@type": "EntryPoint",
-      "urlTemplate": "https://cardmax.com.mx/?q={search_term_string}"
-    },
-    "query-input": "required name=search_term_string"
   }
 }
 </script>
@@ -599,18 +591,34 @@
   "mainEntity": [
     {
       "@type": "Question",
-      "name": "¿Cuánto tiempo tarda la entrega de tarjetas CardMax?",
+      "name": "¿Qué medida tienen las tarjetas?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "El tiempo se confirma según cantidad, aprobación del diseño y destino. Coordinamos producción y envío a diferentes ciudades de México."
+        "text": "El formato estándar es CR80, aproximadamente 8.56 × 5.4 cm."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Pueden personalizar cada tarjeta con datos diferentes?",
+      "name": "¿Pueden imprimirse por ambos lados?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. Podemos trabajar nombres, fotografías, puestos, matrículas, códigos QR, folios, enlaces y otros datos variables dentro del mismo pedido."
+        "text": "Sí. Podemos imprimir a color por uno o ambos lados."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Pueden llevar datos diferentes?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "Sí. Podemos trabajar nombres, números, folios, códigos y otros datos variables."
+      }
+    },
+    {
+      "@type": "Question",
+      "name": "¿Necesito enviar el diseño terminado?",
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": "No necesariamente. Puedes compartir logotipo, colores, datos y referencias."
       }
     },
     {
@@ -618,23 +626,23 @@
       "name": "¿Qué pasa si no tengo diseño?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Podemos incluir servicio de diseño. Nuestro equipo prepara una propuesta con tu logotipo, colores, datos y referencias antes de producir."
+        "text": "Podemos incluir el servicio de diseño. Tenemos un equipo especializado en diseño gráfico para ayudarte a preparar tu tarjeta."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Realizan envíos a todo México?",
+      "name": "¿Pueden incluir código QR?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Sí. CardMax coordina envíos por paquetería a México para tarjetas PVC, credenciales y tarjetas NFC personalizadas."
+        "text": "Sí. El QR puede integrarse dentro del diseño."
       }
     },
     {
       "@type": "Question",
-      "name": "¿Qué incluye soluciones en PVC personalizadas?",
+      "name": "¿Realizan envíos?",
       "acceptedAnswer": {
         "@type": "Answer",
-        "text": "Incluye asesoría para elegir el tipo de pieza, diseño personalizado, revisión antes de producir, impresión en PVC y opciones como QR, fotografías, folios o datos variables."
+        "text": "Sí. Coordinamos envíos por paquetería a diferentes ciudades de México."
       }
     }
   ]
@@ -704,6 +712,7 @@
 </div>
 </header>
 <main class="site-main product-detail-main" id="contenido">
+<nav aria-label="Ruta de navegación" class="web-breadcrumbs site-width"><ol><li><a href="index.html">Inicio</a></li><li><a href="tarjetas-pvc.html">Tarjetas PVC</a></li><li aria-current="page">PVC personalizado</li></ol></nav>
 <section class="product-detail-hero">
 <div class="site-width product-detail-grid">
 <div class="product-gallery">
@@ -1040,10 +1049,6 @@
 </div>
 <div class="site-width footer-bottom">
 <p>© 2026 CardMax. Todos los derechos reservados.</p>
-<div>
-<a href="#">Aviso de privacidad</a>
-<a href="#">Términos y condiciones</a>
-</div>
 </div>
 </footer>
 <div class="whatsapp-widget">

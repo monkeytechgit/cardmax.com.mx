@@ -418,13 +418,15 @@
   });
 
   /* ------------------------------------------------------------------------
-     8. Filtros de reseñas ([data-filter])
+     8. Filtros de reseñas y catálogos ([data-filter])
      ------------------------------------------------------------------------ */
-  document.querySelectorAll(".reviews-filter").forEach((group) => {
-    const scope = group.parentElement;
+  document.querySelectorAll(".reviews-filter, .catalog-filter").forEach((group) => {
+    const scope = group.closest("[data-filter-scope]") || group.parentElement;
     const items = Array.from(scope.querySelectorAll("[data-category]"));
     const buttons = Array.from(group.querySelectorAll("[data-filter]"));
-    const counter = group.querySelector(".reviews-filter-count");
+    const counter = group.querySelector(".reviews-filter-count") || scope.querySelector(".catalog-count");
+    const singular = group.dataset.singular || "proyecto";
+    const plural = group.dataset.plural || "proyectos";
 
     const apply = (filter) => {
       let visible = 0;
@@ -457,7 +459,7 @@
       });
 
       if (counter) {
-        counter.textContent = `${visible} ${visible === 1 ? "proyecto" : "proyectos"}`;
+        counter.textContent = `${visible} ${visible === 1 ? singular : plural}`;
       }
     };
 
