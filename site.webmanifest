@@ -1,0 +1,16 @@
+{
+  "name": "CardMax México",
+  "short_name": "CardMax",
+  "description": "Tarjetas PVC, credenciales y tarjetas NFC personalizadas para empresas y escuelas.",
+  "lang": "es-MX",
+  "start_url": "/",
+  "scope": "/",
+  "display": "browser",
+  "background_color": "#ffffff",
+  "theme_color": "#e9164f",
+  "icons": [
+    { "src": "/img/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/img/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    { "src": "/img/icons/icon-maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}

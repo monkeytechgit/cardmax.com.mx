@@ -1792,7 +1792,7 @@ body.menu-open::after {
   color: var(--brand);
 }
 
-/* Bloque informativo de desarrollo web en el inicio */
+/* Bloque informativo de desarrollo web en el inicio (fondo claro) */
 .teaser-card {
   position: relative;
   display: grid;
@@ -1801,9 +1801,10 @@ body.menu-open::after {
   grid-template-columns: 1.05fr 0.95fr;
   gap: clamp(32px, 5vw, 64px);
   padding: clamp(32px, 5vw, 64px);
+  border: 1px solid #f6dfe6;
   border-radius: var(--radius-lg);
-  color: var(--white);
-  background: #121318;
+  color: var(--text);
+  background: linear-gradient(135deg, #fff6f9 0%, #ffffff 60%, #fdf2f6 100%);
 }
 
 .teaser-card::after {
@@ -1813,7 +1814,7 @@ body.menu-open::after {
   width: 520px;
   height: 520px;
   border-radius: 50%;
-  background: radial-gradient(circle, rgba(233, 22, 79, 0.42), transparent 65%);
+  background: radial-gradient(circle, rgba(233, 22, 79, 0.1), transparent 65%);
   animation: float 14s ease-in-out infinite;
   pointer-events: none;
   content: "";
@@ -1826,19 +1827,19 @@ body.menu-open::after {
 
 .teaser-card h2 {
   margin-bottom: 16px;
-  color: var(--white);
+  color: var(--ink);
   font-size: clamp(2rem, 3.4vw, 2.9rem);
   line-height: 1.08;
 }
 
 .teaser-card p {
   margin-bottom: 26px;
-  color: #c4c5cc;
+  color: var(--muted);
   font-size: 1rem;
 }
 
 .teaser-card .section-kicker {
-  color: #ff6b86;
+  color: var(--brand);
 }
 
 .teaser-card ul {
@@ -1851,30 +1852,32 @@ body.menu-open::after {
 }
 
 .teaser-card li {
-  color: #e6e6ea;
+  color: var(--ink);
   font-size: 0.9rem;
+  font-weight: 500;
 }
 
 .teaser-card li .fa {
   margin-right: 8px;
-  color: #ff6b86;
+  color: var(--brand);
 }
 
 .teaser-card img {
   width: 100%;
   border-radius: var(--radius);
+  background: #ffffff;
   animation: float 10s ease-in-out infinite;
 }
 
 .teaser-card small {
   display: block;
   margin-top: 16px;
-  color: #8e8f98;
+  color: var(--muted);
   font-size: 0.78rem;
 }
 
 .teaser-card small a {
-  color: #d9d9de;
+  color: var(--ink);
   text-decoration: underline;
   text-underline-offset: 3px;
 }
@@ -2212,10 +2215,9 @@ body.is-leaving {
 
 /* style.css fuerza fondo blanco en "main .section"; la alianza conserva su fondo oscuro */
 main .web-partner-section {
+  border-bottom: 1px solid #26272d;
   color: var(--white);
-  background:
-    radial-gradient(circle at 85% 10%, rgba(233, 22, 79, 0.28), transparent 40%),
-    #121318;
+  background: #050506;
 }
 
 main .web-partner-section h2 {
@@ -2710,4 +2712,106 @@ main .web-partner-section h2 {
 
 .product-detail-main > .web-breadcrumbs ol {
   padding-top: 22px;
+}
+
+/* Imagen de producto completa (sin recorte) dentro del slider principal */
+.hero-media img.hero-media-contain {
+  object-fit: contain;
+  padding: clamp(20px, 4vw, 56px);
+  background: #ffffff;
+}
+
+/* Números de pasos (Cómo trabajamos): el degradado cubre el número completo */
+.workflow-row {
+  grid-template-columns: 150px minmax(0, 1fr);
+}
+
+.workflow-number {
+  width: max-content;
+  padding-right: 0.08em;
+  font-size: clamp(3.2rem, 6vw, 5.2rem);
+  font-variant-numeric: tabular-nums;
+  letter-spacing: -0.02em;
+  line-height: 1.05;
+}
+
+@media (max-width: 850px) {
+  .workflow-row {
+    grid-template-columns: 1fr;
+  }
+
+  .workflow-number {
+    font-size: 3.25rem;
+  }
+}
+
+/* Enlace a las reseñas junto a la calificación del producto */
+.product-rating a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-color: rgba(233, 22, 79, 0.45);
+  text-underline-offset: 3px;
+  transition: color 200ms ease;
+}
+
+.product-rating a:hover {
+  color: var(--brand);
+}
+
+.product-reviews-section {
+  scroll-margin-top: 96px;
+}
+
+/* --------------------------------------------------------------------------
+   Slider del inicio: las 3 diapositivas comparten la misma altura
+   (se apilan en la misma celda; la imagen ya no cambia de tamaño)
+   -------------------------------------------------------------------------- */
+.hero-slides {
+  display: grid;
+  min-height: 0;
+}
+
+.hero-slide,
+#hero-slide-1:checked ~ .hero-slides .hero-slide-1,
+#hero-slide-2:checked ~ .hero-slides .hero-slide-2,
+#hero-slide-3:checked ~ .hero-slides .hero-slide-3 {
+  position: relative;
+  inset: auto;
+  grid-area: 1 / 1;
+  min-height: 560px;
+}
+
+.hero-media {
+  position: relative;
+  min-height: 0;
+}
+
+.hero-media img {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  min-height: 0;
+}
+
+.hero-copy h1,
+.hero-copy h2 {
+  font-size: clamp(2.3rem, 3.7vw, 3.5rem);
+}
+
+@media (max-width: 850px) {
+  .hero-slide,
+  #hero-slide-1:checked ~ .hero-slides .hero-slide-1,
+  #hero-slide-2:checked ~ .hero-slides .hero-slide-2,
+  #hero-slide-3:checked ~ .hero-slides .hero-slide-3 {
+    min-height: 0;
+  }
+
+  .hero-slide {
+    grid-template-rows: 1fr auto;
+  }
+
+  .hero-media {
+    height: 360px;
+  }
 }

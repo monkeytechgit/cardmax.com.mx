@@ -11,6 +11,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjeta-pvc-personalizada.jpg</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-principal.webp</image:loc>
     </image:image>
     <image:image>
@@ -51,6 +54,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjetas-pvc-color.jpg</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-principal.webp</image:loc>
     </image:image>
     <image:image>
@@ -88,6 +94,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/pvc.jpg</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-principal.webp</image:loc>
     </image:image>
     <image:image>
@@ -124,6 +133,9 @@
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/credenciales-empresariales.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-credencial-empresarial-principal.webp</image:loc>
     </image:image>
@@ -171,6 +183,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/credenciales-escolares.jpg</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-credencial-escolar-principal.webp</image:loc>
     </image:image>
     <image:image>
@@ -204,6 +219,9 @@
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjeta-presentacion-digital-nfc.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-digital-nfc-principal.webp</image:loc>
     </image:image>
@@ -245,6 +263,9 @@
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjeta-nfc-metalica.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-nfc-metalica-principal.webp</image:loc>
     </image:image>
@@ -296,6 +317,9 @@
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjeta-social-nfc.jpg</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-social-google-principal.webp</image:loc>
     </image:image>
     <image:image>
@@ -336,6 +360,9 @@
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjeta-presentacion-digital-taploop-pvc.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/taploop/producto1pvc.webp</image:loc>
     </image:image>
@@ -404,6 +431,9 @@
     <lastmod>2026-11-08</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.8</priority>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/og/tarjeta-presentacion-digital-taploop-metalica.jpg</image:loc>
+    </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/productos/taploop/producto1metal.webp</image:loc>
     </image:image>

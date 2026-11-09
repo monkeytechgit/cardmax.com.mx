@@ -11,7 +11,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax-og.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/og/desarrollo-web.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax.webp</image:loc>
@@ -24,7 +24,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax-og.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/og/diseno-de-paginas-web.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax.webp</image:loc>
@@ -37,7 +37,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax-og.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/og/tienda-en-linea.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax.webp</image:loc>
@@ -50,7 +50,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.7</priority>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax-og.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/og/posicionamiento-seo.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax.webp</image:loc>
@@ -63,7 +63,7 @@
     <changefreq>monthly</changefreq>
     <priority>0.6</priority>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax-og.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/og/mantenimiento-web.jpg</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/desarrollo-web-cardmax.webp</image:loc>
