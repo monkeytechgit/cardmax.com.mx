@@ -38,7 +38,9 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-resenas.webp">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ui.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -596,7 +598,7 @@
 
       <a class="primary-button header-button" href="#cotizacion">
         Solicitar cotización
-        <i class="fa fa-external-link" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </a>
 
       <details class="mobile-menu">
@@ -636,15 +638,27 @@
       <div class="site-width">
         <header class="reviews-page-heading">
           <p class="section-kicker">Casos de uso</p>
-          <h1>Reseñas de clientes sobre tarjetas PVC, credenciales y NFC</h1>
+          <h1>Proyectos reales, clientes satisfechos</h1>
           <p>
             Referencias de credenciales PVC, tarjetas NFC y proyectos
             personalizados para empresas, instituciones y profesionales.
           </p>
         </header>
 
-        <div class="reviews-grid reviews-grid-large">
-          <article class="review-item review-case-card">
+        <div class="stat-row stat-row-3">
+<div class="stat-item"><strong>17</strong><span>proyectos publicados</span></div>
+<div class="stat-item"><strong>4.9</strong><span>calificación promedio</span></div>
+<div class="stat-item"><strong>+2,000</strong><span>clientes atendidos</span></div>
+</div>
+<div class="reviews-filter" role="group" aria-label="Filtrar proyectos">
+<button type="button" data-filter="todos" aria-pressed="true"><i aria-hidden="true" class="fa fa-th-large"></i> Todos</button>
+<button type="button" data-filter="credenciales" aria-pressed="false"><i aria-hidden="true" class="fa fa-id-badge"></i> Credenciales (6)</button>
+<button type="button" data-filter="pvc" aria-pressed="false"><i aria-hidden="true" class="fa fa-id-card"></i> Tarjetas PVC (4)</button>
+<button type="button" data-filter="nfc" aria-pressed="false"><i aria-hidden="true" class="fa fa-wifi"></i> NFC y reseñas (7)</button>
+<span class="reviews-filter-count" aria-live="polite"></span>
+</div>
+<div class="reviews-grid reviews-grid-large">
+          <article class="review-item review-case-card" data-category="credenciales">
             <img src="img/resenas/resena1.webp" alt="Credencial PVC para empleado de Alexander Cosmetics" loading="lazy" width="1069" height="1946" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -654,7 +668,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="pvc">
             <img src="img/resenas/resena2.webp" alt="Tarjetas PVC promocionales FumiPlus" loading="lazy" width="1199" height="1217" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -664,7 +678,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="pvc">
             <img src="img/resenas/resena3.webp" alt="Tarjetas de regalo en PVC Grupo Tseek" loading="lazy" width="1290" height="1358" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -674,7 +688,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena4.webp" alt="Tarjeta de presentación NFC de Sandra Sotelo" loading="lazy" width="1290" height="1631" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -684,7 +698,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="pvc">
             <img src="img/resenas/resena5.webp" alt="Tarjetas PVC con código QR UMAMI" loading="lazy" width="1290" height="1381" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -694,7 +708,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="credenciales">
             <img src="img/resenas/resena6.webp" alt="Credenciales para colaboradores Dental Fácil" loading="lazy" width="1290" height="1686" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -704,7 +718,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena7.webp" alt="Tarjetas de presentación NFC Legacy4Life" loading="lazy" width="1210" height="2120" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -714,7 +728,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="credenciales">
             <img src="img/resenas/resena8.webp" alt="Credencial con portagafete de vinil Kia Capital" loading="lazy" width="1290" height="1555" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -724,7 +738,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="pvc">
             <img src="img/resenas/resena9.webp" alt="Pedido de 200 tarjetas PVC PrintPack" loading="lazy" width="1290" height="1680" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -734,7 +748,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena10.webp" alt="Tarjetas para reseñas de Google Marakai Poke-Tea" loading="lazy" width="1290" height="951" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -744,7 +758,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="credenciales">
             <img src="img/resenas/resena11.webp" alt="Credencial y colgante personalizado Distribuidora El Comino" loading="lazy" width="1290" height="1634" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -754,7 +768,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="credenciales">
             <img src="img/resenas/resena12.webp" alt="Credenciales para personal de seguridad ARSEG" loading="lazy" width="1290" height="1825" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -764,7 +778,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="credenciales">
             <img src="img/resenas/resena13.webp" alt="Credencial de membresía con QR Caminos Sin Fronteras" loading="lazy" width="1290" height="1427" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -774,7 +788,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena14.webp" alt="Tarjeta metálica NFC personalizada NBG Technologies" loading="lazy" width="1290" height="1559" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -784,7 +798,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena15.webp" alt="Pedido de tarjetas metálicas NFC NBG Technologies" loading="lazy" width="922" height="1115" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -794,7 +808,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena16.webp" alt="Tarjeta metálica negra Escala Business Manager" loading="lazy" width="1183" height="1585" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -804,7 +818,7 @@
             </div>
           </article>
 
-          <article class="review-item review-case-card">
+          <article class="review-item review-case-card" data-category="nfc">
             <img src="img/resenas/resena17.webp" alt="Kit de tarjeta NFC con instructivo CardMax" loading="lazy" width="1290" height="1973" decoding="async">
             <div class="review-item-copy">
               <div class="review-stars" aria-label="5 de 5 estrellas">★★★★★</div>
@@ -823,9 +837,9 @@
       <div class="site-width faq-layout">
         <header class="section-heading">
           <p class="section-kicker">Preguntas frecuentes</p>
-          <h2>Información antes de realizar tu pedido</h2>
+          <h2>Lo que necesitas saber antes de pedir</h2>
           <p>
-            Respuestas generales sobre personalización, archivos, producción y entrega.
+            Personalización, archivos, tiempos y envíos, explicados en pocas palabras.
           </p>
         </header>
 
@@ -969,5 +983,6 @@
 
 
 <script src="product-cards.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

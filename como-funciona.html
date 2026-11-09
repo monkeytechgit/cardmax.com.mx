@@ -38,7 +38,9 @@
 <link rel="preconnect" href="https://cdnjs.cloudflare.com" crossorigin>
 <link rel="preload" as="image" href="img/hero-como-funciona.webp">
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&amp;display=swap">
 <link rel="stylesheet" href="style.css">
+<link rel="stylesheet" href="ui.css">
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -560,7 +562,7 @@
 
       <a class="primary-button header-button" href="#cotizacion">
         Solicitar cotización
-        <i class="fa fa-external-link" aria-hidden="true"></i>
+        <i class="fa fa-arrow-right" aria-hidden="true"></i>
       </a>
 
       <details class="mobile-menu">
@@ -600,59 +602,25 @@
       <div class="site-width">
         <header class="process-page-heading">
           <p class="section-kicker">Así trabajamos contigo</p>
-          <h1>Cómo cotizar tarjetas PVC, credenciales y NFC</h1>
+          <h1>De tu idea a tus tarjetas, en 4 pasos claros</h1>
           <p>
             Organizamos la información, preparamos el diseño, validamos los
             archivos y producimos el pedido después de recibir tu aprobación.
           </p>
         </header>
 
-        <div class="process-line process-line-large">
-          <article class="process-step">
-            <span class="process-number">1</span>
-            <div class="process-icon">
-              <i class="fa fa-comments-o" aria-hidden="true"></i>
-            </div>
-            <h3>Requerimientos</h3>
-            <p>Definimos producto, cantidad, datos, diseño, accesorios y entrega.</p>
-            <a class="primary-button process-step-cta" href="#cotizacion">
-              Solicitar cotización
-            </a>
-          </article>
-
-          <article class="process-step">
-            <span class="process-number">2</span>
-            <div class="process-icon">
-              <i class="fa fa-pencil-square-o" aria-hidden="true"></i>
-            </div>
-            <h3>Propuesta</h3>
-            <p>Preparamos el diseño y ordenamos la información que llevará cada tarjeta.</p>
-          </article>
-
-          <article class="process-step">
-            <span class="process-number">3</span>
-            <div class="process-icon">
-              <i class="fa fa-check-square-o" aria-hidden="true"></i>
-            </div>
-            <h3>Aprobación</h3>
-            <p>Aplicamos ajustes y confirmamos el archivo final antes de producir.</p>
-          </article>
-
-          <article class="process-step">
-            <span class="process-number">4</span>
-            <div class="process-icon">
-              <i class="fa fa-cogs" aria-hidden="true"></i>
-            </div>
-            <h3>Producción y envío</h3>
-            <p>Imprimimos, programamos cuando aplica, revisamos y enviamos.</p>
-          </article>
-        </div>
+        <nav class="process-jump" aria-label="Pasos del proceso">
+<a href="#paso-1"><b>1</b>Información inicial</a>
+<a href="#paso-2"><b>2</b>Diseño y propuesta</a>
+<a href="#paso-3"><b>3</b>Ajustes y aprobación</a>
+<a href="#paso-4"><b>4</b>Producción y entrega</a>
+</nav>
       </div>
     </section>
 
     <section class="section workflow-section">
       <div class="site-width workflow-list">
-        <article class="workflow-row">
+        <article class="workflow-row" id="paso-1">
           <div class="workflow-number">01</div>
           <div class="workflow-content">
             <p class="workflow-kicker">Información inicial</p>
@@ -685,7 +653,7 @@
           </div>
         </article>
 
-        <article class="workflow-row">
+        <article class="workflow-row" id="paso-2">
           <div class="workflow-number">02</div>
           <div class="workflow-content">
             <p class="workflow-kicker">Diseño y propuesta</p>
@@ -704,7 +672,7 @@
           </div>
         </article>
 
-        <article class="workflow-row">
+        <article class="workflow-row" id="paso-3">
           <div class="workflow-number">03</div>
           <div class="workflow-content">
             <p class="workflow-kicker">Ajustes y aprobación</p>
@@ -729,7 +697,7 @@
           </div>
         </article>
 
-        <article class="workflow-row">
+        <article class="workflow-row" id="paso-4">
           <div class="workflow-number">04</div>
           <div class="workflow-content">
             <p class="workflow-kicker">Producción y entrega</p>
@@ -753,36 +721,14 @@
       </div>
     </section>
 
-    <section class="section requirements-section">
-      <div class="site-width requirements-grid">
-        <div>
-          <p class="section-kicker">Para comenzar</p>
-          <h2>Información recomendada para preparar la propuesta</h2>
-          <p>
-            Contar con estos elementos ayuda a organizar el pedido y reducir
-            correcciones posteriores.
-          </p>
-        </div>
-
-        <div class="requirements-list">
-          <span><i class="fa fa-check-circle" aria-hidden="true"></i> Cantidad requerida</span>
-          <span><i class="fa fa-check-circle" aria-hidden="true"></i> Logotipo en buena calidad</span>
-          <span><i class="fa fa-check-circle" aria-hidden="true"></i> Lista de datos variables</span>
-          <span><i class="fa fa-check-circle" aria-hidden="true"></i> Fotografías identificadas</span>
-          <span><i class="fa fa-check-circle" aria-hidden="true"></i> Enlaces o códigos QR</span>
-          <span><i class="fa fa-check-circle" aria-hidden="true"></i> Dirección de entrega</span>
-        </div>
-      </div>
-    </section>
-
 
     <section class="section faq-section" id="preguntas">
       <div class="site-width faq-layout">
         <header class="section-heading">
           <p class="section-kicker">Preguntas frecuentes</p>
-          <h2>Información antes de realizar tu pedido</h2>
+          <h2>Lo que necesitas saber antes de pedir</h2>
           <p>
-            Respuestas generales sobre personalización, archivos, producción y entrega.
+            Personalización, archivos, tiempos y envíos, explicados en pocas palabras.
           </p>
         </header>
 
@@ -935,5 +881,6 @@
 
 
 <script src="product-cards.js"></script>
+<script src="site.js"></script>
 </body>
 </html>

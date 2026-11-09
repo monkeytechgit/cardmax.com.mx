@@ -175,7 +175,7 @@
           </button>
           <img class="quote-modal-logo" src="img/cardmax-logo.webp" alt="CardMax">
           <h2 id="quote-modal-title">Solicita tu cotización</h2>
-          <p>Cuéntanos qué necesitas y prepararemos una opción personalizada.</p>
+          <p>Déjanos tus datos y un asesor te contactará en minutos con una propuesta personalizada.</p>
           <form class="quote-form">
             <div class="quote-form-grid">
               <label>
@@ -214,7 +214,7 @@
               Recibir mi cotización
             </button>
             <p class="quote-form-status" role="status" aria-live="polite"></p>
-            <p class="quote-modal-note">Te contactaremos para confirmar los detalles y preparar tu cotización. Sin compromiso.</p>
+            <p class="quote-modal-note">Sin costo y sin compromiso. Usamos tus datos solo para preparar tu cotización.</p>
           </form>
           <div class="quote-loading-overlay" hidden aria-hidden="true">
             <span class="quote-loading-spinner"></span>
