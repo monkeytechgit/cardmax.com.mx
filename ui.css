@@ -2815,3 +2815,32 @@ main .web-partner-section h2 {
     height: 360px;
   }
 }
+
+/* Página 404 */
+.error-page {
+  min-height: 52vh;
+}
+
+.error-links {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 14px 32px;
+}
+
+.error-links a {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  color: var(--ink);
+  font-weight: 600;
+  transition: color 200ms ease;
+}
+
+.error-links a:hover {
+  color: var(--brand);
+}
+
+.error-links .fa {
+  color: var(--brand);
+}
