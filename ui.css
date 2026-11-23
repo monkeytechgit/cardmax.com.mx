@@ -2844,3 +2844,154 @@ main .web-partner-section h2 {
 .error-links .fa {
   color: var(--brand);
 }
+
+/* Resumen de calificaciones en la sección de reseñas de cada producto */
+.rating-summary {
+  display: grid;
+  max-width: 620px;
+  margin: 0 auto clamp(28px, 3.5vw, 40px);
+  padding: 22px 28px;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 28px;
+  border: 1px solid var(--line);
+  border-radius: var(--radius-lg);
+  background: #ffffff;
+}
+
+.rating-summary-score {
+  display: grid;
+  justify-items: center;
+  gap: 4px;
+  padding-right: 28px;
+  border-right: 1px solid var(--line);
+}
+
+.rating-summary-score strong {
+  color: var(--ink);
+  font-size: 2.6rem;
+  line-height: 1;
+}
+
+.rating-summary-stars {
+  color: #f5b301;
+  font-size: 1.05rem;
+  letter-spacing: 2px;
+}
+
+.rating-summary-score small {
+  color: var(--muted);
+  font-size: 0.8rem;
+  white-space: nowrap;
+}
+
+.rating-summary-bars {
+  display: grid;
+  margin: 0;
+  padding: 0;
+  gap: 6px;
+  list-style: none;
+}
+
+.rating-summary-bars li {
+  display: grid;
+  grid-template-columns: 34px minmax(0, 1fr) 22px;
+  align-items: center;
+  gap: 10px;
+  color: var(--muted);
+  font-size: 0.8rem;
+}
+
+.rating-summary-bars .fa {
+  color: #f5b301;
+  font-size: 0.7rem;
+}
+
+.rating-bar {
+  overflow: hidden;
+  height: 6px;
+  border-radius: 999px;
+  background: #f0f0f3;
+}
+
+.rating-bar span {
+  display: block;
+  height: 100%;
+  border-radius: inherit;
+  background: #f5b301;
+}
+
+.reviews-grid-4 {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+@media (max-width: 1020px) {
+  .reviews-grid-4 {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 760px) {
+  .reviews-grid-4 {
+    grid-template-columns: 1fr;
+  }
+
+  .rating-summary {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .rating-summary-score {
+    padding: 0 0 16px;
+    border-right: 0;
+    border-bottom: 1px solid var(--line);
+  }
+}
+
+/* Estrellas con relleno parcial (calificaciones.js): 4.9 y 4.5 se ven exactos */
+.rating-stars {
+  position: relative;
+  display: inline-block;
+  line-height: 1;
+  white-space: nowrap;
+}
+
+.rating-stars::before {
+  color: #e2e2e7;
+  content: "★★★★★";
+}
+
+.rating-stars::after {
+  position: absolute;
+  top: 0;
+  left: 0;
+  overflow: hidden;
+  width: var(--rating, 100%);
+  color: #f5a623;
+  content: "★★★★★";
+}
+
+/* Resumen con datos de calificaciones: promedio y total, sin barras */
+.rating-summary.is-configured {
+  max-width: 520px;
+  grid-template-columns: auto minmax(0, 1fr);
+}
+
+.rating-summary.is-configured .rating-summary-score small {
+  white-space: normal;
+  text-align: center;
+}
+
+.rating-summary-note {
+  margin: 0;
+  color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.55;
+}
+
+@media (max-width: 760px) {
+  .rating-summary.is-configured {
+    grid-template-columns: 1fr;
+    text-align: center;
+  }
+}

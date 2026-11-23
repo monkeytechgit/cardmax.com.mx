@@ -516,6 +516,59 @@
   }
 
   /* ------------------------------------------------------------------------
+     12. Calificaciones por producto (configuración en calificaciones.js)
+     Solo interfaz: no modifica los datos estructurados de Google.
+     ------------------------------------------------------------------------ */
+  const ratingConfig = window.CARDMAX_CALIFICACIONES;
+
+  if (ratingConfig && ratingConfig.productos) {
+    let pageName = window.location.pathname.replace(/\/+$/, "").split("/").pop() || "index";
+
+    try {
+      pageName = decodeURIComponent(pageName);
+    } catch (error) {
+      // Se conserva el nombre sin decodificar
+    }
+
+    if (!pageName.toLowerCase().endsWith(".html")) {
+      pageName = `${pageName}.html`;
+    }
+
+    const rating = ratingConfig.productos[pageName];
+    const promedio = rating ? Number(rating.promedio) : NaN;
+    const total = rating ? Number(rating.calificaciones) : NaN;
+
+    if (rating && promedio >= 0 && promedio <= 5 && total > 0) {
+      const average = promedio.toFixed(1);
+      const count = total.toLocaleString("es-MX");
+      const label = rating.etiqueta || "calificaciones";
+      const percent = `${(promedio / 5) * 100}%`;
+      const stars = (extraClass) =>
+        `<span class="rating-stars ${extraClass}" role="img" aria-label="${average} de 5 estrellas" style="--rating:${percent}"></span>`;
+      const reviewSection = document.querySelector(".product-reviews-section");
+      const writtenReviews = reviewSection ? reviewSection.querySelectorAll(".review-item").length : 0;
+
+      // Calificación junto al nombre del producto
+      document.querySelectorAll(".product-detail-info .product-rating").forEach((box) => {
+        const link = writtenReviews
+          ? ` · <a href="#resenas">Ver ${writtenReviews} ${writtenReviews === 1 ? "reseña" : "reseñas"}</a>`
+          : "";
+        box.innerHTML = `${stars("product-rating-stars")}<strong>${average}/5</strong><span>${count} ${label}${link}</span>`;
+        box.classList.add("is-configured");
+      });
+
+      // Resumen de la sección de reseñas (sin distribución por estrellas: no se reportó)
+      document.querySelectorAll(".rating-summary").forEach((summary) => {
+        const comments = writtenReviews
+          ? `<p class="rating-summary-note">Abajo puedes leer ${writtenReviews} ${writtenReviews === 1 ? "reseña" : "reseñas"} con comentario de nuestros clientes.</p>`
+          : "";
+        summary.innerHTML = `<div class="rating-summary-score"><strong>${average}</strong>${stars("rating-summary-stars")}<small>${count} ${label}</small></div>${comments}`;
+        summary.classList.add("is-configured");
+      });
+    }
+  }
+
+  /* ------------------------------------------------------------------------
      11. Transición entre páginas
      Los navegadores con View Transitions entre documentos usan CSS
      (@view-transition). El resto recibe un fundido de salida corto.

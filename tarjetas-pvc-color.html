@@ -525,13 +525,6 @@
       }
     }
   },
-  "aggregateRating": {
-    "@type": "AggregateRating",
-    "ratingValue": "5.0",
-    "reviewCount": "2",
-    "bestRating": "5",
-    "worstRating": "1"
-  },
   "review": [
     {
       "@type": "Review",
@@ -562,6 +555,36 @@
       },
       "reviewBody": "Las tarjetas llegaron en excelentes condiciones y protegidas individualmente. La información y las imágenes se leen claramente, y el resultado representa muy bien la imagen de FumiPlus.",
       "name": "Tarjetas PVC promocionales"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Organization",
+        "name": "UMAMI Ingeniería Especializada"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Las tarjetas quedaron exactamente como esperábamos. El código QR se escanea sin problemas, los textos pequeños son legibles y los colores conservaron muy bien el diseño original.",
+      "name": "Tarjetas PVC con código QR"
+    },
+    {
+      "@type": "Review",
+      "author": {
+        "@type": "Organization",
+        "name": "PrintPack"
+      },
+      "reviewRating": {
+        "@type": "Rating",
+        "ratingValue": "5",
+        "bestRating": "5",
+        "worstRating": "1"
+      },
+      "reviewBody": "Recibimos nuestro pedido completo y muy bien organizado. Las tarjetas mantienen una impresión uniforme, buen corte y una calidad consistente en todas las piezas.",
+      "name": "Pedido de 200 tarjetas PVC"
     }
   ]
 }
@@ -728,7 +751,7 @@
 <div class="product-rating">
 <span aria-label="5 de 5 estrellas" class="product-rating-stars">★★★★★</span>
 <strong>5.0/5</strong>
-<span><a href="#resenas">2 reseñas de clientes</a> · +2,000 clientes · +8,500 trabajos realizados</span>
+<span><a href="#resenas">4 reseñas de clientes</a> · +2,000 clientes · +8,500 trabajos realizados</span>
 </div>
 <ul class="product-feature-list">
 <li><i aria-hidden="true" class="fa fa-paint-brush"></i><span>Gift cards y tarjetas de regalo</span></li>
@@ -869,7 +892,11 @@
 <h2>Proyectos reales con tarjetas y piezas PVC</h2>
 <p>Marcas que ya usan tarjetas PVC a color para regalar, promocionar y fidelizar a sus clientes.</p>
 </header>
-<div class="reviews-grid">
+<div class="rating-summary">
+<div class="rating-summary-score"><strong>5.0</strong><span aria-label="5 de 5 estrellas" class="rating-summary-stars">★★★★★</span><small>4 reseñas de clientes</small></div>
+<ul aria-label="Distribución de calificaciones" class="rating-summary-bars"><li><span>5 <i aria-hidden="true" class="fa fa-star"></i></span><span class="rating-bar"><span style="width:100%"></span></span><span>4</span></li><li><span>4 <i aria-hidden="true" class="fa fa-star"></i></span><span class="rating-bar"><span style="width:0%"></span></span><span>0</span></li><li><span>3 <i aria-hidden="true" class="fa fa-star"></i></span><span class="rating-bar"><span style="width:0%"></span></span><span>0</span></li><li><span>2 <i aria-hidden="true" class="fa fa-star"></i></span><span class="rating-bar"><span style="width:0%"></span></span><span>0</span></li><li><span>1 <i aria-hidden="true" class="fa fa-star"></i></span><span class="rating-bar"><span style="width:0%"></span></span><span>0</span></li></ul>
+</div>
+<div class="reviews-grid reviews-grid-4">
 <article class="review-item product-review-card">
 <img alt="Tarjetas de regalo en PVC Grupo Tseek" loading="lazy" src="img/resenas/resena3.webp" width="1290" height="1358" decoding="async"/>
 <div class="review-item-copy">
@@ -886,6 +913,24 @@
 <p>“Las tarjetas llegaron en excelentes condiciones y protegidas individualmente. La información y las imágenes se leen claramente, y el resultado representa muy bien la imagen de FumiPlus.”</p>
 <strong>Equipo FumiPlus · FumiPlus</strong>
 <span>Tarjetas PVC promocionales</span>
+</div>
+</article>
+<article class="review-item product-review-card">
+<img alt="Tarjetas PVC con código QR UMAMI" loading="lazy" src="img/resenas/resena5.webp" width="1290" height="1381" decoding="async"/>
+<div class="review-item-copy">
+<div aria-label="5 de 5 estrellas" class="review-stars">★★★★★</div>
+<p>“Las tarjetas quedaron exactamente como esperábamos. El código QR se escanea sin problemas, los textos pequeños son legibles y los colores conservaron muy bien el diseño original.”</p>
+<strong>Equipo UMAMI · UMAMI Ingeniería Especializada</strong>
+<span>Tarjetas PVC con código QR</span>
+</div>
+</article>
+<article class="review-item product-review-card">
+<img alt="Pedido de 200 tarjetas PVC PrintPack" loading="lazy" src="img/resenas/resena9.webp" width="1290" height="1680" decoding="async"/>
+<div class="review-item-copy">
+<div aria-label="5 de 5 estrellas" class="review-stars">★★★★★</div>
+<p>“Recibimos nuestro pedido completo y muy bien organizado. Las tarjetas mantienen una impresión uniforme, buen corte y una calidad consistente en todas las piezas.”</p>
+<strong>Equipo PrintPack · PrintPack</strong>
+<span>Pedido de 200 tarjetas PVC</span>
 </div>
 </article>
 </div>
@@ -1031,6 +1076,7 @@
 </a>
 </div>
 <script src="product-cards.js"></script>
+<script src="calificaciones.js"></script>
 <script src="site.js"></script>
 </body>
 </html>

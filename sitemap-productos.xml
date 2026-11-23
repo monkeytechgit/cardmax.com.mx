@@ -32,13 +32,16 @@
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-pvc-personalizada-detalle-5.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/resenas/resena2.webp</image:loc>
-    </image:image>
-    <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena5.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena9.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena2.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena3.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/credenciales-empresariales.webp</image:loc>
@@ -81,6 +84,12 @@
       <image:loc>https://cardmax.com.mx/img/resenas/resena2.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena9.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/tarjetas-pvc-personalizadas.webp</image:loc>
     </image:image>
   </url>
@@ -118,7 +127,16 @@
       <image:loc>https://cardmax.com.mx/img/resenas/resena8.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena11.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena9.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena5.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena12.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/tarjetas-pvc-personalizadas.webp</image:loc>
@@ -167,6 +185,15 @@
       <image:loc>https://cardmax.com.mx/img/resenas/resena12.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena8.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena11.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena13.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/credenciales-escolares.webp</image:loc>
     </image:image>
     <image:image>
@@ -198,10 +225,13 @@
       <image:loc>https://cardmax.com.mx/img/resenas/resena13.webp</image:loc>
     </image:image>
     <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena11.webp</image:loc>
+    </image:image>
+    <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena8.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/resenas/resena11.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena1.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/credenciales-empresariales.webp</image:loc>
@@ -236,6 +266,9 @@
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena17.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena10.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/tarjeta-nfc-metalica.webp</image:loc>
@@ -282,13 +315,13 @@
       <image:loc>https://cardmax.com.mx/img/productos/producto-tarjeta-nfc-metalica-detalle-5.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/resenas/resena14.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena16.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena15.webp</image:loc>
     </image:image>
     <image:image>
-      <image:loc>https://cardmax.com.mx/img/resenas/resena16.webp</image:loc>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena14.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/tarjeta-digital-nfc.webp</image:loc>
@@ -333,6 +366,9 @@
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/resenas/resena17.webp</image:loc>
+    </image:image>
+    <image:image>
+      <image:loc>https://cardmax.com.mx/img/resenas/resena4.webp</image:loc>
     </image:image>
     <image:image>
       <image:loc>https://cardmax.com.mx/img/tarjeta-digital-nfc.webp</image:loc>
